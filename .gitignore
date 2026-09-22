@@ -1,32 +1,25 @@
-# OS and editor artifacts
-.DS_Store
-Thumbs.db
-*.swp
-*.tmp
+# Local environments and private state
+.env
+.env.*
+!.env.example
+.local/
+*.local.*
 
-# Python/tool caches (implementation language is not decided yet)
+# Dependencies and generated artifacts
+node_modules/
+.venv/
 __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.venv/
-dist/
-build/
 *.egg-info/
-
-# Node/tool caches
-node_modules/
 coverage/
-
-# Personal cognition state must not enter shared project knowledge
-.project-cognition/*.local.*
-.project-cognition/user-progress.local.yaml
-
-# Local environment and secrets
-.env
-.env.*
-!.env.example
-
-# Browser session caches and private source illustrations stay local
+build/
+dist/
 .playwright-cli/
-/output/submit-plan-review-20260913/
+
+# Editor and OS artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

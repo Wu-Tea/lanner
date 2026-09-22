@@ -1,9 +1,0 @@
-README.md
-AGENTS.md
-docs/product/mvp-spec.md
-docs/validation/golden-cases.md
-docs/contracts/agent-output-contract.md
-docs/contracts/visual-view-contract.md
-docs/architecture/information-system-architecture.md
-.agent-context/handoff.md
-.agent-context/session-log.md
