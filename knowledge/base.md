@@ -1,5 +1,8 @@
 # Project Cognition 设计期来源索引
 
+> 历史索引说明（2026-09-22）：下列为旧目标的设计期条目，不是本轮协作模型或当前运行状态。新方向以[能力目标](../docs/product/capability-goals.md)和[新决定](../.agent-context/decisions/DEC-2026-09-22-001-project-collaboration-direction.md)为准，旧确认范围保留其历史含义。
+
+
 状态：未采纳的存储形式示例，2026-09-07；用于整理已有目标的来源，不是运行中的 Base。物理存储、目录和准入实现尚未确定。  
 设计索引版本：`pc-base-20260907-01`（保留草稿编号，不表示已发布的 Base revision）。  
 范围：既有产品意图与证据边界的最小摘要。原始决定拥有确认与理由，条目中的 human-confirmed 仅指这些命题。最新完整方向及本次用户要求见 [能力目标](../docs/product/capability-goals.md)。

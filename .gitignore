@@ -26,3 +26,7 @@ coverage/
 .env
 .env.*
 !.env.example
+
+# Browser session caches and private source illustrations stay local
+.playwright-cli/
+/output/submit-plan-review-20260913/

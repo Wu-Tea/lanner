@@ -1,7 +1,7 @@
 # Engineering Knowledge Semantics Contract
 
-Status: Reset draft 0.1  
-Last updated: 2026-09-03
+Status: Semantic contract with collaboration extension; design unverified
+Last updated: 2026-09-22
 
 ## 1. Purpose
 
@@ -120,3 +120,11 @@ Promotion 必须保留原有 epistemic、acceptance、scope 和 evidence 边界�
 2. 哪些 evidence 只保留定位，哪些需要保留可重复运行摘要。
 3. reusable inferred explanation 是否允许按策略自动进入 Base。
 4. 如何在允许不同措辞的同时，对齐不同模型结果中的 stable topic。
+
+## 12. 协作记录的语义
+
+参与者的陈述是可观察的交流事实，但其内容不因此成为已验证的项目事实。manager 综合属于有来源的解释；决定须绑定决定者及其授权 scope，Agent 归属不自动提供项目决策权。
+
+工作状态由任务条件与来源支持，session 结束、任务完成、目标达成和人工接受分别表达。tag 是主题线索，不证明工作关联或因果；稳定对象、实际依赖和决定替代关系按来源核实。重复导入不增加命题权威，多个摘要重复同一来源不算独立证据。
+
+跨用户综合保留授权可见范围、read basis 和覆盖缺口，不能凭时间较新覆盖另一个范围的决定。详见[协作契约](project-collaboration-contract.md)。

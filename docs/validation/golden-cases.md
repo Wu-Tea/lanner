@@ -3,13 +3,17 @@
 Status: Revised validation design; no new run or reader acceptance recorded  
 Last updated: 2026-09-07
 
-当前按用户要求只整理资料、方向和架构。以下案例保留为后续验证设计，本轮不执行。产品须比现有 `agent-context-sync` 更完善、更好用，相关门槛见 [能力目标](../product/capability-goals.md#4-怎样才算超过-agent-context-sync)。
+以下为截至 2026-09-07 的验证设计，当前使用范围见下方说明。产品须比现有 `agent-context-sync` 更完善、更好用，相关门槛见 [能力目标](../product/capability-goals.md#7-怎样才算更完善更好用)。
+
+## 当前使用范围 — 2026-09-22
+
+本文保留旧 PC-G0–PC-G5 的案例及历史任务候选，用于回归设计；尚未执行的案例继续保持未运行。新首轮切片由[协作验收](collaboration-cases.md)和[当前 MVP](../product/mvp-spec.md)维护，以下“首轮”“下一步”等安排按当时语境阅读，不覆盖新的用户指令。旧编号到当前能力的映射见[能力目标](../product/capability-goals.md#8-旧能力怎样保留)。
 
 ## 1. Purpose
 
 Golden Cases 验证 Project Cognition 是否管住了任务方向、项目规范、结果质量和知识晋升，同时给强模型保留调查与推理自由。
 
-首轮提供单次可行性和失败样例。后续任务复用、独立运行、真实读者使用和成本收益各自需要对应证据，按 [MVP 的分阶段成功标准](../product/mvp-spec.md#8-success-criteria) 汇报。
+首轮提供单次可行性和失败样例。后续任务复用、独立运行、真实读者使用和成本收益各自需要对应证据，按 [MVP 的分阶段成功标准](../product/mvp-spec.md#5-验收层次) 汇报。
 
 首次接入与全项目建模有独立案例 GC-015；从零项目有补充设计案例 GC-016。两者不依赖已有 Base 或先完成一次开发任务，已有局部 Design 案例不能代替它们的验收。
 
@@ -80,7 +84,7 @@ GC-017 和 GC-018 检查开发中主动发现隐藏能力、使用经验和及�
 | C5 — 验证与未知 | 给出对应正常路径、相关兼容/失败路径的验证方法，区分已有证据、未执行验证与运行盲区 | 检查方法是否能暴露所述风险；计划和历史结果不计为本次执行通过 |
 | C6 — 可作决定 | 让维护者能判断进入实现、复用现有能力或补证据，并看到阻碍决定的事项 | 建议与证据相连，人工接受状态另行记录 |
 
-每项条件按 [结果契约](../contracts/agent-output-contract.md#7-outcome-review) 记录满足、不满足或尚未验证，保留核验者、实际来源和理由。此表不要求 Agent 使用指定调查过程。
+每项条件按 [结果契约](../contracts/agent-output-contract.md#5-outcome-review) 记录满足、不满足或尚未验证，保留核验者、实际来源和理由。此表不要求 Agent 使用指定调查过程。
 
 ### Knowledge and Reader Validation
 

@@ -17,7 +17,11 @@ Related files:
 - `docs/contracts/visual-view-contract.md`
 - `docs/validation/golden-cases.md`
 Supersedes: none
-Superseded by: none
+Superseded by: [DEC-2026-09-22-001](DEC-2026-09-22-001-project-collaboration-direction.md) partially; see current applicability below
+
+## Current Applicability — 2026-09-22
+
+本记录保留当时决定。新的用户授权将整个产品方向扩展到项目协作，并启动设计重塑；旧的完整产品范围或立即下一动作以新决定为准。自主执行、来源与确认边界、证据比例，以及超过 agent-context-sync 的目标等未冲突要求继续有效。具体新方案仍为提案。
 
 ## Context
 

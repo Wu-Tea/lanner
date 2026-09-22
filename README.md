@@ -1,61 +1,48 @@
 # Project Cognition
 
-Project Cognition 面向使用 AI 持续开发和维护项目的人。它的目标是让 AI 按项目目标和规范完成工作，让维护者能够核验交付、掌握重要决定，并利用工作中留下的知识继续理解和维护项目。
+让人和 Agent 围绕同一个项目目标持续协作：理解项目、开展工作、协调变化、核验成果，并把经验留给后续参与者。
 
-它从 `agent-context-sync` 的项目接续需求发展而来。新应用必须保留接续与决策留存的价值，进一步支持任务核验、可靠知识复用和人的项目理解，并通过真实使用证明比现有做法更完善、更好用。
+仓库：[Wu-Tea/lanner](https://github.com/Wu-Tea/lanner)。Project Cognition 为当前工作名称，`lanner` 为仓库名；正式品牌和发布形态尚未冻结。
 
-产品还需要方便传播，让其他使用者容易安装并在自己的项目中开始使用。当前正参考成熟插件的分发与接入方式；插件形态和具体实现仍在设计中。
+## 它帮助解决什么
 
-## 第一次接入项目
+当几个人分别带着自己的 Agent 开发同一个项目时，一个任务的成功还不足以保证整体工作一致。新决定可能没有传到旧任务，两个任务可能依赖不同版本的接口，讨论也可能被误读成已经实施。
 
-用户可以直接要求“完整调查这个项目并建立模型”，无需先积累开发记录。Agent 调查整个指定项目，形成项目全貌、模块职责与关系、关键流程、规范和未知项，保留来源与实际覆盖范围；核验并接纳的知识成为后续工作和人类资料的共同起点。
+Project Cognition 希望让每个参与者都能知道：项目怎样工作、当前目标是什么、自己的任务依赖谁、发生了哪些相关变化、哪些成果有证据，以及下一步需要什么判断。单人跨会话工作也使用同一套能力。
 
-从零创建的项目先建立目标、约束与设计模型，随着实现出现，再补充代码事实和设计差异。首次建模与持续更新是两种工作入口，具体产物见 [能力目标](docs/product/capability-goals.md#首次接入的两种起点)。
+## 从哪里开始
 
-## 用它完成一次项目任务
+- 第一次接入：指定项目，调查并建立有来源的结构、功能、关键流程和未知项。
+- 收到新资料：把需求、设计、反馈与项目模型关联，识别新增认识、冲突和影响。
+- 开始或继续任务：理解目标、约束、相关知识、依赖和完成条件，Agent 自主执行。
+- 工作发生变化：及时使用新决定、复用现有能力，记录实际结果和待解决问题。
+- 查看一条工作线：跨任务与会话理解进展、决定、阻塞和下一动作，必要时进入来源。
 
-你继续用普通自然语言说明要做什么。一次工作围绕以下结果展开：
+会议形式用于理解活动目的；task、session、工作线和项目模块分别表达。manager 是协调职责，实际分派、承诺与风险接受遵循明确授权。
 
-1. **任务说清楚。** 保留你的原始请求，明确预期变化、相关项目规则和完成条件；会影响方向的解释对你可见。
-2. **AI 自主完成工作。** AI 选择合适的调查、设计、实现和验证方法，遇到需要你判断的取舍时说明依据。
-3. **交付可以核验。** 结果解释完成了什么、影响哪里、证据是什么、哪些部分还未验证。
-4. **知识可以接着用。** 适合长期保留的事实、决定和风险经过来源、冲突及确认检查，留给后续任务。
-5. **人能理解项目。** 根据实际问题，用说明、流程或局部关系帮助你理解行为、找到影响和未知，并返回证据。
+## 当前状态
 
-普通小任务保持轻量。需要保留多少知识、生成什么资料，由这次工作和后续使用的实际需要决定。
+2026-09-22 已完成从任务执行视角到项目协作视角的一轮设计重塑。当前是设计提案与验证准备，尚无可安装产品或实际多用户协调运行。
 
-开发中也需要主动使用记忆：准备新增能力时提示项目已有工具，遇到问题时找到适用的踩坑经验与研发记录；发现隐藏能力、验证修复或完成方案试验时及时形成知识候选。详细的读取与记录时机见 [开发中的记忆使用](docs/product/capability-goals.md#开发中让相关记忆参与工作)。
+重塑前基线已上传：[8c7b2ff](https://github.com/Wu-Tea/lanner/commit/8c7b2ff22908e8b6afe8d5fbb0571b6f5288f77b)。历史记录和案例保留各自范围；私人 Word 提取图与浏览器临时缓存未上传。巡检 Demo 是独立案例，不能证明本产品已经实现。
 
-## 一个具体例子
+## 按问题继续
 
-准备调整控制输出时，维护者需要先知道最终状态由谁负责、哪些路径会参与、什么行为必须保留，以及改动会影响哪里。AI 查清相关来源后，给出设计建议和验证计划，把需要人决定的取舍摆出来。
+| 当前问题 | 入口 |
+| --- | --- |
+| 整个产品要解决什么，能力怎样划分？ | [能力目标](docs/product/capability-goals.md) |
+| 多个人和 Agent 如何推进同一项工作？ | [完整协作例子](docs/guides/cognition-flow.md) |
+| 从项目管理借鉴了什么？ | [研究与取舍](docs/research/project-collaboration-foundations.md) |
+| 先验证什么，怎样判断值得做？ | [MVP 与阶段计划](docs/product/mvp-spec.md) |
+| 角色、task、session、tag、manager 怎样分工？ | [协作契约](docs/contracts/project-collaboration-contract.md) |
+| 信息怎样流动，工具需要承担什么？ | [逻辑架构](docs/architecture/information-system-architecture.md) |
+| 工作结果与长期知识怎样保持可靠？ | [结果契约](docs/contracts/agent-output-contract.md) · [长期知识](docs/contracts/base-knowledge-contract.md) · [知识语义](docs/contracts/knowledge-contract.md) |
+| 人怎样读懂当前工作和项目？ | [资料契约](docs/contracts/visual-view-contract.md) · [信息归属](docs/contracts/projection-ownership-contract.md) |
+| 哪些失败必须验证？ | [协作验收](docs/validation/collaboration-cases.md) · [既有能力回归](docs/validation/golden-cases.md) |
+| 当前做到哪里？ | [交接](.agent-context/handoff.md) |
 
-任务中确认的关键关系和约束可以留下来。下一次修改时，AI 能引用并复核这些知识；维护者也能通过一段说明和一张流程图理解它们。项目会分别验证本次结果是否合格、知识是否真的得到复用、资料是否帮助人作出判断。
+旧方案比较见[能力基线与候选](docs/research/capability-baseline-and-candidates.md)，既有材料按[案例规则](docs/cases/README.md)使用。历史草稿不作为实现规范。
 
-## 当前阶段
+## 发布与许可
 
-当前处于 R1：整理资料、产品方向和逻辑架构。当前任务与下一动作见 [项目交接](.agent-context/handoff.md)。
-
-仓库已有规格、契约、验收设计和调研。新应用的真实效果、后续知识复用和人的使用收益尚待验证，具体实现仍未确定。
-
-先从 [能力目标与使用要求](docs/product/capability-goals.md) 开始，其余资料按下面的问题选择。
-
-## 继续阅读
-
-| 你现在关心的问题 | 入口 |
-|---|---|
-| 应该具备哪些能力，怎样才算比 agent-context-sync 更好？ | [能力目标](docs/product/capability-goals.md) |
-| 已有哪些类似方案，哪些结论已经查证？ | [基线与候选资料](docs/research/capability-baseline-and-candidates.md) |
-| 怎样方便安装和传播，Skill 与运行代码怎样配合？ | [插件分发与执行模式调研](docs/research/plugin-distribution-and-runtime-patterns.md) |
-| 为谁解决什么问题，怎样判断有用？ | [产品规格与分阶段成功标准](docs/product/mvp-spec.md) |
-| 人、AI 和项目工具各自负责什么？ | [架构与职责边界](docs/architecture/information-system-architecture.md) |
-| 一次任务如何明确目标、核验结果？ | [Agent 工作与结果契约](docs/contracts/agent-output-contract.md) |
-| 哪些知识值得留下，来源和状态如何保留？ | [长期知识契约](docs/contracts/base-knowledge-contract.md) · [知识语义](docs/contracts/knowledge-contract.md) |
-| 说明和图怎样帮助人理解，如何保持一致？ | [人类资料契约](docs/contracts/visual-view-contract.md) · [资料所有权](docs/contracts/projection-ownership-contract.md) |
-| 用哪些任务和证据检验这些要求？ | [验收案例](docs/validation/golden-cases.md) |
-
-需要追溯讨论时，查 [历史目标快照](.agent-context/baselines/BASELINE-2026-09-07-001.md)；实际案例的记录方式见 [案例说明](docs/cases/README.md)。
-
-## License
-
-项目 License 将在正式发布或接入第三方实现前确定。研究快照和未采纳草稿涉及的上游内容保留各自许可与来源；这不表示已选择实现依赖。
+当前公开的是设计仓库，不代表已有可安装版本。项目整体 License 尚未选择；引用和研究快照保留原来源与许可。

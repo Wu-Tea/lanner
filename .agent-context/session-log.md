@@ -105,3 +105,14 @@ SyncSet sync-20260913-002：更新当前 handoff、追加本条，无新决定/�
 ## 2026-09-13 — 明确零业务、仅 CRUD 的读者前提
 
 用户否定上一版可读性，明确读者为零业务知识、只会 CRUD 的大学生。已用同一学校设备检查故事，重写案例入口、业务、推荐、提交与作者改动说明：先解释业务及数据关系，再通过数组/循环和完整算例介绍术语。Demo 包新增从推荐主文生成的 guide.md；算例、三设备请求、链接及 10 文件分享包核对通过，页面代码与算法未改。sync-20260913-004 更新短交接及本条，不把机器核对记为读者接受；下一动作是按明确的读者前提收集理解反馈并继续修订。
+
+
+## 2026-09-22 — 先上传基线，再重塑为项目协作
+
+用户从会议性质、session 记录和 manager 综合提出协作视角，随后明确授权基于项目管理重塑整个项目，并要求先上传到 `Wu-Tea/lanner`。本地原无提交、远端为空；先提交并推送 314 文件基线 `8c7b2ff22908e8b6afe8d5fbb0571b6f5288f77b`，用 `git ls-remote` 确认后才在 `codex/project-collaboration-redesign` 修改。私人 Word 提取图和浏览器缓存留在本地。
+
+本轮查阅 PMI、Scrum Guide、Kanban Guide、Google SRE 及既有两篇美团文章，重写目标、MVP、架构和相关契约，新增[协作契约](../docs/contracts/project-collaboration-contract.md)、[研究](../docs/research/project-collaboration-foundations.md)、[合成完整例子](../docs/guides/cognition-flow.md)和[13 个协作验收设计](../docs/validation/collaboration-cases.md)。六条能力覆盖项目建模、资料整合、任务理解、工作中复用/协调、结果记录与核验、跨任务综合；五个 POV 是可切换责任。task/session 多对多，tag 作为线索，manager 调度依具体授权，工作状态与 Base 分工。
+
+[DEC-2026-09-22-001](decisions/DEC-2026-09-22-001-project-collaboration-direction.md)只接受用户明确的方向与重塑授权；上述具体模型和单项目小团队切片仍为提案。两份旧决定增加部分替代说明，旧案例、Demo、历史快照、schemas 和未采纳 Skill 保留。没有产品实现、多用户运行或新 Golden Run，真实收益仍未知。
+
+SyncSet sync-20260922-001 更新 handoff、追加本条、新建方向决定并维护旧决定适用性；无归档或 subagent。文档链接、围栏、差异与来源边界已核对，见[核验记录](../output/collaboration-redesign-20260922/verification.json)和[自查/同步记录](../output/collaboration-redesign-20260922/review-and-syncset.md)。下一动作是围绕完整例子与首轮切片选择真实来源、参与方式和运行边界。

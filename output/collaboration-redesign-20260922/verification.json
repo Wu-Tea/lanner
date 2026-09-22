@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-22",
+  "kind": "documentation_static_verification",
+  "baseline_commit": "8c7b2ff22908e8b6afe8d5fbb0571b6f5288f77b",
+  "baseline_remote_main_verified_before_edit": true,
+  "baseline_file_count": 314,
+  "scope": "README, AGENTS, docs Markdown, current context and decisions, knowledge and skill Markdown; output and archival snapshots not recursively re-audited; plus this redesign review/SyncSet",
+  "markdown_files": 56,
+  "local_links_checked": 319,
+  "link_issues": [],
+  "unbalanced_fences": [],
+  "protected_baseline_paths_changed": [],
+  "sensitive_patterns_in_audited_markdown": [],
+  "excluded_material_tracked": [],
+  "checks_are_not_product_runs": true,
+  "product_case_execution": "CO-01 through CO-13 not run; historical tests not rerun",
+  "limitations": [
+    "Link checks do not prove semantic validity or runtime behavior",
+    "Mermaid source inspected; no rendered browser QA",
+    "No actual multi-user, event adapter, persistence, permission or benefit validation",
+    "Initial broad text secret-pattern scan found only a literal private-key detector in existing verify.py; no real credential match detected"
+  ],
+  "git_diff_check_passed": true
+}
