@@ -1,0 +1,266 @@
+{
+  "syncset": "sync-20260910-001",
+  "captured_at": "2026-09-10T10:21:26+08:00",
+  "changed_paths": [
+    ".agent-context/handoff.md",
+    ".agent-context/session-log.md",
+    "docs/cases/README.md",
+    "docs/product/capability-goals.md"
+  ],
+  "new_case_files": [
+    "docs/cases/CASE-20260910-001/analysis.md",
+    "docs/cases/CASE-20260910-001/source-1.png",
+    "docs/cases/CASE-20260910-001/source-2.png"
+  ],
+  "files": [
+    {
+      "path": ".agent-context/archive/session-log-2026-09-02-to-2026-09-03-pre-mainline-reset.md",
+      "sha256": "6b85fae6fe60ff4881f8ebf6abe7fa36775b10f002e8aba266e4075da3c6724e"
+    },
+    {
+      "path": ".agent-context/archive/session-log-2026-09-02-to-2026-09-07-pre-case-compaction.md",
+      "sha256": "508a40ba4778a896a01bc009cf88d1fc816bfcdeeed16eef603fcb203287fa08"
+    },
+    {
+      "path": ".agent-context/baselines/BASELINE-2026-09-07-001.md",
+      "sha256": "37fe262914f4ba82ec90411db7aa687ebca2c0eb4348e33ecc74b6bbb31449e4"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-02-001-agent-led-analysis-and-progressive-visuals.md",
+      "sha256": "83601c186c3882bc87e8547ee3107066fb6674b3d054fea4bdfee86a9b5e262b"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-03-001-canonical-base-and-derived-projections.md",
+      "sha256": "6235a2e3f83ff868327e7ad7ec47e331ccff052503664ddef94ba63bd359ecf5"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-03-002-coordinated-multi-view-base-store.md",
+      "sha256": "93f00c361acce9272e22b7cf1eb107e847a0acc2c4eaa373e799d3930700560b"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md",
+      "sha256": "e33a6049583e233ea4e0199f09e2c8069b5d6315457735ba6ed4672ae185b34a"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md",
+      "sha256": "1283ba806572772138e3dadf61e09f0c4955276f54ae6146b65e1f807872e270"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md",
+      "sha256": "05aa65766e07c772e670cf5f08b4501c19c0b1794ea8c793eef0745e47e16330"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-07-002-initial-project-modeling.md",
+      "sha256": "8b9ec9fdb39bb23f3259b5393d972327015862154d0230495603a520d063aa31"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-07-003-development-time-memory-use.md",
+      "sha256": "bf309e979e077cfc2dfb980e92d4994c65cdb20f37d8453a4853eeae078e94da"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-07-004-product-form-and-execution-guarantees.md",
+      "sha256": "dcf70a83aa673c41ac0aaccc2f67c170a8ce96633137a4c5f68cf75c2b6975ce"
+    },
+    {
+      "path": ".agent-context/decisions/DEC-2026-09-07-005-pre-case-baseline-and-scope-separation.md",
+      "sha256": "5e183d448d932c13da13f2fe94e3f49c2622cde99be0e0b0c4b23a2dbae343c2"
+    },
+    {
+      "path": ".agent-context/handoff.md",
+      "sha256": "cfee92d79be38885f810dc059a66fd4f25d7887c993543547ff5cbb882ab16e0",
+      "snapshot": "before/.agent-context/handoff.md",
+      "lines": 45
+    },
+    {
+      "path": ".agent-context/session-log.md",
+      "sha256": "5231179d566e58a0c75da4359593e44f01c02990035b5337309eb504a706fae6",
+      "snapshot": "before/.agent-context/session-log.md",
+      "lines": 71
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1b304f0b6edc90c43af49dd21fba4603ac452bd4aa2dcc9c50259c5adfaeea97"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "547f8b85d4247df1d2f144401447de79b0616e8b40607a3d1781dcba3ff63d76"
+    },
+    {
+      "path": "docs/architecture/information-system-architecture.md",
+      "sha256": "af8fa14703f9d8d429ff06336b8079d5c22d0819a90f44e2585c62528afab28e"
+    },
+    {
+      "path": "docs/cases/CASE-20260908-001/analysis.md",
+      "sha256": "0521bbd191081f4c924eb55640284897668517fe29bfa372170459d003ff8a2c"
+    },
+    {
+      "path": "docs/cases/CASE-20260908-001/evidence.json",
+      "sha256": "445ff174497da6c328304665117092bc7b7f8e045f04727056cc013722159e13"
+    },
+    {
+      "path": "docs/cases/README.md",
+      "sha256": "df7410399c9d7d48235035c5c21b9d53d057e2542191dda79ad7abda84229a11",
+      "snapshot": "before/docs/cases/README.md",
+      "lines": 22
+    },
+    {
+      "path": "docs/contracts/agent-output-contract.md",
+      "sha256": "a69463c3d77fa642378d326760a8ac628807644d778cebaf9fb227cfed0c8e9f"
+    },
+    {
+      "path": "docs/contracts/base-knowledge-contract.md",
+      "sha256": "f5b7e48e154a9df331d8ffcc809e333ab6751fdc4fbde7d128aa11e5c8d1d8d6"
+    },
+    {
+      "path": "docs/contracts/knowledge-contract.md",
+      "sha256": "966ffe024877ecd62e8057c0861e71e91e63c4de81712704bf161978c77714ff"
+    },
+    {
+      "path": "docs/contracts/projection-ownership-contract.md",
+      "sha256": "fff0d3f73e49b3b2907aec36cc87f4b339f04fdce5e44e9951e13dee10e8e7b9"
+    },
+    {
+      "path": "docs/contracts/visual-view-contract.md",
+      "sha256": "e82ff212a71e1ab11921425bb5d0b23128dda272f403778368653886f3772a0c"
+    },
+    {
+      "path": "docs/examples/project-cognition-output-walkthrough.md",
+      "sha256": "73f7f71bb7b2add75f470816362ce91b5827ed4a83b8b661340d50fd1d070a32"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/app.js",
+      "sha256": "e2e2f3204452c33f0c7b6dc73cf6b509cd5a9905e3acd3e357d8ce39fcb1cc37"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/base.fixture.js",
+      "sha256": "f710e86928883f422c71a96bddc38e3388d5a8617cca2eeb918672326e3da967"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/index.html",
+      "sha256": "54a47f7da49f4bfc556e678c0a38f195b3363e8396942a7c9991f7d1b3ebe691"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/projection-specs.fixture.js",
+      "sha256": "b3120c88ae5d7bdde1b04a3d9a1c661d49735c1f4ab30d64c1ff9b5491f25d10"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/README.md",
+      "sha256": "e68f79cd0d502abc4b3c3612be7b037fe449690a6333d9887609baf26d8f1852"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-base-store/styles.css",
+      "sha256": "467bbe949fd318549990032f2d697d4414994547d87a9e620ee4826e57e6f505"
+    },
+    {
+      "path": "docs/examples/yolo-study-001-reference-preview.html",
+      "sha256": "cd8b0b118ee80ddf6a4b47540df338b8f2afa4143f35343a07c6b0ae18ab39a7"
+    },
+    {
+      "path": "docs/guides/cognition-flow.md",
+      "sha256": "0700c5978bce0c48ce46a8dba585973cbd3642c9276b9de59a6f3c4684450dfe"
+    },
+    {
+      "path": "docs/product/capability-goals.md",
+      "sha256": "32c2d1d3acf98936f9264b6cf58b74d7cf0546f5155b03b5918f6e484896a1c9",
+      "snapshot": "before/docs/product/capability-goals.md",
+      "lines": 144
+    },
+    {
+      "path": "docs/product/mvp-spec.md",
+      "sha256": "53779e2d9a99cec8b5729ab32d9bac688a34fb66feac174637038c4c27ba21bf"
+    },
+    {
+      "path": "docs/research/capability-baseline-and-candidates.md",
+      "sha256": "7d11c0b0b42767f372ed02e6fbb961bd8245d4cc09037daa155cb257ccf4d6e1"
+    },
+    {
+      "path": "docs/research/plugin-distribution-and-runtime-patterns.md",
+      "sha256": "d81314c29867e2a1c743ea34e479c6d4a029e1669e004fbab75463b39463e7c7"
+    },
+    {
+      "path": "docs/validation/golden-cases.md",
+      "sha256": "a28b46701d155f9ffe88f2d00d444e36e28c1bae3abf2558d501ecb211c410dd"
+    },
+    {
+      "path": "knowledge/base.md",
+      "sha256": "c394da3a396c192fee49012e004367020bb35e0ec1806004d8da2d95d23864ae"
+    },
+    {
+      "path": "knowledge/changes/20260907-bootstrap.md",
+      "sha256": "096a270a4d74155f929bca5c3198d4887c24f058934677727549f21aeb31942a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a5a9355e8b75a32077ac29364ed86b69e715f0352f40fcec59ae152fe97a01bb"
+    },
+    {
+      "path": "schemas/claim.schema.json",
+      "sha256": "fb3e2a60ffc3bcdc8a3e31895551aefec8613a2da0aa7c68f58a45f6af60cec5"
+    },
+    {
+      "path": "schemas/examples/capture-code-default.claim.json",
+      "sha256": "ab289df87a2fc510e895aec2bd0f5d801d3d10dcf9d19699857d30528c23de6c"
+    },
+    {
+      "path": "schemas/examples/capture-recommended-profile.claim.json",
+      "sha256": "a4cac2b75326a10803d09d4ac43df49019d4b80fec9a43ef0666361122cf9bef"
+    },
+    {
+      "path": "skills/project-cognition/references/human-material.md",
+      "sha256": "7fea10f3f452d0ab93457121e398530cb2b1c7814873bcf410006bdeb990663f"
+    },
+    {
+      "path": "skills/project-cognition/references/knowledge.md",
+      "sha256": "7b609f4502b5960fa01442ff9505668d5ffb79a6dd86efef78c0abe200a28683"
+    },
+    {
+      "path": "skills/project-cognition/references/outcome-review.md",
+      "sha256": "bf85a0e041ee98080e68b72de9e0ab08d0d932a446bfc314f205b1571677611a"
+    },
+    {
+      "path": "skills/project-cognition/references/task-context.md",
+      "sha256": "d768e46295defaaaf3b0ee91510a10161e0ea22827c9004be880ca5be1da0f58"
+    },
+    {
+      "path": "skills/project-cognition/references/workspace-binding.md",
+      "sha256": "4e0900a2d9acc6937de8325655bbdf6383d79507fd7539f26a911f7370931749"
+    },
+    {
+      "path": "skills/project-cognition/SKILL.md",
+      "sha256": "5601e5cb7b4200657e0468a388a6f37328a4270b43be8c4636c19e082877a6d6"
+    },
+    {
+      "path": "skills/project-cognition/THIRD_PARTY_NOTICES.md",
+      "sha256": "64ac235e0bc69d2686f49c924ad8c2ffef5217da423576c153e1539576e53d2c"
+    }
+  ],
+  "user_images": [
+    {
+      "image": 1,
+      "source": "C:/Users/ADMINI~1/AppData/Local/Temp/codex-clipboard-5857e483-5c34-4364-b716-af3324e4591d.png",
+      "preserved": "docs/cases/CASE-20260910-001/source-1.png",
+      "bytes": 210263,
+      "sha256": "c9db2adb70d736f68395518292bad9b0eb3b5d3e7facccc357fa43963a1e1162"
+    },
+    {
+      "image": 2,
+      "source": "C:/Users/ADMINI~1/AppData/Local/Temp/codex-clipboard-58af6bcf-4e18-4777-87ec-a656fbd900d6.png",
+      "preserved": "docs/cases/CASE-20260910-001/source-2.png",
+      "bytes": 329709,
+      "sha256": "dd6c1fc68ba2dbe9613874b88634af91b48f34769fec328facee4537f3509385"
+    }
+  ],
+  "web_sources": [
+    {
+      "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "section": "A Reimagined Yet Familiar iOS Experience",
+      "publication_date": "2026-09-09",
+      "scope": "官方说明侧边布局的内容空间用途与角落圆形状态显示；不证明完整研发时间线。"
+    },
+    {
+      "url": "https://dev.mi.com/xiaomihyperos/documentation/detail?pId=2026",
+      "title": "竖折手机（Flip）适配说明",
+      "scope": "另一型号类别的公开适配指南，反对将截图概括为整个品牌没有适配；不证明图2型号、质量或发布时间。"
+    }
+  ]
+}

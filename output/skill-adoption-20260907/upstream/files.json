@@ -1,0 +1,162 @@
+[
+  {
+    "repo": "obra/superpowers",
+    "commit": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+    "path": "LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "url": "https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/LICENSE",
+    "local": "output\\skill-adoption-20260907\\upstream\\obra__superpowers\\LICENSE"
+  },
+  {
+    "repo": "obra/superpowers",
+    "commit": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+    "path": "skills/verification-before-completion/SKILL.md",
+    "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+    "url": "https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/verification-before-completion/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\obra__superpowers\\skills\\verification-before-completion\\SKILL.md"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "LICENSE",
+    "sha256": "596de79bba18ad5370b07346f8d323ef711e26350fa6b0dab56110938e8efbe6",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/LICENSE",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\LICENSE"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "plugins/technical-writer/skills/diagramming-processes/SKILL.md",
+    "sha256": "99f74d0c49f141524e202139e11abfe0d37b5d98c3e967680c3c2d7e7ed0c6b0",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/diagramming-processes/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\plugins\\technical-writer\\skills\\diagramming-processes\\SKILL.md"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "plugins/technical-writer/skills/technical-writing/SKILL.md",
+    "sha256": "6072822f82c96dec95c63baf41f897c90fd6eef8a718e527366400ce52ad1af9",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/technical-writing/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\plugins\\technical-writer\\skills\\technical-writing\\SKILL.md"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "plugins/technical-writer/skills/technical-writing/references/style.md",
+    "sha256": "38e734ab12fe2f9de118bd4d8c2ffba533a02bb9195f3e68bf5af98b1d520182",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/technical-writing/references/style.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\plugins\\technical-writer\\skills\\technical-writing\\references\\style.md"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "plugins/technical-writer/skills/technical-writing/references/truth.md",
+    "sha256": "c2f640aa1e633e5f4d8364d651abe7dd8c1461dd8c220bf2ce7c04e020350d67",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/technical-writing/references/truth.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\plugins\\technical-writer\\skills\\technical-writing\\references\\truth.md"
+  },
+  {
+    "repo": "riekelt/technical-writer",
+    "commit": "099d31bc3fa1f82acc6bc196f2a9a7010607f66d",
+    "path": "plugins/technical-writer/skills/writing-design-docs/SKILL.md",
+    "sha256": "ddcc3632f782042f217603582053893356ae01cdcf532f5ad0d70f150f86837b",
+    "url": "https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/writing-design-docs/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\riekelt__technical-writer\\plugins\\technical-writer\\skills\\writing-design-docs\\SKILL.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "LICENSE",
+    "sha256": "93ee071d3644ce5303a0f118d15b35cc4c560d775fdbc061735000bc3ebe2b06",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/LICENSE",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\LICENSE"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "SKILL.md",
+    "sha256": "041298cba01574fd0864fb46d2763d0bd4067b1b4aef2afb864c48f379ce6682",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\SKILL.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/adopt_existing.md",
+    "sha256": "359a5da11015c3b552a8f8af2bb5360276f9d05536af793b999b7eed0bb88f2d",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/adopt_existing.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\adopt_existing.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/conflict_resolution.md",
+    "sha256": "2f26894d239c6bda526d398ece98abb641377eb5f29605a595aca71dbde2a6a5",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/conflict_resolution.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\conflict_resolution.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/init_session.md",
+    "sha256": "1f539c86c84343afc3b8589a46c26d29ddc0c69f40d183318ac6486ce59fe712",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/init_session.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\init_session.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/migrate_context.md",
+    "sha256": "9a6d63372dcd299c7c60cf72c860427989c27d3c7185274d49ea07edb119e632",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/migrate_context.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\migrate_context.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/privacy.md",
+    "sha256": "802a3b297dab0b436bbfbdbdfbdf6f690434842bb68ee28d17120ebad0de15f2",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/privacy.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\privacy.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/research_logging.md",
+    "sha256": "4905a8cd083b165adf528129ad128682847b6f15cb8a79feab52d6cc9f3d7c68",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/research_logging.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\research_logging.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/resume_work.md",
+    "sha256": "8c82b678cc6ef9f24d6e46fa62b123edbc3efee500563009d3e1a10ea6b54207",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/resume_work.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\resume_work.md"
+  },
+  {
+    "repo": "tasuku-9/project-memory-skill",
+    "commit": "de8a47d555105eccfafa1e2f050f43c8de2d48ce",
+    "path": "tasks/update_memory.md",
+    "sha256": "6cfe65c3af2fe98ee3c3b7f176072e4dc5e460072be9295ecfb3678c2f7843e4",
+    "url": "https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/tasks/update_memory.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\tasuku-9__project-memory-skill\\tasks\\update_memory.md"
+  },
+  {
+    "repo": "yibie/SPEC-AGENTS.md",
+    "commit": "5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed",
+    "path": ".spec-agents/doctrine/skills/plan/SKILL.md",
+    "sha256": "97e4ae3bbc820ba65efd4f915cbea0a63af9f1a4d528a629374896d7cdfbd6d6",
+    "url": "https://github.com/yibie/SPEC-AGENTS.md/blob/5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed/.spec-agents/doctrine/skills/plan/SKILL.md",
+    "local": "output\\skill-adoption-20260907\\upstream\\yibie__SPEC-AGENTS.md\\.spec-agents\\doctrine\\skills\\plan\\SKILL.md"
+  },
+  {
+    "repo": "yibie/SPEC-AGENTS.md",
+    "commit": "5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed",
+    "path": "LICENSE",
+    "sha256": "b0498170ea362050393e18e5dfa804933a2a4cc47eaa6fe6fa6c28565a736f98",
+    "url": "https://github.com/yibie/SPEC-AGENTS.md/blob/5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed/LICENSE",
+    "local": "output\\skill-adoption-20260907\\upstream\\yibie__SPEC-AGENTS.md\\LICENSE"
+  }
+]

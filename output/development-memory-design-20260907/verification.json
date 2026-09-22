@@ -1,0 +1,33 @@
+{
+  "scope": "static documentation only; no source-project investigation, Hook installation or runtime validation",
+  "markdown_files": 13,
+  "local_links_and_anchors": 72,
+  "golden_case_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "history_preserved": true,
+  "context_line_counts": {
+    ".agent-context/handoff.md": 65,
+    ".agent-context/session-log.md": 159
+  },
+  "new_decision_status": "proposed",
+  "local_draft_installation_paths_present": [],
+  "issues": []
+}

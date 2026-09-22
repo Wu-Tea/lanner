@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>巡检路线实验室</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="./index.html"><span class="mark">↗</span> 巡检路线实验室</a><span class="environment"><i></i> 本地运行 · 全部合成数据</span></header>
+<main>
+  <div class="page-heading"><div><p class="eyebrow">RECOMMEND LINES / 交互演示</p><h1>看看一条路线是怎样选出来的。</h1><p class="intro">选择检查对象与起点，生成候选顺序，再沿着计算过程查看依据。</p></div><button id="reset" class="text-button">重置示例 ↺</button></div>
+  <div class="workspace">
+    <aside aria-label="路线设置">
+      <div class="section-label"><span>01</span><h2>设置这次巡检</h2></div>
+      <label class="field">场景<select id="scenario"><option value="standard">基础场景 · 8 个对象</option><option value="large">扩展场景 · 12 个对象</option><option value="single">单对象边界</option><option value="missing">对象 6 缺少坐标</option></select></label>
+      <div class="object-heading"><span>检查对象 <b id="selected-count"></b></span><button id="toggle-all" class="text-button">取消全选</button></div>
+      <div id="objects" class="object-list"></div>
+      <label class="field">从哪里出发<select id="start"></select></label>
+      <div id="coordinate-inputs" hidden><label class="field">经度 smx<input id="smx" type="number" step="any" value="10.0005"></label><label class="field">纬度 smy<input id="smy" type="number" step="any" value="20.0005"></label></div>
+      <div class="weight-controls"><label><input type="checkbox" id="spatial" checked> 考虑楼栋、楼层与房间</label><label><input type="checkbox" id="history" checked> 考虑合成历史偏好</label></div>
+      <button id="run" class="primary">生成候选路线 <span>↗</span></button>
+      <p id="run-status" class="muted" role="status" aria-live="polite">准备就绪</p>
+    </aside>
+    <section class="canvas-area" aria-label="推荐结果">
+      <div class="canvas-toolbar"><div class="section-label"><span>02</span><h2>查看候选路线</h2></div><div class="mode-switch" role="group" aria-label="计算模式"><button data-mode="legacy" aria-pressed="true">原逻辑移植</button><button data-mode="corrected" aria-pressed="false">距离校正对照</button></div></div>
+      <div id="notice" class="notice">原逻辑包含距离计算偏差及路线2的随机改写，用于观察实现行为。</div>
+      <div id="error" class="error" role="alert" hidden></div>
+      <div class="map-shell"><svg id="map" viewBox="0 0 880 360" role="img" aria-label="合成巡检场地和候选访问顺序"></svg><div class="map-legend"><span><i class="line-key"></i> 所选候选顺序</span><span><i class="node-key"></i> 合成巡检点</span><span>示意平面 · 不代表道路导航</span></div><div id="node-info" class="node-info">点击巡检点，可查看合成位置及空间层级。</div></div>
+      <div id="routes" class="routes" aria-label="候选路线选择"></div>
+      <div id="sequence" class="sequence"></div>
+      <div class="result-foot"><span id="summary" class="muted"></span><button id="export" class="text-button" disabled>导出本次结果 ↓</button></div>
+    </section>
+  </div>
+  <section class="inspection">
+    <div class="inspection-heading"><div class="section-label"><span>03</span><h2>展开计算依据</h2></div><div class="tabs" role="tablist"><button role="tab" id="tab-process" data-tab="process" aria-selected="true" aria-controls="process">计算过程</button><button role="tab" id="tab-request" data-tab="request" aria-selected="false" aria-controls="request">请求与响应</button><button role="tab" id="tab-data" data-tab="data" aria-selected="false" aria-controls="data">合成数据</button></div></div>
+    <div id="process" role="tabpanel" aria-labelledby="tab-process"><div id="steps" class="steps"></div><div class="matrix-heading"><div><h3 id="matrix-title">合并权重</h3><p id="matrix-description" class="muted">距离矩阵减去空间奖励和历史边权；候选展开时还会设置 -1000 的起始边。</p></div><select id="matrix-type" aria-label="选择权重矩阵"><option value="final">合并权重</option><option value="distance">距离矩阵</option><option value="spatial">空间奖励</option><option value="history">历史边权</option></select></div><div id="matrix" class="table-scroll"></div><details><summary>这两个模式与原服务有什么差别？</summary><div class="details-copy"><p><strong>原逻辑移植</strong>保留矩阵缩放、空间与历史奖励、负权起始边、候选展开、三条选择规则，以及路线2的随机距离改写。这里使用 JavaScript 浮点数和合成依赖，数值不是 Java BigDecimal 的逐位复制。</p><p><strong>距离校正对照</strong>统一经纬度顺序、采用球面米制距离，重新计算 ETA，并去除随机距离改写。它沿用原候选搜索策略，不代表最优巡检算法或生产修复。</p><p>演示额外校验重复 ID、未知对象、无效起点与请求格式。历史边权直接使用合成聚合数据，未模拟原 SQL 的顺序问题。两种模式都不连接真实数据库、资产服务或地图服务。</p></div></details></div>
+    <div id="request" role="tabpanel" aria-labelledby="tab-request" hidden><p class="endpoint">POST /api/inspect/line/recommend/list</p><p class="muted" id="request-mode"></p><div class="json-columns"><div><label for="query-json">请求 JSON</label><textarea id="query-json" spellcheck="false"></textarea><button id="run-json" class="secondary">用这个请求计算</button></div><div><label for="response-json">响应 JSON</label><pre id="response-json"></pre></div></div></div>
+    <div id="data" role="tabpanel" aria-labelledby="tab-data" hidden><p class="muted">ID、坐标、设备名称、空间层级与历史偏好均独立生成，没有原数据映射表。坐标仅服务本演示。</p><div id="data-table" class="table-scroll"></div></div>
+  </section>
+  <footer><span>运行边界清晰，结果才有解释。</span><span>离线页面 / 本地 API · 无外部资源</span></footer>
+</main>
+<script src="fixtures.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>

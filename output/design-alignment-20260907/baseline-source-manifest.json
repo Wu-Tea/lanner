@@ -1,0 +1,80 @@
+[
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\using-agent-context-sync\\SKILL.md",
+    "sha256": "b25781aac473bf302cef83e6d668f52c1e592825ed65c3f6c3a0f812f7e7a2bb",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\SKILL.md",
+    "sha256": "669886b0c08f5b0b6eed20f1f83e06b1eee099eef5c1740cb6e12d109a34146a",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\agents\\openai.yaml",
+    "sha256": "1ae2908c5b771896bb395e317dff2f8b3ae96249ef27a1c5861ed52a97bbcf83",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\assets\\decision-template.md",
+    "sha256": "b5d92dcc3a525de409af77ead0d20ae68d4d8c8823515e5bdf6525318d1b72c9",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\assets\\handoff-template.md",
+    "sha256": "19ee5ee56a7c0eef181251abf7a355084a0b4f9c332d0840f5d197dee9e874b9",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\assets\\session-log-template.md",
+    "sha256": "5249a411b3e9702a1ae8c686d5e0203ea1b00ab3867e48a2edbcb132e5746eea",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\assets\\subagent-brief-template.md",
+    "sha256": "71eebf3f392ec03cb2c8679be9f38260638a1a9917cd60a291109bace172c13d",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\assets\\syncset-template.md",
+    "sha256": "a85757250150ffe07f3c23457e4495c4a53f7bf232828c9078f1da53749c6f55",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\references\\context-files.md",
+    "sha256": "fd2aecddf6f6f1636f63668be9aa0a50eb7c88f519acfa8cb8bd84c0a59f8c4c",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\references\\decision-record-schema.md",
+    "sha256": "77eb51e41cbff9e3ed17156ad9a5f291b5e40376c05103d632546f323e588ba1",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\references\\reviewer-checklist.md",
+    "sha256": "a29a7dfe98e3971ff907feedb9b6e3698caa3a2b908120e0b33071b2295e705e",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\references\\subagent-briefing.md",
+    "sha256": "fa79dec4ca1289733a578c6cb1d2056a8f725445c716366e5c88767fb2aa552a",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  },
+  {
+    "path": "C:\\Users\\Administrator\\.codex\\skills\\codex-primary-runtime\\agent-context-sync\\references\\syncset-protocol.md",
+    "sha256": "a879e2296e8ccc7c437c8a4aaefc2a187c3e639fedfaab7a6987e994e4ede339",
+    "observed_on": "2026-09-07",
+    "evidence": "local file snapshot identity; not behavioral evaluation"
+  }
+]

@@ -1,0 +1,1322 @@
+[
+  {
+    "commit": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e",
+    "date": "2025-06-25",
+    "author": "wutea",
+    "parents": [
+      "fa4721c03a02ee16619a0104585a2566f5b4162c"
+    ],
+    "subject": "mod: 巡检时间由数据库创建",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "fa4721c03a02ee16619a0104585a2566f5b4162c",
+    "date": "2025-06-24",
+    "author": "wutea",
+    "parents": [
+      "c4dcc87bfc760b23c15591369dc6a6b0c7e70847"
+    ],
+    "subject": "mod: 巡检时间去除jdbctype",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/entity/InspectRecordDetail.java"
+    ]
+  },
+  {
+    "commit": "c4dcc87bfc760b23c15591369dc6a6b0c7e70847",
+    "date": "2025-06-24",
+    "author": "wutea",
+    "parents": [
+      "1e8d83adc80f7a6cc39219052c0d380de6d6ed2b"
+    ],
+    "subject": "mod: edit时同步管理、运维单位",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectObjectServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "1e8d83adc80f7a6cc39219052c0d380de6d6ed2b",
+    "date": "2025-06-23",
+    "author": "wutea",
+    "parents": [
+      "0f460c5e70c3b9c0024d73467381fdd90a741c14"
+    ],
+    "subject": "mod: 巡检人物提交时记录inspect_time",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "e2e448dd52d3d11e49a68dc2245768ec48774506",
+    "date": "2025-06-04",
+    "author": "wutea",
+    "parents": [
+      "858e128c3473fc05a7aea9f0fb2efe596de0c913"
+    ],
+    "subject": "mod: 修改巡检测试服连接的数据库",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/config/application-dev.yml"
+    ]
+  },
+  {
+    "commit": "6c9f9579946b7c710aa7defae4e5cd20420dbf42",
+    "date": "2025-06-04",
+    "author": "wutea",
+    "parents": [
+      "40b3e4962886a71479f7189f40bd7be553082e8f"
+    ],
+    "subject": "mod: 修改巡检测试服连接的数据库",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/config/application-dev.yml",
+      "src/main/resources/config/application-local.yml"
+    ]
+  },
+  {
+    "commit": "858e128c3473fc05a7aea9f0fb2efe596de0c913",
+    "date": "2025-05-29",
+    "author": "wutea",
+    "parents": [
+      "ccaacdac744fc5a6db02c27672536994badc91a9"
+    ],
+    "subject": "feat: 添加object-snapshots接口",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectRecordDetailController.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectRecordDetail.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectRecordDetailService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectRecordDetailServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectContentSnapshot.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectObjectSnapshotDTO.java"
+    ]
+  },
+  {
+    "commit": "40b3e4962886a71479f7189f40bd7be553082e8f",
+    "date": "2025-05-28",
+    "author": "wutea",
+    "parents": [
+      "203c196121b2d565d99845c274b312a928e1a6bf"
+    ],
+    "subject": "mod: normalIds只查一次",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "203c196121b2d565d99845c274b312a928e1a6bf",
+    "date": "2025-05-28",
+    "author": "wutea",
+    "parents": [
+      "ddecac2777811c118c0526ea02b3cbb49d5890f5"
+    ],
+    "subject": "mod: inspectNormal改为mq异步存储",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "ddecac2777811c118c0526ea02b3cbb49d5890f5",
+    "date": "2025-05-28",
+    "author": "wutea",
+    "parents": [
+      "403675b6a14ea84e4a67ed64fd3d50bb6ee22c81"
+    ],
+    "subject": "mod: 调整巡检默认线程池数量，暂时开启mybatis日志",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/config/application-prod.yml"
+    ]
+  },
+  {
+    "commit": "403675b6a14ea84e4a67ed64fd3d50bb6ee22c81",
+    "date": "2025-05-27",
+    "author": "wutea",
+    "parents": [
+      "8761be95a6b8975f9dc804d513631cccfb26ba4e"
+    ],
+    "subject": "feat: saveCacheInspectV2接口的存储改为mq削峰逻辑",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/enums/InspectMqEnum.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/BugMainMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+      "src/main/java/com/ecidi/dam/util/mq/InspectMqConfig.java",
+      "src/main/java/com/ecidi/dam/util/mq/InspectMqConsumer.java",
+      "src/main/java/com/ecidi/dam/util/mq/InspectMqSender.java",
+      "src/main/resources/config/application-prod.yml",
+      "src/main/resources/config/liquibase/changelog/2025/2025-05-27_create_inspect_clx_log.xml",
+      "src/main/resources/config/liquibase/master.xml"
+    ]
+  },
+  {
+    "commit": "8761be95a6b8975f9dc804d513631cccfb26ba4e",
+    "date": "2025-05-23",
+    "author": "wutea",
+    "parents": [
+      "c551aa7d640d7870bd3dbc58b663c2a2350d68fc"
+    ],
+    "subject": "feat: 增加接口，设置某缺陷所有pic附件的groupToken",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/BugMainController.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/BugMainMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/BugMainService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/BugMainServiceImpl.java",
+      "src/main/resources/mapper/BugMainMapper.xml"
+    ]
+  },
+  {
+    "commit": "c551aa7d640d7870bd3dbc58b663c2a2350d68fc",
+    "date": "2025-05-19",
+    "author": "wutea",
+    "parents": [
+      "316e29f5c915bd767b7f5566884a9a3af55ba5a0"
+    ],
+    "subject": "mod: 删除巡检增加可删除范围",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "316e29f5c915bd767b7f5566884a9a3af55ba5a0",
+    "date": "2025-05-14",
+    "author": "wutea",
+    "parents": [
+      "60e54f04bee66c8ebdca9b20f6cf60f334073a4a"
+    ],
+    "subject": "mod: 是否消缺字段补充",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/enums/BugStatusEnum.java",
+      "src/main/java/com/ecidi/dam/modules/vo/excel/InspectTaskDefectExcelVo.java"
+    ]
+  },
+  {
+    "commit": "60e54f04bee66c8ebdca9b20f6cf60f334073a4a",
+    "date": "2025-05-14",
+    "author": "wutea",
+    "parents": [
+      "0027980eba531bce690333ec0928f68597ba72b6"
+    ],
+    "subject": "mod: bugstatus采用枚举取值",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/enums/BugStatusEnum.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/excel/InspectTaskDefectExcelVo.java"
+    ]
+  },
+  {
+    "commit": "0027980eba531bce690333ec0928f68597ba72b6",
+    "date": "2025-05-14",
+    "author": "wutea",
+    "parents": [
+      "4723dc72c8d4185b7f743d0e0fb6cf40768a708f"
+    ],
+    "subject": "feat: 巡检缺陷台账导出",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/client/YxywDefectClient.java",
+      "src/main/java/com/ecidi/dam/client/dto/DefectBugMainVo.java",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/entity/BugMain.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/BugMainMapper.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/BugMainService.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskRecordService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/BugMainServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/DefectResult.java",
+      "src/main/java/com/ecidi/dam/modules/vo/excel/InspectTaskDefectExcelVo.java",
+      "src/main/resources/mapper/BugMainMapper.xml",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "4723dc72c8d4185b7f743d0e0fb6cf40768a708f",
+    "date": "2025-04-27",
+    "author": "wutea",
+    "parents": [
+      "4ef1f299c8a09440f182c122796efb009fd758be"
+    ],
+    "subject": "mod: 台账导出pageSize为MAX_VALUE",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java"
+    ]
+  },
+  {
+    "commit": "4ef1f299c8a09440f182c122796efb009fd758be",
+    "date": "2025-04-11",
+    "author": "wutea",
+    "parents": [
+      "6a2b50f880bf0d0c6ae58366cb73e244a64027d5"
+    ],
+    "subject": "feat: 提交龙华口配置文件",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/config/application-lhk-prod.yml"
+    ]
+  },
+  {
+    "commit": "6a2b50f880bf0d0c6ae58366cb73e244a64027d5",
+    "date": "2025-03-31",
+    "author": "wutea",
+    "parents": [
+      "c990226e3295c5f18f900f88312b2cb52cbfcfcf"
+    ],
+    "subject": "revert: 巡检记录详情从批量存储改为逐个存储",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "c990226e3295c5f18f900f88312b2cb52cbfcfcf",
+    "date": "2025-03-22",
+    "author": "wutea",
+    "parents": [
+      "ffb723cb38d47eb17769a3d4de9e2cf2d835010f"
+    ],
+    "subject": "mod: inspectRecordDetali改为批量保存",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "ffb723cb38d47eb17769a3d4de9e2cf2d835010f",
+    "date": "2025-03-21",
+    "author": "wutea",
+    "parents": [
+      "a60520ebfd2703942cf5031a50b7f3f8d9831043"
+    ],
+    "subject": "mod: 添加巡检记录中，recordDetail改为批量新增",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "a60520ebfd2703942cf5031a50b7f3f8d9831043",
+    "date": "2025-03-21",
+    "author": "wutea",
+    "parents": [
+      "9c6dfe6bb167360dc21fabf69b6f9e20d06a3c8a"
+    ],
+    "subject": "mod: 巡检对象同步资产运维单位字段，修改搜索条件",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/dto/CapitalMqModel.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectObject.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectObjectServiceImpl.java",
+      "src/main/resources/config/liquibase/changelog/2025/2025-03-21_add_inspect_object_mscid.xml",
+      "src/main/resources/config/liquibase/master.xml"
+    ]
+  },
+  {
+    "commit": "9c6dfe6bb167360dc21fabf69b6f9e20d06a3c8a",
+    "date": "2025-03-19",
+    "author": "wutea",
+    "parents": [
+      "2ec781875f66a93c338a2ece825f856de33b539e"
+    ],
+    "subject": "mod: fileClient增加批量下载文件接口",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/client/SysFileClient.java"
+    ]
+  },
+  {
+    "commit": "2ec781875f66a93c338a2ece825f856de33b539e",
+    "date": "2025-03-19",
+    "author": "wutea",
+    "parents": [
+      "0f52c1aecb90bf004e6b84d63a439c3f10040f76"
+    ],
+    "subject": "mod: 巡检批量导出优化下载文件逻辑",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/client/dto/ZipMoreTo.java",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/util/ImageZipProcessor.java"
+    ]
+  },
+  {
+    "commit": "0f52c1aecb90bf004e6b84d63a439c3f10040f76",
+    "date": "2025-03-18",
+    "author": "wutea",
+    "parents": [
+      "d53c32411c3f8ebf9dbd5055f1828337cb0dc496"
+    ],
+    "subject": "fix: 批量导出巡检报告filename前后多了一对双引号",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "d53c32411c3f8ebf9dbd5055f1828337cb0dc496",
+    "date": "2025-03-18",
+    "author": "wutea",
+    "parents": [
+      "62f43d816d4fe4a47e71d38fd572780b9b36b4ec"
+    ],
+    "subject": "fix: 解决冲突",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java"
+    ]
+  },
+  {
+    "commit": "62f43d816d4fe4a47e71d38fd572780b9b36b4ec",
+    "date": "2025-03-11",
+    "author": "wutea",
+    "parents": [
+      "9a35c9da86550ad7bf1e371242e1133379ee2860"
+    ],
+    "subject": "feat: 巡检任务提交接口v2",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "379b77aa23f35739ffe65a4f45a33fdf957d7fa5",
+    "date": "2025-03-11",
+    "author": "wutea",
+    "parents": [
+      "b2c504a94ac26a443af26a82b78f20d3fbaaec9b"
+    ],
+    "subject": "feat: 巡检任务提交接口v2",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "9a35c9da86550ad7bf1e371242e1133379ee2860",
+    "date": "2025-03-10",
+    "author": "wutea",
+    "parents": [
+      "1b624e0e3f5e345ef2dd33abdab8e5184999f4bc"
+    ],
+    "subject": "feat: 巡检人物离线查询接口中，object增加capitalModel字段",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/InspectModelEquipmentsUtils.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectDeviceContentTreeDVO.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectObjectDVO.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectTaskDVO.java"
+    ]
+  },
+  {
+    "commit": "b2c504a94ac26a443af26a82b78f20d3fbaaec9b",
+    "date": "2025-03-10",
+    "author": "wutea",
+    "parents": [
+      "7f692b78e1694a7d8c3c4b9d28792dfbfecd32b3"
+    ],
+    "subject": "feat: 巡检人物离线查询接口中，object增加capitalModel字段",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/InspectModelEquipmentsUtils.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectDeviceContentTreeDVO.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectObjectDVO.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectTaskDVO.java"
+    ]
+  },
+  {
+    "commit": "7f692b78e1694a7d8c3c4b9d28792dfbfecd32b3",
+    "date": "2025-03-10",
+    "author": "wutea",
+    "parents": [
+      "8021cd821af26e24d9b0b65ab3cd5ee78195f607"
+    ],
+    "subject": "mod: 取消post接口正文的长度限制",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/resources/config/application-dev.yml"
+    ]
+  },
+  {
+    "commit": "8021cd821af26e24d9b0b65ab3cd5ee78195f607",
+    "date": "2025-03-07",
+    "author": "wutea",
+    "parents": [
+      "bd24aa96963420bc4d563ce4981b367d0f115267"
+    ],
+    "subject": "chore: 更新测试",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "bd24aa96963420bc4d563ce4981b367d0f115267",
+    "date": "2025-03-07",
+    "author": "wutea",
+    "parents": [
+      "27e41e68adb09ae0d1f7ac059ad9202c4f50384f"
+    ],
+    "subject": "feat: saveInspectTask接口打印error日志",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "1b624e0e3f5e345ef2dd33abdab8e5184999f4bc",
+    "date": "2025-03-06",
+    "author": "wutea",
+    "parents": [
+      "b0d9f1e5b007b0edaf509404eecb4b3bb4742d4a"
+    ],
+    "subject": "mod:批量导出报告接口改为post请求",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java"
+    ]
+  },
+  {
+    "commit": "b0d9f1e5b007b0edaf509404eecb4b3bb4742d4a",
+    "date": "2025-03-05",
+    "author": "wutea",
+    "parents": [
+      "c2c79b24e7dee6af21d607996fdaf31edfa3aa05"
+    ],
+    "subject": "feat:巡检记录批量导出报告",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/dto/InspectRecordDefectEntity.java",
+      "src/main/java/com/ecidi/dam/modules/dto/InspectRecordTaskFindDTO.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskRecordService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectReportBatchVo.java",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "c2c79b24e7dee6af21d607996fdaf31edfa3aa05",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "e897970230a90e0dc028d7b96db9a3a0db448e0f"
+    ],
+    "subject": "feat:巡检记录导出台账",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskRecordService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/excel/InspectRecordTaskExcelVo.java"
+    ]
+  },
+  {
+    "commit": "e897970230a90e0dc028d7b96db9a3a0db448e0f",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "fda331410882d9652345b859982cf89fa991f761"
+    ],
+    "subject": "fix:委托任务时对用户id的判断逻辑错误",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "fda331410882d9652345b859982cf89fa991f761",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "e925e882cf9da1f7320a70f6a308e845917be31f"
+    ],
+    "subject": "mod:巡检记录、缺陷、任务、路线、对象的orgNo搜索从模糊搜索改为精确搜索",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectObjectServiceImpl.java",
+      "src/main/resources/mapper/BugMainMapper.xml",
+      "src/main/resources/mapper/InspectLineMapper.xml",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "e925e882cf9da1f7320a70f6a308e845917be31f",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "79a32203ba402870ad5e008f1c009881fca36c06"
+    ],
+    "subject": "mod:巡检任务不能委托给自己",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "79a32203ba402870ad5e008f1c009881fca36c06",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "e88062ea50faafe06791a92b148c66d0493552f5"
+    ],
+    "subject": "mod:委托接口原委托人改为从token获得",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/entity/InspectTaskDelegation.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "e88062ea50faafe06791a92b148c66d0493552f5",
+    "date": "2025-03-04",
+    "author": "wutea",
+    "parents": [
+      "27e41e68adb09ae0d1f7ac059ad9202c4f50384f"
+    ],
+    "subject": "feat:巡检任务委托接口，巡检任务详情中查询委托信息",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/dto/InspectTaskDetailDTO.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectTaskDelegation.java",
+      "src/main/java/com/ecidi/dam/modules/enums/TableInfoEnum.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskDelegationMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskDelegationService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskDelegationServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/config/liquibase/changelog/2025/2025-03-03_create_inspect_task_delegation.xml",
+      "src/main/resources/config/liquibase/master.xml",
+      "src/main/resources/mapper/InspectTaskDelegationMapper.xml"
+    ]
+  },
+  {
+    "commit": "27e41e68adb09ae0d1f7ac059ad9202c4f50384f",
+    "date": "2025-03-03",
+    "author": "wutea",
+    "parents": [
+      "a83be5fab7343a69188e6a38f278c6539ea5b7ee"
+    ],
+    "subject": "fix:兼容未刷新的前端版本，自动判断多人还是单人巡检",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/entity/InspectPlan.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "a83be5fab7343a69188e6a38f278c6539ea5b7ee",
+    "date": "2025-02-27",
+    "author": "wutea",
+    "parents": [
+      "f94ddb655facc63756fbf305aed8d86e413e8d7a"
+    ],
+    "subject": "mod:允许删除进行中的巡检任务",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "f94ddb655facc63756fbf305aed8d86e413e8d7a",
+    "date": "2025-02-27",
+    "author": "wutea",
+    "parents": [
+      "f6bd1f8342141cc3c2372b2c61164fbb0e8e156d"
+    ],
+    "subject": "fix poi与easyexcel版本冲突",
+    "reachable_from_head": true,
+    "paths": [
+      "build.gradle"
+    ]
+  },
+  {
+    "commit": "f6bd1f8342141cc3c2372b2c61164fbb0e8e156d",
+    "date": "2025-02-24",
+    "author": "wutea",
+    "parents": [
+      "6674e1294412435326b606d7562111e903cffb9c"
+    ],
+    "subject": "fix task/list接口对时间字段的排序策略不合理",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "6674e1294412435326b606d7562111e903cffb9c",
+    "date": "2025-02-17",
+    "author": "wutea",
+    "parents": [
+      "ffe7690bc479b53ac59acc6e4a8af184b3c36aec"
+    ],
+    "subject": "fix 注释add_before_tree的try catch",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "eb3997785bd70d219c06208d5b5576d957499969",
+    "date": "2025-02-17",
+    "author": "wutea",
+    "parents": [
+      "937ec64b699f029a6554cd9623bb1026c8fa69c6"
+    ],
+    "subject": "fix find_record_by_task性能修复",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "ffe7690bc479b53ac59acc6e4a8af184b3c36aec",
+    "date": "2025-02-13",
+    "author": "wutea",
+    "parents": [
+      "0611b130063c883ec0d7c2203953620af239ef33"
+    ],
+    "subject": "feat 巡检任务委托接口",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "0611b130063c883ec0d7c2203953620af239ef33",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "e2d2dfc31e9f13d2492273c89d4105972921738a"
+    ],
+    "subject": "feat task/list接口增加overdue搜索条件。补充逾期场景的搜索条件",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskRecordService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "e2d2dfc31e9f13d2492273c89d4105972921738a",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "8218db1f13670b907fd07a19dc2ba0bb14cb9298"
+    ],
+    "subject": "feat findInspectLineName接口过滤关闭的巡检路线",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "8218db1f13670b907fd07a19dc2ba0bb14cb9298",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "dcc541f4c0b3b6e1b642749cd08db8431007504f"
+    ],
+    "subject": "fix 优化findRecordByTask的首页查询性能",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "dcc541f4c0b3b6e1b642749cd08db8431007504f",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "abf41fcce2292ea5d7f724f85ec560894fc4f0de"
+    ],
+    "subject": "fix 优化findRecordByTask的首页查询性能",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "abf41fcce2292ea5d7f724f85ec560894fc4f0de",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "607585983bfe1659f95bcbfe790305845ffbdaed"
+    ],
+    "subject": "mod 关于巡检任务逾期判断，添加overdue字段的判断",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/job/TaskJob.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "607585983bfe1659f95bcbfe790305845ffbdaed",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "5c465b1e04fb5e89dbef193a7a26e99e0de83004"
+    ],
+    "subject": "feat 添加是否逾期字段与修改定时器",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/job/TaskJob.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectTaskRecord.java",
+      "src/main/resources/config/liquibase/changelog/2025/2025-02-11_add_task_overdue.xml",
+      "src/main/resources/config/liquibase/master.xml"
+    ]
+  },
+  {
+    "commit": "5c465b1e04fb5e89dbef193a7a26e99e0de83004",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "38738359172afae19913650e01025957efa61b65"
+    ],
+    "subject": "fix 巡检路线、计划状态修改接口改为post",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineController.java",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectPlanController.java"
+    ]
+  },
+  {
+    "commit": "38738359172afae19913650e01025957efa61b65",
+    "date": "2025-02-11",
+    "author": "wutea",
+    "parents": [
+      "db8b6ffa91fa3351ba94a3d5ec26e50212e06835"
+    ],
+    "subject": "feat 巡检路线、计划状态修改接口。巡检路线查询增加flagActive条件",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineController.java",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectPlanController.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectLine.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectPlan.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectLineMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectPlanService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectPlanServiceImpl.java",
+      "src/main/resources/mapper/InspectLineMapper.xml"
+    ]
+  },
+  {
+    "commit": "db8b6ffa91fa3351ba94a3d5ec26e50212e06835",
+    "date": "2025-02-10",
+    "author": "wutea",
+    "parents": [
+      "598f351b13672e0a30cb8b4deeb1c850dd584f3d"
+    ],
+    "subject": "feat line、plan表增加flag_active字段，标记是否启用",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/resources/config/liquibase/changelog/2025/2025-02-10_add_line_enabled.xml",
+      "src/main/resources/config/liquibase/master.xml"
+    ]
+  },
+  {
+    "commit": "598f351b13672e0a30cb8b4deeb1c850dd584f3d",
+    "date": "2025-02-10",
+    "author": "wutea",
+    "parents": [
+      "e6685459e2873f5a67b138abba8e2d3d023a291d"
+    ],
+    "subject": "mod 巡检智能路线 最差路线取第10位(不足10取末位)",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "e6685459e2873f5a67b138abba8e2d3d023a291d",
+    "date": "2025-01-13",
+    "author": "wutea",
+    "parents": [
+      "937ec64b699f029a6554cd9623bb1026c8fa69c6"
+    ],
+    "subject": "feat 巡检复制巡检路线接口",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "937ec64b699f029a6554cd9623bb1026c8fa69c6",
+    "date": "2025-01-09",
+    "author": "wutea",
+    "parents": [
+      "bd024d7d4ff707c55346430dba6691c80b8c76c0"
+    ],
+    "subject": "feat 巡检路线导出巡检对象接口",
+    "reachable_from_head": true,
+    "paths": [
+      "build.gradle",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineController.java",
+      "src/main/java/com/ecidi/dam/modules/enums/InspectRequireEnum.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/excel/LineObjectExcelVo.java"
+    ]
+  },
+  {
+    "commit": "bd024d7d4ff707c55346430dba6691c80b8c76c0",
+    "date": "2025-01-07",
+    "author": "wutea",
+    "parents": [
+      "e99748acca6cc1abd11124fb7915c72e8b8cd210"
+    ],
+    "subject": "feat 巡检任务添加路线名称查询条件",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectTaskRecordMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskRecordService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/mapper/InspectTaskRecordMapper.xml"
+    ]
+  },
+  {
+    "commit": "e99748acca6cc1abd11124fb7915c72e8b8cd210",
+    "date": "2025-01-06",
+    "author": "wutea",
+    "parents": [
+      "85895b403f6e9396ea1741e82491d570246a6256"
+    ],
+    "subject": "mod loginUtils不再获取用户的orgNo",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/util/LoginUtils.java"
+    ]
+  },
+  {
+    "commit": "85895b403f6e9396ea1741e82491d570246a6256",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "1c181205de69e3c5cc0c1db474080fa79b0eddf6"
+    ],
+    "subject": "fix 处理isCache为null的场景",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "1c181205de69e3c5cc0c1db474080fa79b0eddf6",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "38a9190b464fc2f102c122204c718dea66afcfc6"
+    ],
+    "subject": "feat pageSize赋值判断是否是缓存场景",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "38a9190b464fc2f102c122204c718dea66afcfc6",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "f7e91a0d36d40da10c7bf80c9e2afcacd352e16c"
+    ],
+    "subject": "feat 离线记录只截取5条",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "f7e91a0d36d40da10c7bf80c9e2afcacd352e16c",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "abd41f21f8df4600a9105bd290fe39bbbbb1d280"
+    ],
+    "subject": "feat 离线记录只截取20条",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "abd41f21f8df4600a9105bd290fe39bbbbb1d280",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "0d78abe72c4f60056af07127df6631ec10de518c"
+    ],
+    "subject": "feat 关闭sql日志",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/config/application-prod.yml"
+    ]
+  },
+  {
+    "commit": "0d78abe72c4f60056af07127df6631ec10de518c",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "b08816df2664792b394111e1a2758ef6f6816780"
+    ],
+    "subject": "fix 增加getCacheData线程数",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "b08816df2664792b394111e1a2758ef6f6816780",
+    "date": "2024-12-10",
+    "author": "wutea",
+    "parents": [
+      "81b78afad0bda43b2a5675ff3166024c85088f14"
+    ],
+    "subject": "feat getCacheData改为多线程查询",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "81b78afad0bda43b2a5675ff3166024c85088f14",
+    "date": "2024-12-02",
+    "author": "wutea",
+    "parents": [
+      "7e91bbc601701fab9400b1bd0821c44ea4af3238"
+    ],
+    "subject": "feat InspectObjectContentProblemDVO增加capitalModel字段",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/vo/InspectObjectContentProblemDVO.java"
+    ]
+  },
+  {
+    "commit": "3b3d15e7ed19cf665725780ad772e2a6b09202c3",
+    "date": "2024-10-18",
+    "author": "wutea",
+    "parents": [
+      "6fe70d1705896bf5bc1159b0f428ef45a8e4ea3e"
+    ],
+    "subject": "添加海塘运行期配置文件",
+    "reachable_from_head": false,
+    "paths": [
+      "src/main/resources/config/application-ht-dev.yml"
+    ]
+  },
+  {
+    "commit": "7e91bbc601701fab9400b1bd0821c44ea4af3238",
+    "date": "2024-10-18",
+    "author": "wutea",
+    "parents": [
+      "58093c608dcca52d0846455e686b2c686fac8bc4"
+    ],
+    "subject": "add 判断当前用户是否能承接给定任务",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectTaskAppService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "58093c608dcca52d0846455e686b2c686fac8bc4",
+    "date": "2024-10-17",
+    "author": "wutea",
+    "parents": [
+      "d49c9e102c48ebca1bd58c78674fa105901f312f"
+    ],
+    "subject": "fix 修复判断执行人名称用错函数的问题",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "d49c9e102c48ebca1bd58c78674fa105901f312f",
+    "date": "2024-10-16",
+    "author": "wutea",
+    "parents": [
+      "7215f1bf7b040ce6ccd349f2b9e657ea8303b8ca"
+    ],
+    "subject": "add 添加候选人功能，添加任务时支持意向执行人名单，改变任务状态时才确定执行人",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/entity/InspectPlan.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectTaskRecord.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+      "src/main/resources/config/liquibase/changelog/2024/2024-10-15-add-column.xml",
+      "src/main/resources/config/liquibase/master.xml"
+    ]
+  },
+  {
+    "commit": "7215f1bf7b040ce6ccd349f2b9e657ea8303b8ca",
+    "date": "2024-09-27",
+    "author": "wutea",
+    "parents": [
+      "4301481ddac9e2af0ab1ea17fddf69e2897cb6bb"
+    ],
+    "subject": "fix 修复路径长度计算错误的问题",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/DistanceMatrixUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java"
+    ]
+  },
+  {
+    "commit": "4301481ddac9e2af0ab1ea17fddf69e2897cb6bb",
+    "date": "2024-09-24",
+    "author": "wutea",
+    "parents": [
+      "a480a42278473a6646fc099f245217eb8658cefb"
+    ],
+    "subject": "fix 取起始点通过id取",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineRecommendController.java",
+      "src/main/java/com/ecidi/dam/modules/dto/RecommendLineQuery.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "a480a42278473a6646fc099f245217eb8658cefb",
+    "date": "2024-09-24",
+    "author": "wutea",
+    "parents": [
+      "17e722f74d6368771f00ebaf32f5b427191b283a"
+    ],
+    "subject": "fix 去掉多余函数，经纬度取capitalModel的",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/PathfindingUtils.java"
+    ]
+  },
+  {
+    "commit": "17e722f74d6368771f00ebaf32f5b427191b283a",
+    "date": "2024-09-24",
+    "author": "wutea",
+    "parents": [
+      "928ad4838b473f69ed67bdcac4fc5922656e9802"
+    ],
+    "subject": "fix 取消translate的新线程执行，改为同步代码",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "928ad4838b473f69ed67bdcac4fc5922656e9802",
+    "date": "2024-09-24",
+    "author": "wutea",
+    "parents": [
+      "2712ec3e14a5f1f92b5c2ed881ddf8960a98b487"
+    ],
+    "subject": "fix 处理一下空字段的问题",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/DistanceMatrixUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java",
+      "src/main/java/com/ecidi/dam/modules/util/translate/impl/CapitalTranslateHandler.java"
+    ]
+  },
+  {
+    "commit": "2712ec3e14a5f1f92b5c2ed881ddf8960a98b487",
+    "date": "2024-09-24",
+    "author": "wutea",
+    "parents": [
+      "e91be2e64bf01acb061f1d0511bd957b51b862f2"
+    ],
+    "subject": "迭代 计算路线时的经纬度从资产中取",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/DistanceMatrixUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java",
+      "src/main/java/com/ecidi/dam/modules/vo/LineFinderObjectVo.java"
+    ]
+  },
+  {
+    "commit": "e91be2e64bf01acb061f1d0511bd957b51b862f2",
+    "date": "2024-09-20",
+    "author": "wutea",
+    "parents": [
+      "7f4d450a9e022c5c9313d19014a524f2d08a7516"
+    ],
+    "subject": "迭代 增加资产模型的转换",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "7f4d450a9e022c5c9313d19014a524f2d08a7516",
+    "date": "2024-09-19",
+    "author": "wutea",
+    "parents": [
+      "50a46dd33f9d28864c6b1c88a2fbd8d71cca7c58"
+    ],
+    "subject": "fix 补充字段，数据造假",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/model/PathResult.java",
+      "src/main/java/com/ecidi/dam/modules/vo/LineFinderObjectVo.java"
+    ]
+  },
+  {
+    "commit": "50a46dd33f9d28864c6b1c88a2fbd8d71cca7c58",
+    "date": "2024-09-19",
+    "author": "wutea",
+    "parents": [
+      "209a925656b39faa9a3ef64bb4238bbe2e62b12d"
+    ],
+    "subject": "迭代 修改请求方式为post",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineRecommendController.java",
+      "src/main/java/com/ecidi/dam/modules/dto/RecommendLineQuery.java"
+    ]
+  },
+  {
+    "commit": "209a925656b39faa9a3ef64bb4238bbe2e62b12d",
+    "date": "2024-09-19",
+    "author": "wutea",
+    "parents": [
+      "7f18d8723399b3ff4b9fdf03a38c76323d458bc5"
+    ],
+    "subject": "迭代 改进路线搜索方案、远程调用资产模块以获得楼栋号等字段",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/client/CapitalClient.java"
+    ]
+  },
+  {
+    "commit": "7f18d8723399b3ff4b9fdf03a38c76323d458bc5",
+    "date": "2024-09-19",
+    "author": "wutea",
+    "parents": [
+      "d93e3c132bc8c797791ffd72b7482bec9e448ef2"
+    ],
+    "subject": "迭代 改进路线搜索方案、远程调用资产模块以获得楼栋号等字段",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/client/dto/CapitalExtendVo.java",
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineRecommendController.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectObjectMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectObjectService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectObjectServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/MatrixWeightUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/PathfindingUtils.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/PathfindingAlgorithm.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/model/PathResult.java",
+      "src/main/java/com/ecidi/dam/modules/vo/LineFinderObjectVo.java",
+      "src/main/resources/mapper/InspectObjectMapper.xml"
+    ]
+  },
+  {
+    "commit": "d93e3c132bc8c797791ffd72b7482bec9e448ef2",
+    "date": "2024-09-18",
+    "author": "wutea",
+    "parents": [
+      "86e3d8217b74caf7b6712900d71a3d4b2efe199a"
+    ],
+    "subject": "迭代 添加新接口，搜索推荐路线",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/InspectLineRecommendController.java",
+      "src/main/java/com/ecidi/dam/modules/entity/InspectObject.java",
+      "src/main/java/com/ecidi/dam/modules/mapper/InspectObjectMapper.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectLineService.java",
+      "src/main/java/com/ecidi/dam/modules/service/InspectObjectService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/InspectObjectServiceImpl.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/DistanceMatrixUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/MatrixWeightUtil.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/PathfindingUtils.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/PathfindingAlgorithm.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/model/EdgeWeight.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/model/Node.java",
+      "src/main/java/com/ecidi/dam/modules/util/shortpath/model/PathResult.java",
+      "src/main/java/com/ecidi/dam/modules/vo/LineFinderObjectVo.java",
+      "src/main/resources/config/liquibase/changelog/2024/2024-09-18-add-column.xml",
+      "src/main/resources/config/liquibase/changelog/2024/2024-09-18-drop-column.xml",
+      "src/main/resources/config/liquibase/master.xml",
+      "src/main/resources/mapper/InspectObjectMapper.xml"
+    ]
+  },
+  {
+    "commit": "86e3d8217b74caf7b6712900d71a3d4b2efe199a",
+    "date": "2024-09-13",
+    "author": "wutea",
+    "parents": [
+      "dc44a32b991435924f6704c31cf21139a2788a84"
+    ],
+    "subject": "同步状态时额外处理问题模块排除的情况，修改is_fixed和bring_defect",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/service/impl/BugMainServiceImpl.java"
+    ]
+  },
+  {
+    "commit": "dc44a32b991435924f6704c31cf21139a2788a84",
+    "date": "2024-09-12",
+    "author": "wutea",
+    "parents": [
+      "1f2a8cbe7736063cd1fd6f844a664bb96ddc9773"
+    ],
+    "subject": "迭代 新增供问题模块调用的状态同步接口",
+    "reachable_from_head": true,
+    "paths": [
+      "src/main/java/com/ecidi/dam/modules/controller/BugMainController.java",
+      "src/main/java/com/ecidi/dam/modules/enums/BugStatusEnum.java",
+      "src/main/java/com/ecidi/dam/modules/service/BugMainService.java",
+      "src/main/java/com/ecidi/dam/modules/service/impl/BugMainServiceImpl.java"
+    ]
+  }
+]

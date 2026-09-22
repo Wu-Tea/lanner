@@ -1,0 +1,28 @@
+# OS and editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Python/tool caches (implementation language is not decided yet)
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Node/tool caches
+node_modules/
+coverage/
+
+# Personal cognition state must not enter shared project knowledge
+.project-cognition/*.local.*
+.project-cognition/user-progress.local.yaml
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example

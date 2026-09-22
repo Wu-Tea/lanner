@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "check": "initial_three_candidates",
+      "passed": true
+    },
+    {
+      "check": "route_selection",
+      "passed": true
+    },
+    {
+      "check": "corrected_mode",
+      "passed": true
+    },
+    {
+      "check": "large_scenario",
+      "passed": true
+    },
+    {
+      "check": "request_tab",
+      "passed": true
+    },
+    {
+      "check": "invalid_json_message",
+      "passed": true
+    },
+    {
+      "check": "single_empty_state",
+      "passed": true
+    },
+    {
+      "check": "missing_coordinate_error",
+      "passed": true
+    },
+    {
+      "check": "export_json",
+      "passed": true
+    },
+    {
+      "check": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "check": "file_offline_entry",
+      "passed": true
+    },
+    {
+      "check": "no_browser_errors",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

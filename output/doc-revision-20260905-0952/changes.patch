@@ -1,0 +1,1015 @@
+--- a/README.md
++++ b/README.md
+@@ -1,110 +1,43 @@
+-# project-cognition
++# Project Cognition
+ 
+-`project-cognition` 帮助 Coding Agent 在项目中持续做对事情，并把工作中形成的有效认知留给后续 Agent 和人类成员。
++Project Cognition 面向使用 AI 持续开发和维护项目的人。它的目标是让 AI 按项目目标和规范完成工作，让维护者能够核验交付、掌握重要决定，并利用工作中留下的知识继续理解和维护项目。
+ 
+-用户继续用普通自然语言说明目标。系统为当前任务提供相关项目规范、已确认事实和完成条件；Agent 自主理解仓库、选择工具、执行工作并验证结果；有长期价值的发现经过确认后进入 Canonical Base，再按人的问题生成易于理解的项目资料。
++## 用它完成一次项目任务
+ 
+-## 首先理解这条工作路径
++你继续用普通自然语言说明要做什么。一次工作围绕以下结果展开：
+ 
+-```text
+-用户说明要完成的事情
+-        ↓
+-系统明确目标、相关规范和完成条件
+-        ↓
+-Agent 自主调查、推理、执行和验证
+-        ↓
+-交付当前任务结果
+-        ↓
+-提取可供后续任务复用的 Knowledge Delta
+-        ↓
+-确认后更新 Canonical Base
+-        ↓
+-生成当前读者需要的项目资料
+-```
++1. **任务说清楚。** 保留你的原始请求，明确预期变化、相关项目规则和完成条件；会影响方向的解释对你可见。
++2. **AI 自主完成工作。** AI 选择合适的调查、设计、实现和验证方法，遇到需要你判断的取舍时说明依据。
++3. **交付可以核验。** 结果解释完成了什么、影响哪里、证据是什么、哪些部分还未验证。
++4. **知识可以接着用。** 适合长期保留的事实、决定和风险经过来源、冲突及确认检查，留给后续任务。
++5. **人能理解项目。** 根据实际问题，用说明、流程或局部关系帮助你理解行为、找到影响和未知，并返回证据。
+ 
+-**当前唯一下一步：** 固定第一条真实 Design 请求、相关项目规范和完成条件，然后让强模型自主完成 [Primary Golden Run](docs/validation/golden-cases.md#2-primary-golden-run)。项目状态和当前问题见 [当前交接](.agent-context/handoff.md)。
++普通小任务保持轻量。需要保留多少知识、生成什么资料，由这次工作和后续使用的实际需要决定。
+ 
+-## 目标一：让 Agent 的工作持续对齐项目
++## 一个具体例子
+ 
+-Project Cognition 为每次工作提供四类稳定条件：
++准备调整控制输出时，维护者需要先知道最终状态由谁负责、哪些路径会参与、什么行为必须保留，以及改动会影响哪里。AI 查清相关来源后，给出设计建议和验证计划，把需要人决定的取舍摆出来。
+ 
+-### Direction
++任务中确认的关键关系和约束可以留下来。下一次修改时，AI 能引用并复核这些知识；维护者也能通过一段说明和一张流程图理解它们。项目会分别验证本次结果是否合格、知识是否真的得到复用、资料是否帮助人作出判断。
+ 
+-说明本次任务要达到的结果、适用范围、完成条件和需要人类决定的事项。原始用户请求会被保留，Agent 对目标的解释可以被核对和修正。
++## 当前阶段
+ 
+-### Policy
++当前处于 R1：能力边界与验收设计。仓库已有产品规格、工作契约、验收案例及历史资料实验；首个完整真实任务和读者使用验证仍待开展。
+ 
+-提供本次任务真正相关的项目规范、架构约束、既有决定和风险边界。Agent 获得完成任务所需的上下文，同时保留对仓库和工具的自主判断。
++首轮用来发现可行性和具体失败，后续再验证知识复用、独立运行和成本收益。具体实现语言、存储、工具集成和界面由实际需要决定。
+ 
+-### Outcome
++从 [首个真实任务的候选与完成条件](docs/validation/golden-cases.md#2-primary-golden-run) 进入验证；当前状态和唯一下一动作见 [项目交接](.agent-context/handoff.md)。
+ 
+-检查结果是否回答了用户目标、满足完成条件、遵守项目规范，并用与结论风险相称的证据说明影响和未知项。
++## 继续阅读
+ 
+-### Knowledge Promotion
+-
+-把当前回答与长期知识分开。稳定事实、重要关系、项目规范、已确认决定、长期风险和关键未知项可以形成 Knowledge Delta，经审查后进入 Canonical Base。
+-
+-## 目标二：伴生产生人类资料
+-
+-资料库随着真实项目工作持续生长。每次 Design、实现、评审或排障都可能补充一小部分可复用知识；这些知识进入 Base 后，再根据读者当前的问题组织成合适的形式：
+-
+-- 项目入口帮助读者建立用途和边界；
+-- 应用框架说明运行单元和外部交互；
+-- 流程说明一次控制、数据或事件如何从输入到输出；
+-- 模块详情解释局部职责和内部机制；
+-- 关系视图回答调用、依赖、读写、所有权和影响；
+-- 技术说明把一个完整主题按阅读前置关系连续讲清楚；
+-- 证据入口让读者核对来源、scope、状态和未知项。
+-
+-这些资料共享同一个 Base 身份和来源。读者可以从总体进入细节，在不同表现形式之间保持当前焦点，并随时返回上层位置。
+-
+-## 模型与系统的分工
+-
+-Agent 发挥模型自身能力完成：
+-
+-- 识别仓库技术栈和运行边界；
+-- 选择源码、Git、构建、编译、测试、语言服务或其他工具；
+-- 决定调查范围、工作深度和验证方式；
+-- 追踪调用、数据、状态和影响；
+-- 形成解释、设计、实现、图形和当前任务结果。
+-
+-Project Cognition 提供持续治理：
+-
+-- 保持用户方向和完成条件；
+-- 选择相关项目规范和长期认知；
+-- 检查结果质量、证据和未知项；
+-- 管理知识晋升、冲突、确认和生命周期；
+-- 为人类资料提供统一且可追溯的内容基础。
+-
+-模型能力提升后可以采用更好的调查、推理和表达方法，以上治理语义保持稳定。
+-
+-## 当前纵向验证
+-
+-第一阶段使用固定的 `yolo-study-001/dev@9505591f51974c04664d7fc231ddc8685791bcf7`，完成一次 Design Golden Run：
+-
+-1. 固定一条真实自然语言任务；
+-2. 明确相关项目规范和完成条件；
+-3. 让强模型自主选择调查与验证方法；
+-4. 评审方向、规范、证据、影响和未知项；
+-5. 从合格结果中提取最小 Knowledge Delta；
+-6. 用确认后的知识生成两种互补的人类资料；
+-7. 根据真实失败决定需要增加的规则、Skill、Hook、MCP 或工具。
+-
+-完成这次纵向验证后，再选择实现语言、物理 Base、自动化边界和资料承载方式。
+-
+-## 文档入口
+-
+-- [MVP 规格](docs/product/mvp-spec.md)
+-- [信息系统架构](docs/architecture/information-system-architecture.md)
+-- [Agent 工作与结果契约](docs/contracts/agent-output-contract.md)
+-- [Base Knowledge 契约](docs/contracts/base-knowledge-contract.md)
+-- [知识语义契约](docs/contracts/knowledge-contract.md)
+-- [资料所有权与投影契约](docs/contracts/projection-ownership-contract.md)
+-- [人类资料视图契约](docs/contracts/visual-view-contract.md)
+-- [Golden Cases](docs/validation/golden-cases.md)
+-- [当前交接](.agent-context/handoff.md)
+-
+-早期 L0–L3 walkthrough、yolo 技术说明、多视图 fixture 和 Claim Schema 保留为研究材料，用于复盘阅读负担、交互和知识表达经验。
++| 你现在关心的问题 | 入口 |
++|---|---|
++| 为谁解决什么问题，怎样判断有用？ | [产品规格与分阶段成功标准](docs/product/mvp-spec.md) |
++| 人、AI 和项目工具各自负责什么？ | [架构与职责边界](docs/architecture/information-system-architecture.md) |
++| 一次任务如何明确目标、核验结果？ | [Agent 工作与结果契约](docs/contracts/agent-output-contract.md) |
++| 哪些知识值得留下，来源和状态如何保留？ | [长期知识契约](docs/contracts/base-knowledge-contract.md) · [知识语义](docs/contracts/knowledge-contract.md) |
++| 说明和图怎样帮助人理解，如何保持一致？ | [人类资料契约](docs/contracts/visual-view-contract.md) · [资料所有权](docs/contracts/projection-ownership-contract.md) |
++| 用哪些任务和证据检验这些要求？ | [验收案例](docs/validation/golden-cases.md) |
+ 
+ ## License
+ 
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -45,6 +45,7 @@
+ - 让用户能够看见会实质改变目标、scope 或完成条件的解释。
+ - 为 Agent 选择完成当前任务所需的项目事实、规范、决定、风险和未知项。
+ - 结果评审聚焦目标命中、规范遵守、证据、适用范围、影响和未知项。
++- 重要完成条件对应实际产物或执行证据，标明核验方式及满足、不满足或尚未验证；普通任务可以简短表达。
+ - 结论风险决定证据强度：局部结论使用局部证据，全局结论同时说明调查范围和盲区。
+ - 普通局部任务采用轻量路径；结构性任务使用与其影响相称的设计和验证材料。
+ - 模型能够可靠完成的调查、归纳、画图和自我复核直接由模型承担。
+@@ -65,6 +66,7 @@
+ ## Human-facing Content
+ 
+ - 人类资料使用已确认 Base 内容生成，并共享同一语义身份和来源。
++- 资料围绕读者的真实问题帮助其定位影响、未知和待决定事项；生成状态与真实使用反馈分别记录。
+ - 从可观察用途、输入输出和运行边界开始，再按阅读前置关系引入内部名词。
+ - 用具体项目行为、完整过程、例子和证据组织内容。
+ - 根据读者问题选择文章、框架图、流程、模块细节、关系或证据形式。
+@@ -88,6 +90,7 @@
+ - 评价不同模型时比较方向、规范遵守、证据、未知项和结果可用性。
+ - 确定性实现通过机器测试；体验结论标明合成评测或真实用户反馈。
+ - Agent 自评、离线 benchmark、生成成功和真实用户验收保持各自独立状态。
++- 单次任务成功、后续知识复用、独立运行和成本收益分别保留证据范围；首轮实验记录要求见 Golden Cases。
+ 
+ ## Safety and Privacy
+ 
+--- a/docs/product/mvp-spec.md
++++ b/docs/product/mvp-spec.md
+@@ -1,17 +1,19 @@
+ # Project Cognition MVP Spec
+ 
+-Status: Reset baseline for validation  
++Status: Revised validation baseline; effectiveness unverified  
+ Phase: R1 capability contract and vertical-slice design  
+-Last updated: 2026-09-03  
+-Related decision: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`
++Last updated: 2026-09-05  
++Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`
+ 
+ ## 1. Outcome
+ 
+-MVP 只验证一个命题：
++Project Cognition 希望让维护者把真实项目工作交给 AI 后，能够核对方向、判断交付，并利用积累下来的知识继续维护项目。维护者的精力应更多用于目标、业务语义和重要取舍，重复解释、纠偏和复核的负担应当逐步减少。
++
++首轮验证一个具体命题：
+ 
+ > 向 Agent 提供正确方向、相关项目规范和结果要求，并让强模型自主完成调查与推理，能否使一次真实项目任务保持目标一致、结果可验证，并把其中有长期价值的认知伴生为对人类友好的项目资料。
+ 
+-成功意味着我们找到模型外部长期有价值的最小治理边界，并能用一次完整工作验证它。
++一次完整工作提供这条路径的可行性证据，并暴露候选治理边界的缺口。持续可靠、知识长期有用以及收益高于成本，需要后续独立运行、真实复用和适当对照分别提供证据。当前尚未完成首轮验证。
+ 
+ ## 2. Two Linked Outcomes
+ 
+@@ -22,21 +24,23 @@
+ - 让 Agent 自主选择仓库调查、工具、验证和表现方式；
+ - 对最终结果检查方向、规范、证据、影响和不确定性；
+ - 把必须由人判断的事项清楚交还给人。
++- 记录本次需要人补充背景、纠正方向和核验结果的实际工作，为后续判断收益提供依据。
+ 
+ ### O2 — Produce Companion Human Knowledge
+ 
+ - 从真实任务结果中识别可复用知识增量；
+ - 只将通过证据、冲突和确认边界的内容晋升到 Canonical Base；
+ - 从同一 Base 按人的问题生成低负担资料；
++- 让维护者或新成员能借助资料找到影响范围、关键未知和待决定事项；
+ - 保证文章、框架、流程、模块和关系视图不形成多套当前事实。
+ 
+-O1 是当前主线，O2 使用 O1 的真实产物同步验证。
++O1 是当前主线，O2 使用 O1 的真实产物同步验证。资料生成、读者使用和后续 Agent 复用分别记录结果；人类理解效果属于待验证目标。
+ 
+ ## 3. Users
+ 
+ ### Maintainer
+ 
+-对产品、架构、风险和最终结果负责，希望 Agent 自主工作但不偏离项目方向。
++对产品、架构、风险和最终结果负责，需要看清本次改变了什么、依据是什么、哪些选择仍由自己决定，并能利用留下的知识继续维护项目。
+ 
+ ### Coding Agent
+ 
+@@ -44,7 +48,7 @@
+ 
+ ### Reader or New Contributor
+ 
+-需要从项目用途和真实行为出发，逐步理解结构、流程、模块、关系和证据。
++需要从项目用途和真实行为出发，逐步理解结构、流程、模块、关系和证据，再据此完成一个与自身经验相称的维护判断。
+ 
+ ## 4. Product Boundary
+ 
+@@ -81,13 +85,15 @@
+ → Outcome Review
+ → Knowledge Delta
+ → Promotion Review
+-→ Canonical Base 更新候选
+-→ 至少两种互补的人类资料表现
++→ 按来源、冲突和确认边界接纳最小知识增量
++→ 从同一 Base 生成两种互补的人类资料并观察使用结果
+ ```
+ 
+ 第一案例继续使用固定的 `yolo-study-001/dev@9505591`，但只把旧 fixture 当作证据和对照，不接受其数据结构或 UI 为产品实现。
+ 
+-推荐任务：在修改核心控制输出路径之前，说明当前状态所有权、兼容或回退路径、隐式消费者、关键约束和设计风险，并形成一个可供人理解的完整行为说明。
++首个任务的唯一详细定义见 [Primary Golden Run](../validation/golden-cases.md#2-primary-golden-run)。正式运行前固定真实的预期变化、相关规范、需要人做的设计决定和完成条件；任务候选保持其提案状态。调查方法由 Agent 自主选择。
++
++本轮交付 Design 分析、可评审建议及验证计划，代码实施和真实运行接受按各自任务另行判断。两种资料是本次实验用于验证同源表达的安排；普通任务按实际需要选择资料数量，也可以没有知识更新。
+ 
+ ## 6. Minimal Information Boundary
+ 
+@@ -113,7 +119,8 @@
+ - 对项目约束的遵守情况；
+ - 影响、风险和替代方案；
+ - 不确定项、未检查部分和需要人类回答的问题；
+-- 是否满足完成条件；
++- 重要完成条件逐项对应的证据、核验状态和理由；
++- 谁进行了自查、证据核验或人工接受，以及尚未核验的部分；
+ - Knowledge Delta 候选。
+ 
+ 结果结构只统一语义，各类任务可以使用最适合当前读者的版式。
+@@ -150,9 +157,12 @@
+ - 检查结果是否回答任务目标和完成条件；
+ - 检查是否违反相关项目规范；
+ - 检查关键结论是否有足以支持其强度的证据；
++- 按预先明确的完成条件核验实际产物、源码、测试或运行记录，写明满足、不满足或尚未验证及其依据；
+ - 检查事实、推断、建议和人类决定是否分开；
+ - 检查影响、未知项和人工决策点是否充分暴露；
+ - 结果 Review 通过不等于用户验收或 Knowledge Delta 已晋升。
++
++逐项判定、证据核验和总体 Review 状态使用 [结果契约](../contracts/agent-output-contract.md#7-outcome-review)。首例先用少量具体结果校准人工与模型判断；模型自查、人工核验及自动评审的可信程度分别保留，自动评审效果待验证。
+ 
+ ### F5 — Scale Evidence With Risk
+ 
+@@ -160,6 +170,7 @@
+ - 结构性变更、全局否定结论和正式 Gate 需要更强的范围与盲区说明；
+ - “没有发现”保留实际调查范围；“项目中不存在”同时提供与结论强度匹配的覆盖说明；
+ - 运行时或外部系统无法由静态仓库证明时必须明确限制。
++- 按风险引用足以复核关键行为的执行记录；必要的记录包含实际动作及其结果，完整内部推理不属于验收证据要求。
+ 
+ ### F6 — Promote Durable Knowledge Deliberately
+ 
+@@ -176,6 +187,7 @@
+ - 相同事实和关系跨资料复用同一 Base 身份和来源；
+ - 生成资料可以删除并重建，不影响长期知识；
+ - 人类修改中的语义变更形成新的 Base candidate，确认后重新生成资料。
++- 通过一个具体维护问题观察读者能否使用资料，生成成功只记录为产物状态。
+ 
+ ### F8 — Remain Provider-neutral
+ 
+@@ -186,20 +198,32 @@
+ 
+ ## 8. Success Criteria
+ 
+-纵向案例进入实现前必须证明：
++### First Run — Feasibility and Failure Discovery
++
++首轮分别记录任务评审、知识接纳、资料生成和真实读者使用状态。完成条件如下：
+ 
+ 1. 用户可以核对 Agent 对目标和完成条件的理解，没有关键静默改写。
+ 2. 强模型无需固定扫描步骤即可选择与仓库匹配的调查和验证方式。
+ 3. 结果明确回答 Design 问题，并引用足够证据、scope 和未知项。
+-4. 一个看似完整但偏离目标或违反规范的结果会被 Review 识别。
++4. 在少量明确标为合成的评审样例中，偏离目标、违反规范或缺乏证据的结果会被识别；人工与模型判定分歧有具体记录。
+ 5. 高风险的全局结论会说明覆盖边界；普通局部任务不会被迫提交完整审计包。
+ 6. Knowledge Delta 明显小于任务回答，只保留跨任务有价值的内容。
+ 7. 推断、建议和人类确认不会自动升级。
+ 8. 至少两种人类资料表现来自同一批已确认知识，没有独立维护重复事实。
+-9. 不熟悉项目的读者能描述项目用途、一次关键行为和一个主要约束，并能返回证据或模块位置。
++9. 真实读者能描述项目用途、一次关键行为和一个主要约束，并借助资料定位某项改动的主要影响、一个关键未知和一个待决定事项；只有模型模拟时标为合成评估，真实使用效果保持待验证。
+ 10. 机制数量与真实失败相称；模型已经可靠完成的部分保持由模型负责。
+ 
+-首轮不预设漂亮的百分比阈值。先记录失败、人工修正量、有效知识增量和读者困惑，再决定量化门槛。
++没有真实读者反馈时，可以报告任务和资料生成部分已完成，整体首轮验证保留未完成项。通过首轮也只支持这个任务、revision 和运行条件下的结论。
++
++### Follow-up — Reuse, Repeatability and Cost
++
++后续验证逐步回答：
++
++- **知识复用：** 在新的任务上下文中使用已接纳知识，记录实际帮助了什么、哪些来源仍需复核、哪些知识过期或无用，见 GC-013。
++- **独立运行：** 同一模型独立运行或另一个模型完成相同任务，比较结果性质与失败，见 GC-010；一次成功尚不能证明稳定性。
++- **收益与成本：** 当需要判断相对日常做法是否值得时，再做条件可比的对照，保留相同任务、revision、已知规范及权限边界，见 GC-014。模型、上下文或评审者差异必须说明，结论仅适用于实际比较范围。
++
++首轮按 [运行记录要求](../validation/golden-cases.md#15-evidence-to-record-during-the-first-run) 记录人工补充、纠偏、复核、知识整理和资料使用的工作，以及可获得的耗时与资源数据。缺失项标为未记录，估算注明方法。先观察失败和负担，再制定量化门槛。
+ 
+ ## 9. Architecture Health Conditions
+ 
+@@ -207,30 +231,30 @@
+ 
+ - 体系聚焦任务方向和结果质量，模型保留调查与推理自由；
+ - Task Frame 比原始请求更易核对，并忠实保持用户意图；
+-- 每次任务只产生少量可复用 Base 内容；
++- 每次任务只保留实际有跨任务价值的内容；无增量时可以不更新 Base；
+ - 人类资料从 Base 生成并随同一知识更新；
+ - 模型专用提示保持可选，公共路径保持简洁；
+ - 工具和 UI 对应已经观察到的确定性需求；
+-- 治理和复核带来的收益高于其使用成本。
++- 治理和复核带来的收益高于其使用成本；这是持续验证目标，结论保留对应的复用或对照证据。
+ 
+ ## 10. Work Plan by Task and Function
+ 
+ | Task | Function | Status |
+ |---|---|---|
+ | R0 | 确认薄治理与伴生资料双目标 | Accepted |
+-| R1 | 固定最小 Task Frame、Result Envelope 和 Knowledge Delta 语义 | Current |
+-| R2 | 对固定项目执行一次由 Agent 自主规划的 Design Golden Run | Next |
++| R1 | 修订验证基线，固定首例的真实变化、相关规范和证据判据 | Current; task pending confirmation |
++| R2 | 对固定项目执行 Design 任务，核验完成条件并记录人工工作 | After R1 |
+ | R3 | 根据真实失败缩减或增强契约 | After R2 |
+-| R4 | 将同一次运行的 Delta 晋升为最小 Base，并生成两种人类资料 | After R3 |
+-| R5 | 比较另一强模型或独立运行的结果性质 | After R4 |
++| R4 | 接纳最小知识增量，生成同源资料并观察真实读者使用 | After R3; reader evidence tracked separately |
++| R5 | 验证后续任务复用与独立运行；需要比较收益时安排条件可比的对照 | After R4 |
+ | R6 | 根据重复缺口选择最小 Skill、Rule、Hook、MCP 或工具 | After validation |
+ 
+ ## 11. Open Questions
+ 
+-1. 第一条 Design Golden Run 的确切用户任务和完成条件是什么？
+-2. 结果 Review 首轮由人直接完成，还是允许第二个模型先提出问题供人判断？
++1. 首例任务候选是否对应维护者真实需要的变化，哪些行为必须保留？
++2. 谁核验首例的关键完成条件，哪些部分可以由模型先做自查？
+ 3. 哪些项目规范必须常驻，哪些应按任务从 Base 选择？
+ 4. Knowledge Delta 的最小可审查形式是什么？
+-5. 第一对人类资料采用“连续技术说明 + 流程/关系图”，还是“应用框架 + 模块详情”？
++5. 谁使用第一对资料，围绕哪个具体维护问题判断效果？
+ 6. 如何记录读者困惑而不把个人浏览状态写进 Base？
+ 7. 项目正式名称、License 和发布方式是什么？
+--- a/docs/validation/golden-cases.md
++++ b/docs/validation/golden-cases.md
+@@ -1,11 +1,13 @@
+ # Golden Cases
+ 
+-Status: Reset outcome-oriented validation set  
+-Last updated: 2026-09-03
++Status: Revised validation design; no new run or reader acceptance recorded  
++Last updated: 2026-09-05
+ 
+ ## 1. Purpose
+ 
+ Golden Cases 验证 Project Cognition 是否管住了任务方向、项目规范、结果质量和知识晋升，同时给强模型保留调查与推理自由。
++
++首轮提供单次可行性和失败样例。后续任务复用、独立运行、真实读者使用和成本收益各自需要对应证据，按 [MVP 的分阶段成功标准](../product/mvp-spec.md#8-success-criteria) 汇报。
+ 
+ 每个案例固定：
+ 
+@@ -32,30 +34,51 @@
+ - Branch context: `dev`
+ - Commit: `9505591f51974c04664d7fc231ddc8685791bcf7`
+ - Existing fixture: historical evidence and comparison only
+-
+-### Natural-language Task Candidate
++- Commit availability: verified locally on 2026-09-05 with `git rev-parse --verify <commit>^{commit}`; no Golden Run or runtime tests performed by this documentation revision
++
++### Original Task Candidate
+ 
+ > 在修改核心控制输出路径之前，先判断当前最终控制状态由谁拥有，哪些兼容或回退路径可能参与，哪些模块或外部行为会受影响。给出可用于 Design 的约束、风险、证据和未知项，并让一个不了解项目的人能够理解一次输入如何形成最终输出。
+ 
+-### Provided Context
+-
+-- 原始任务；
+-- 与状态所有权、兼容性和 Design 确认有关的项目规范；
+-- 当前可用的 Base/fixture 引用；
+-- 固定仓库 revision；
+-- 结果最低要求。
+-
+-Agent 只获得目标、相关规范、结果要求和可用项目上下文，自主形成调查计划。
+-
+-### Required Result Properties
+-
+-- 直接回答是否具备开始 Design 的充分理解；
+-- 说明当前状态所有权及其证据；
+-- 说明参与的主要路径、关键消费者和 scope；
+-- 区分实际实现、Agent 推断和需要人确认的设计约束；
+-- 说明未检查或无法由仓库证明的部分；
+-- 提出最小 Knowledge Delta；
+-- 从确认知识生成两种互补的人类资料候选。
++上述原候选保留。它尚未指出具体要改变的行为；以下是 Agent 为使案例可审阅而提出的一个有界候选，状态为 **proposed，待维护者确认**。文档修订授权不等于确认该项目改动。
++
++### Proposed Concrete Design Task
++
++> 我希望维护者在遇到控制输出异常时，能对照同一个控制 tick 的物理输入、控制贡献、最终合成状态和设备交付结果，看清差异发生在哪个边界。请先判断固定版本现有的观测记录能否支持这个用途，再提出满足用途所需的最小设计或使用方式。说明最终状态由谁负责，正常、兼容或回退路径及设备交付失败会怎样影响判断，哪些行为必须保持，怎样验证诊断信息与实际输出一致，以及哪些运行影响仍需实测。给出足以决定是否进入实现的建议；本次交付设计分析与验证计划。
++
++预期变化是维护者获得可核对的输出诊断能力。具体方案由调查决定：若已有能力足够，复用已有记录和说明适用边界也可以满足任务。这个候选不预断当前实现存在缺陷，不预定新增日志、重构模块或修改控制算法。
++
++### Freeze Before Execution
++
++| 项目 | 当前状态 / 正式运行前要求 |
++|---|---|
++| 真实目标 | 以上具体候选待确认；维护者可用自己的预期变化替换，保留原始请求和变更理由 |
++| 仓库范围 | 固定上述 commit 的默认 native C++ 手柄输出链；外部硬件、当前私有配置和其他分支分别说明可验证性 |
++| 本次交付 | 设计建议、实际证据、影响与未知、验证计划；实现完成及运行接受另行验证 |
++| 相关规范 | 固定版本 `AGENTS.md` 的主链时序和运行验收边界，以及与实际目标有关的有效项目规范；逐项保存来源、适用范围和确认状态 |
++| 完成条件 | 下表为此候选的判据；目标确认或替换后同步固定，评审后修改需记录理由 |
++| 评审与运行信息 | 保存实际模型/执行环境、上下文来源、任务版本及关键核验者；模型自查与人工判断分别标明 |
++
++源码与规范的可用入口包括固定版本的 `native/runtime_app/runtime_loop.cpp`、`native/controller_native/output_composer.cpp`、`native/controller_native/virtual_gamepad.cpp`、`native/runtime_app/runtime_telemetry.*` 和 `docs/project/CURRENT_STATE.md`。2026-09-05 的文档准备只核对了 commit、根 `AGENTS.md`、状态文档和输出主路径片段；状态文档的历史日期、源码实现与规范性接受仍需在正式任务中比较。这些是来源入口，不是必读顺序或完整覆盖证明；历史 fixture 只提供调查线索。
++
++### Task Completion Conditions
++
++| 条件 | 需要交付的内容 | 核验依据 |
++|---|---|---|
++| C1 — 方向 | 明确诊断要回答的问题、scope 和是否需要实现改动 | 与确认的原始请求逐项比较 |
++| C2 — 当前边界 | 解释同一 tick 的输入、控制贡献、合成状态、交付结果及相应责任 | 固定 revision 的关键生产者、消费者、状态与分支来源；推断单独标记 |
++| C3 — 设计取舍 | 说明现有能力是否足够；不足时提出最小改动、替代方式和推荐理由 | 对照用途、现有来源与相关规范，不预设必须新增机制 |
++| C4 — 行为保护 | 指出方案如何保持相关控制语义、主链时序、状态所有权与已有兼容边界 | 已确认规范与设计逐项对应，任何拟变更约束交由人决定 |
++| C5 — 验证与未知 | 给出对应正常路径、相关兼容/失败路径的验证方法，区分已有证据、未执行验证与运行盲区 | 检查方法是否能暴露所述风险；计划和历史结果不计为本次执行通过 |
++| C6 — 可作决定 | 让维护者能判断进入实现、复用现有能力或补证据，并看到阻碍决定的事项 | 建议与证据相连，人工接受状态另行记录 |
++
++每项条件按 [结果契约](../contracts/agent-output-contract.md#7-outcome-review) 记录满足、不满足或尚未验证，保留核验者、实际来源和理由。此表不要求 Agent 使用指定调查过程。
++
++### Knowledge and Reader Validation
++
++任务评审之外，分别记录最小知识增量的接纳状态、同源资料的生成状态及 GC-009 的真实读者使用结果。资料首选围绕“一次输出如何形成”和“拟改动影响哪里”两个互补问题，具体形式由内容决定。候选知识只能生成明确标为 preview 的资料。
++
++首例及其各项状态当前均为未运行。只有任务、知识、资料和真实读者条件分别取得证据后，才报告整次首轮验证完成。后续另用 GC-013 检查知识是否真正得到复用。
+ 
+ ## 3. GC-001 — Preserve User Direction
+ 
+@@ -201,6 +224,8 @@
+ - 开场直接说明项目用途、读者问题和可观察结果；
+ - 内容按认知前置关系和完整行为组织；
+ - 每种资料引用同一 Base 事实和来源。
++- 真实读者借助资料回答一个具体维护问题：定位主要影响范围、一个关键未知和一个需要人判断的事项，并能回到来源；读者经验与问题难度相匹配。
++- 记录实际查找、解释需求、误解和任务结果；模型模拟、资料生成成功与真实反馈保留不同状态。没有真实读者参与时，使用效果为待验证。
+ 
+ ## 12. GC-010 — Model-independent Outcome Comparison
+ 
+@@ -246,6 +271,8 @@
+ 8. 人类资料来自同一个 Base，不形成平行真相。
+ 9. 不同模型允许使用不同过程和措辞，并以同一结果标准评价。
+ 10. 只有真实重复失败才推动 Rule、Skill、Hook、MCP 或工具建设。
++11. 重要完成条件关联实际证据和核验记录；执行者自述不替代核验。
++12. 单次任务、知识复用、独立运行、真实读者使用和成本收益分别保留结论范围。
+ 
+ ## 15. Evidence To Record During The First Run
+ 
+@@ -258,3 +285,55 @@
+ - 完整回答与 Knowledge Delta 的体量和内容差异；
+ - 人类资料中出现的未解释术语、迷失点和无用内容；
+ - 哪些失败值得成为稳定机制，哪些只需交给更强模型。
++
++首轮另记录以下最小运行信息，具体载体可以是任务记录与已有日志的引用：
++
++- 固定请求、任务版本、仓库 revision、相关规范来源与实际模型/执行环境；
++- 完成条件对应的实际产物或执行结果、核验者、核验方式及未核验项；
++- 为解释重要偏差所需的关键动作和结果；记录有缺口时说明无法归因的范围；
++- 人工补充背景、纠正目标、复核结果、整理知识及使用资料的工作内容和可获得的耗时；
++- Agent 总耗时，以及环境能提供的 Token/费用等资源数据；估算注明方法，缺失标为未记录；
++- 任务评审、人工接受、知识接纳、资料生成和真实读者反馈各自的状态。
++
++这些是首轮实验观察项，不要求所有普通任务生成完整审计包。原始日志继续由执行环境或任务证据目录保存；Base 只接纳有长期价值且符合来源、scope 和隐私边界的内容。
++
++## 16. GC-012 — Review Actual Evidence and Calibrate Judgments
++
++输入：固定少量完成条件及其判据，再准备有充分证据、缺少本次证据、偏离目标或违反规范的合成结果。人工预期判断在查看模型评审前写定。
++
++预期：
++
++- 对“本次测试通过”只有历史记录、产物缺失或来源 revision 不符的情况，相关条件判为尚未验证，整体不能给出 `pass`；
++- 对结果确实违反已确认规范的情况，指出具体条件和证据，判为 `revise`；
++- 对只要求设计分析的任务，准确暴露运行盲区可以满足该分析条件，运行效果仍为未知；
++- 模型与人工在同一标准下分别判断，记录分歧落在哪个条件、证据或范围，再修订模糊标准；
++- 有依据的合格结果可以通过结果评审，人工接受和知识接纳仍单独处理。
++
++验收边界：这是评审方法的合成检查；自动评审的真实效果和稳定性另行验证。普通任务允许同一模型自查，不以新增多模型编排为前提。
++
++## 17. GC-013 — Reuse Knowledge in a Follow-up Task
++
++输入：第一次任务已接纳的最小知识增量、其来源和状态；一个新的任务上下文；新的真实维护问题及明确 revision。模型可相同，可继续访问仓库，但仅以任务所需的长期知识承接上次工作。
++
++预期：
++
++- 具体记录哪条知识帮助定位来源、识别约束或形成判断，哪些内容没有用处；
++- 核验与本次任务有关的适用范围和依赖变化，过期信息标记复核；
++- 缺少关键关系或证据时继续调查，并提出有价值的修正；
++- 已确认决定与上次的 Agent 推断保持各自状态；
++- 记录仍需人工重复解释的内容以及为维护知识增加的工作。
++
++验收边界：后续任务需要实际用到知识才能支持复用结论。没有新任务时保持待验证；复用发生也不直接证明节省时间或适用于所有项目。
++
++## 18. GC-014 — Compare Benefit and Added Work
++
++输入：需要判断流程相对日常做法是否值得时，在相同任务、revision、已知规范和权限边界下，比较日常工作方式与本流程。记录模型、上下文、评审者和已有任务知识等差异；优先使用独立上下文减少先前答案的影响。
++
++预期：
++
++- 同时比较目标和规范满足情况、证据质量、人工补充/纠偏/复核、知识维护及资料使用的成本；
++- 只把可获得的耗时与资源数据作为测量值；缺失保持未记录，估算说明方法；
++- 收益结论同时包含额外治理工作，失败和无收益结果也保留；
++- 未控制的模型、学习效应或任务差异明确限制归因。
++
++验收边界：这是后续对照设计，首个案例不以完成收益实验为前提。一次对照只支持该任务和条件下的局部结论，不能据此声称长期可靠或普遍提效。
+--- a/docs/contracts/agent-output-contract.md
++++ b/docs/contracts/agent-output-contract.md
+@@ -1,12 +1,12 @@
+ # Agent Work and Result Contract
+ 
+-Status: Reset draft 0.1  
++Status: Revised semantic draft 0.2; runtime validation pending  
+ Phase: R1 capability contract  
+-Last updated: 2026-09-03
++Last updated: 2026-09-05
+ 
+ ## 1. Purpose
+ 
+-本契约定义一次 Agent 工作的语义边界：如何保持用户方向、提供相关项目规范、判断最终结果，以及怎样把任务回答与可复用知识增量分开。调查步骤、工具、语言适配、推理方法、视图形式和执行时长由 Agent 根据任务决定。
++本契约定义一次 Agent 工作的语义边界：如何保持用户方向、提供相关项目规范、核验实际结果，以及怎样把任务回答与可复用知识增量分开。Agent 在任务风险、项目约束和已给定资源边界内，自主决定调查步骤、工具、语言适配、推理方法、视图形式和工作深度。
+ 
+ ```text
+ Natural-language request
+@@ -24,10 +24,10 @@
+ | Human | 真实目标、业务语义、架构取舍、风险接受和最终验收 | 明确确认需要价值判断的命题 |
+ | Project Cognition | 方向、相关规范、结果要求和知识晋升边界 | 为 Agent 提供最小充分治理条件 |
+ | Agent | 调查计划、工具选择、推理、验证和当前结果 | 标明观察、推断、建议和未知项 |
+-| Outcome Reviewer | 检查目标、规范、证据、影响和未知项 | 用任务完成条件判断结果质量 |
++| Outcome Reviewer | 将重要完成条件对应到原始证据并实际核验 | 写明核验者、方法、判定依据和未核验部分 |
+ | Promotion Boundary | 把长期知识候选与任务内容分开 | 只保留具有跨任务价值的知识 |
+ 
+-同一个强模型可以同时完成 framing、execution、review 和 delta extraction，但这些职责在结果中仍需可区分。
++同一个强模型可以同时完成 framing、execution、review 和 delta extraction。自查、证据核验和人工接受在记录中分别标明；模型自查可支持当前任务，尚未校准的自动评审不能声称已有人工判断的一致性保证。
+ 
+ ## 3. Task Frame
+ 
+@@ -60,6 +60,7 @@
+ - 明确影响结果的假设；
+ - 实质性改变 scope、完成条件或用户目标时必须对人可见；
+ - 缺失信息保持为假设、未知项或澄清问题。
++- 重要完成条件应能通过产物或行为判断，并在评审前明确。后续需要改变条件时，保留原因和必要的用户确认；条件不能随候选结果静默改写。
+ 
+ ### Agent Execution Freedom
+ 
+@@ -95,7 +96,7 @@
+ direct_result: 对当前任务的直接回答或已完成结果
+ completion:
+   status: complete | partial | blocked
+-  conditions_met: []
++  condition_checks: [] # 完成条件、证据引用、核验者/方式、判定与理由
+ key_findings: []
+ evidence: []
+ policy_check: []
+@@ -106,7 +107,7 @@
+ knowledge_delta: optional
+ ```
+ 
+-普通回答可以使用自然语言。只有 Review 或持久化需要时才转换成明确结构。
++普通回答可以使用自然语言。只有 Review 或持久化需要时才转换成明确结构。`completion` 是执行者对完成状态的报告，Review 会核验其依据；最终接受状态仍按人类确认边界产生。
+ 
+ ## 6. Evidence Proportionality
+ 
+@@ -121,6 +122,15 @@
+ 
+ 证据与结论强度保持一致：当前证据支持局部结论时使用局部表述，需要更强结论时追加相应验证。
+ 
++### Actual Artifacts and Execution Records
++
++- 修改是否落地，由实际文件或 diff 支持；执行是否成功，由相应命令结果或可观察状态支持；测试通过引用测试范围、命令、revision、环境和结果。
++- 历史测试保留为历史记录。没有本次运行证据时，不把已有的通过记录描述为本次复验。
++- Design 工作可交付充分有据的分析和验证计划；计划本身不证明实现完成或运行效果。
++- 核验者打开相关来源，说明实际检查的部分。引用缺失、不可访问或与当前范围不符时，该完成条件保持尚未验证。
++- 当判断规范遵守、失败原因或高影响行为需要过程证据时，引用相关输入、已加载规范、关键动作及结果、实际产物和人工纠正。原始记录由执行环境或任务证据目录承载，Base 只引用其中有长期价值的部分。
++- 记录深度与风险相称。普通局部任务可用少量直接证据；无需为了统一格式保存全量工具输出、私人对话或内部推理。
++
+ ## 7. Outcome Review
+ 
+ Outcome Review 按顺序回答：
+@@ -134,7 +144,33 @@
+ 7. 是否隐藏了会改变决定的重要未知项？
+ 8. 哪些事项仍必须由人判断？
+ 
+-Review 可以输出 `pass`、`revise`、`needs-human-decision` 或 `blocked`。`pass` 只表示结果契约满足，不表示用户验收，也不表示任何知识已经晋升。
++### Condition Checks
++
++每项重要完成条件至少能找到以下信息；可以在简短自然语言中表达，不强制每次任务填表：
++
++| 信息 | 需要回答的问题 |
++|---|---|
++| 完成条件 | 本次约定需要交付或证明什么？ |
++| 证据与范围 | 对应哪个产物、源码、运行结果或决定，适用于哪个 revision 和环境？ |
++| 核验者与方式 | 谁做了自查、来源核验或人工判断，实际查看了什么？ |
++| 判定与理由 | 满足、不满足或尚未验证，依据是什么？ |
++
++不适用的条件说明理由及其范围依据。不得用“不适用”静默取消用户要求。这里的字段名和形式保持为语义草案。
++
++例如，要求“本次回归测试通过”而只有历史测试记录时，判为尚未验证；要求“设计说明静态分析的运行盲区”且明确指出尚未实测的部分时，这条条件可以满足，实际运行效果继续保持未知。
++
++### Review Result and Calibration
++
++Review 可以输出 `pass`、`revise`、`needs-human-decision` 或 `blocked`：
++
++- `pass`：所有必要完成条件都有充分证据支持，相关规范已按本次范围核验，发现的违反项已解决。只表示本次结果契约满足，不表示用户验收，也不表示知识已晋升。
++- `revise`：发现目标、规范、证据或表达缺口，需要修正结果或追加核验。
++- `needs-human-decision`：继续判定或推进需要明确的人类取舍。
++- `blocked`：存在当前无法取得的证据、权限或外部条件，并写明受影响的完成条件。
++
++必要条件尚未验证时，不能仅凭结果完整或模型自述给出 `pass`；总体状态由具体缺口决定。任务评审、人工接受、知识接纳和资料使用反馈分别保留状态。
++
++首个 Golden Run 用少量具体结果校准判据：先写清标准与预期判断，再比较人工和模型对合格、缺证据、偏离目标或违反规范样例的判断。样例为合成时明确标注；分歧用于修订模糊标准或补充来源。所需人机一致性证据随自动化的使用范围增加，首轮不预设百分比门槛，也不强制增加第二个模型。
+ 
+ ## 8. Knowledge Delta
+ 
+@@ -169,7 +205,6 @@
+ ## 10. Model Independence
+ 
+ - 不同模型可以使用不同工具和调查路径；
+-- 比较可观察的目标、规范、证据、未知项和结果效用；
+ - 比较目标命中、规范遵守、证据强度、未知项诚实度和结果效用；
+ - 模型变强时逐步减少提示和中间结构；
+ - 供应商专用能力只作为执行配置，不改变本契约的核心语义。
+@@ -197,8 +232,8 @@
+ 
+ ## 12. Open Decisions
+ 
+-1. 首个 Golden Run 是否需要显式保存 Task Frame，还是只保存原始请求和 Review 结果。
+-2. Outcome Review 首轮由人执行，还是先由第二模型提出审查问题。
++1. 首个 Golden Run 用什么最简记录形式连接原始请求、完成条件、证据和核验结果。
++2. 谁负责首轮关键证据核验，模型自查与人工判断如何记录。
+ 3. Knowledge Delta 使用 Markdown、YAML 还是模型原生结构化输出。
+ 4. 哪些低风险 observed fact 可以无需逐项确认进入 Base candidate。
+ 5. 是否需要为长时间 Agent 运行保留阶段性完成条件，而不固定执行计划。
+--- a/docs/contracts/visual-view-contract.md
++++ b/docs/contracts/visual-view-contract.md
+@@ -1,14 +1,14 @@
+ # Human Knowledge View Contract
+ 
+-Status: Reset draft 0.1  
++Status: Revised semantic draft 0.2; reader outcomes unverified  
+ Phase: companion human knowledge  
+-Last updated: 2026-09-03
++Last updated: 2026-09-05
+ 
+ ## 1. Purpose
+ 
+ 本契约定义如何把真实 Agent 工作中已经晋升的项目认知，组织成对人类友好的资料。
+ 
+-人类资料让读者用较低负担回答一个真实项目问题，并能继续进入所需细节或证据。Base 结构和 Agent 工作过程只在读者当前问题需要时出现。
++人类资料帮助维护者或新成员理解一次真实行为，并据此定位改动影响、识别关键未知和需要人判断的事项。读者能够继续进入所需细节或证据。Base 结构和 Agent 工作过程只在读者当前问题需要时出现；资料效果通过实际使用验证。
+ 
+ ## 2. Companion Generation
+ 
+@@ -24,6 +24,8 @@
+ 
+ 资料生成范围跟随本次任务产生的可复用知识：局部变化更新局部资料，形成新整体认知时再更新项目入口。
+ 
++首个 Golden Run 用两种互补形式检查同源知识表达；普通任务按读者问题决定形式与数量。资料生成成功、真实读者使用和后续 Agent 复用分别记录，知识已接纳并不自动证明这些效果。
++
+ ## 3. Reader-first Principles
+ 
+ ### Start From Observable Reality
+@@ -53,6 +55,10 @@
+ - 来源、scope、状态和限制用证据详情。
+ 
+ 形式服务问题；每个主题选择能够最直接承载当前关系的形式。
++
++### Connect Understanding to a Maintenance Question
++
++选择一个与读者经验相称的具体问题，例如“这项输出路径改动主要影响哪里，还有哪些证据不足以决定是否实施”。资料应让读者定位影响、找出未知和需要人决定的事项，并返回来源。阅读理解支持后续判断；是否接受设计仍由有相应职责的人决定。
+ 
+ ## 4. Minimal View Request
+ 
+@@ -163,8 +169,11 @@
+ - 进入细节后是否知道自己仍在项目的哪个位置；
+ - 是否能够返回来源或证据；
+ - 哪些内容虽然正确但对当前问题没有帮助。
++- 读者是否借助资料完成了约定的维护判断，还是仍需他人重新解释主要逻辑。
+ 
+ 不预先冻结节点数量、字数和页面数量。先用真实读者问题发现负担来源。
++
++记录读者所需的经验背景、实际问题、使用的资料/Base revision、实际回答、额外解释和可获得的用时；只保留理解验证所需信息。模型扮演读者时标为合成评估；真实读者尚未参与时，使用效果保持待验证。实例验收见 [GC-009](../validation/golden-cases.md#11-gc-009--companion-human-material)。
+ 
+ ## 11. Projection Ownership
+ 
+--- a/docs/architecture/information-system-architecture.md
++++ b/docs/architecture/information-system-architecture.md
+@@ -1,13 +1,13 @@
+ # Project Cognition Information System Architecture
+ 
+-Status: Reset logical architecture  
++Status: Revised logical architecture; effectiveness unverified  
+ Phase: R1 capability boundary  
+-Last updated: 2026-09-03  
+-Related decision: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`
++Last updated: 2026-09-05  
++Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`
+ 
+ ## 1. Architecture Outcome
+ 
+-Project Cognition 是强模型外部的一层薄治理和长期认知边界。它保证一次 Agent 工作：
++Project Cognition 在强模型外部维护方向、规范、结果要求和长期知识，使维护者能够核对 Agent 的工作，并利用累积知识继续判断项目变化。当前架构为以下目标提供职责边界，其实际效果由分阶段验证建立：
+ 
+ - 指向正确目标；
+ - 获得相关项目约束；
+@@ -38,6 +38,8 @@
+     R["Repository and external evidence"] <--> A
+     A --> O["Result Envelope\nanswer / evidence / impact / unknowns"]
+     O --> V{"Outcome Review"}
++    E["Actual artifacts and execution evidence"] --> V
++    A --> E
+     V -->|task result| U
+     V -->|durable candidate| D["Knowledge Delta"]
+     D --> P{"Promotion / human confirmation"}
+@@ -118,7 +120,9 @@
+ → 哪些问题必须交回人类
+ ```
+ 
+-Review 可以由人、另一个模型和少量确定性检查共同完成，但最终业务和架构接受仍属于人。
++Review 接收结果及其引用的实际产物和证据。核验者按重要完成条件查看源码、diff、测试、运行或决定记录，给出判定及理由；[结果契约](../contracts/agent-output-contract.md#7-outcome-review) 统一状态语义。自查、证据核验和人工接受分别记录，最终业务和架构接受仍属于人。
++
++执行环境或任务记录保存必要的动作与结果，已有日志可通过引用复用。只有核验关键行为、规范遵守或失败原因所需的部分进入 Review；内部推理不属于记录要求。首版可以人工连接证据，不预设独立的追踪平台。
+ 
+ ### 4.4 Promote
+ 
+@@ -150,11 +154,11 @@
+ | Task Framing | 保持目标、范围和完成条件 | Agent + human review | 用户能核对 Agent 对任务的理解 |
+ | Context Selection | 选择相关规范和 Base 内容 | Agent, retrieval or simple rules | 上下文达到最小充分 |
+ | Agent Runtime | 自主完成项目工作 | Existing coding agent/model | 模型充分使用仓库与工具能力 |
+-| Outcome Review | 检查方向、规范、证据和未知项 | Human, model reviewer, deterministic checks | 人能判断结果是否可用 |
++| Outcome Review | 按完成条件核验实际产物与证据，暴露影响和未知 | Human, model reviewer, deterministic checks | 判定有来源，核验范围和接受状态清楚 |
+ | Delta Extraction | 分离长期知识候选 | Agent | Delta 只保留跨任务价值 |
+ | Promotion | 处理来源、冲突、确认和生命周期 | Policy + human + optional tools | Base 更新可追溯且符合权威边界 |
+ | Base | 维护可复用项目认知 | Git files or future storage | 后续任务能取得稳定上下文 |
+-| Projection | 生成面向人的资料 | Agent + replaceable renderer | 读者能回答当前问题并回到证据 |
++| Projection | 生成面向人的资料 | Agent + replaceable renderer | 读者能借助资料完成具体判断并回到证据；实际使用另行观察 |
+ | Context Adapter | 保持当前任务连续性 | `.agent-context` or host feature | 新 Session 能快速恢复当前动作 |
+ 
+ 这些是职责边界。首版可以由协议和人工验证共同承担，验证后再决定合并或实现哪些组件。
+@@ -167,7 +171,7 @@
+ 
+ ### Result Envelope
+ 
+-回答：完成了什么、凭什么、影响什么、还不知道什么、是否达到完成条件。
++回答：完成了什么、凭什么、影响什么、还不知道什么；每项重要完成条件由谁核验、依据什么、结果如何。
+ 
+ ### Knowledge Delta
+ 
+@@ -231,7 +235,9 @@
+ |---|---|---|
+ | Agent 误解目标 | Task Framing | 显示差异并修正方向 |
+ | Agent 遗漏项目约束 | Context Selection / Policy | 补充相关规范，重做结果检查 |
+-| 结果正确但证据不足 | Outcome Review | 降低结论强度或追加验证 |
++| 声称完成但产物或证据未核验 | Outcome Review | 标记受影响条件尚未验证，打开来源核验后重新判断 |
++| 证据支持范围小于结论 | Outcome Review | 降低结论强度或追加验证 |
++| 人工与模型判定不一致 | Outcome Review | 对照具体条件和来源定位分歧，校准后再扩大自动化范围 |
+ | 强模型已能处理但流程仍强制编排 | Architecture | 删除不必要过程约束 |
+ | 临时回答污染 Base | Promotion | 拒绝或缩小 Delta |
+ | 多个资料维护不同事实 | Projection ownership | 回到 Base，废止并行维护 |
+@@ -253,20 +259,20 @@
+ 
+ ### R1 — Current
+ 
+-- 固定 Task Frame、Result Envelope、Knowledge Delta 的最小语义；
+-- 重写 Golden Cases 为结果导向，不固定 Agent 步骤；
+-- 选择一个真实 Design 任务。
++- 修订 Task Frame、Result Envelope、Knowledge Delta 的最小语义及其验证边界；
++- 补实首例任务、证据判据和后续复用案例；
++- 确认首例要支持的真实变化和人类决定，保留任务候选状态直到确认。
+ 
+ ### R2 — Next
+ 
+ - 对固定项目执行一次由强模型自主规划的 Golden Run；
+-- 记录真实失败和人工修正；
+-- 记录真实失败和人工修正，为基础设施选择提供依据。
++- 核验重要完成条件，记录真实失败、人工补充和修正成本，为基础设施选择提供依据。
+ 
+ ### Later
+ 
+ - 从真实失败中决定最小 Rule、Skill、Hook、MCP、validator、recorder 或 renderer；
+-- 使用同一次工作产生的 Base Delta 验证人类资料；
++- 使用同一次工作产生的 Base Delta 验证资料和真实读者判断，再在后续任务验证知识复用；
++- 通过独立运行和必要的条件可比对照，逐步建立稳定性及成本收益证据；
+ - 再决定物理存储和产品界面。
+ 
+ ## 14. Architecture Acceptance Checklist
+@@ -280,3 +286,5 @@
+ - Base 是否只保存跨任务有价值的认知？
+ - 人类资料能否从 Base 重建而不独立维护事实？
+ - 删除所有历史 fixture 后，核心目标是否仍然完整成立？
++- 每项必要完成条件能否回到实际产物及核验记录，而不仅是执行者自述？
++- 一次成功、后续知识复用、真实读者反馈和对照收益是否保持各自证据范围？
+--- a/.agent-context/handoff.md
++++ b/.agent-context/handoff.md
+@@ -1,69 +1,57 @@
+ # Agent Handoff
+ 
+-Last updated: 2026-09-03T16:59:53+08:00  
+-Updated by: Codex  
+-Staleness: stale after the first outcome-oriented Golden Run is completed, the user changes either main objective, or implementation begins
++Last updated: 2026-09-05T10:08:31.9206244+08:00
++Updated by: Codex
++Staleness: stale when the first task is confirmed/replaced, a validation run is completed, or the user changes the product direction
+ 
+ ## Current Objective
+ 
+-Validate the smallest model-external governance boundary for one real Design task: preserve user direction, supply relevant project policy, judge the result, extract a small Knowledge Delta, and use the accepted Delta to produce human-friendly companion material.
++Validate whether a thin boundary around Agent direction, project policy, actual outcomes and reusable knowledge helps maintainers complete work and understand the project. The first run establishes bounded feasibility; reuse, repeatability, reader usefulness and relative cost require later evidence.
+ 
+ ## Current State
+ 
+-The project mainline has been reset after a verified external backup. The active design treats frontier LLMs/Coding Agents as the owners of repository investigation, tool choice, reasoning, verification and presentation. Project Cognition owns direction, relevant policy, outcome requirements and durable-knowledge promotion. Human materials are downstream projections of knowledge produced during real work.
++The user authorized the document-revision recommendations after a purpose discussion and reading two Meituan articles. README, MVP, Golden Cases, result review, architecture, human-material guidance and stable AGENTS rules now distinguish task completion, evidence verification, human acceptance, knowledge admission and reader use.
+ 
+-README, AGENTS, MVP, architecture, five contracts and Golden Cases were rewritten around this boundary. The old progressive walkthrough, yolo technical article, multi-view fixture and Claim Schema remain only as labeled historical experiments and evidence inputs.
+-
+-Active product writing now follows an attention order: required outcome first, relevant context and policy second, main action third, visible result fourth, with boundaries and history disclosed when they become relevant. Capabilities are described through positive responsibilities and acceptance conditions.
++The mainline remains DEC-2026-09-03-003. DEC-2026-09-05-001 records the accepted validation refinements. No first Golden Run, implementation, knowledge-reuse experiment or new real-reader acceptance has occurred.
+ 
+ ## Next Action
+ 
+-Instantiate the Primary Golden Run in `docs/validation/golden-cases.md`: freeze its exact natural-language Design request, relevant project policies, fixed repository revision and completion conditions, then let a strong Agent investigate without a prescribed scan procedure.
++Confirm or replace the proposed output-diagnosis Design task in [Primary Golden Run](../docs/validation/golden-cases.md#2-primary-golden-run), then freeze its original request, relevant policies and completion conditions before executing it. The proposal is concrete and reviewable but is not a user-confirmed change to the reference project.
+ 
+ ## Blockers
+ 
+-- The current Agent can frame and run the first case.
+-- Cross-model comparison follows when Fable 5.1, Astra or another target model is available.
++- The maintainer's exact intended change is not yet confirmed. An optional question was raised in this session; document revision proceeded with the concrete task marked proposed.
++- Existing Agent capabilities can execute the analysis once the target is fixed. Another model is optional; independent same-model runs can support later comparison.
+ 
+ ## Active Questions
+ 
+-- What exact Design change should anchor the first yolo Golden Run?
+-- Should the first Outcome Review be human-only or model-review followed by human judgment?
+-- What is the smallest reviewable Knowledge Delta representation?
+-- Which two complementary human materials should be generated from the first accepted Delta?
+-- Which failures recur often enough to justify a Rule, Skill, Hook, MCP or deterministic tool?
++- Does the proposed output-diagnosis use case match a real maintenance need, or should the maintainer supply another intended change?
++- Who verifies the important first-run criteria, and which parts are model self-review?
++- Which reader will use the materials for which concrete maintenance judgment?
++- Which admitted knowledge will help a later real task, and what additional human work does maintaining it require?
+ 
+ ## Relevant Decisions
+ 
+-- `decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md` — accepted active mainline.
+-- `decisions/DEC-2026-09-02-001-agent-led-analysis-and-progressive-visuals.md` — accepted Agent-led repository investigation; still valid.
+-- `decisions/DEC-2026-09-03-001-canonical-base-and-derived-projections.md` — accepted one Canonical Base and one-way projections; still valid.
+-- `decisions/DEC-2026-09-03-002-coordinated-multi-view-base-store.md` — accepted human-view findings; retained as downstream guidance, not the current implementation target.
++- [DEC-2026-09-05-001](decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md): accepted documentation and validation refinements; proposed task and effectiveness are outside that acceptance.
++- [DEC-2026-09-03-003](decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md): accepted active thin-governance mainline.
++- [DEC-2026-09-02-001](decisions/DEC-2026-09-02-001-agent-led-analysis-and-progressive-visuals.md): Agent-led investigation remains active.
++- [DEC-2026-09-03-001](decisions/DEC-2026-09-03-001-canonical-base-and-derived-projections.md): one Canonical Base and derived human materials remain active.
++- [DEC-2026-09-03-002](decisions/DEC-2026-09-03-002-coordinated-multi-view-base-store.md): downstream human-view guidance; historical fixture is not an implementation baseline.
+ 
+ ## Files To Read First
+ 
+-- `README.md`
+-- `docs/product/mvp-spec.md`
+-- `docs/architecture/information-system-architecture.md`
+-- `docs/contracts/agent-output-contract.md`
+-- `docs/contracts/base-knowledge-contract.md`
+-- `docs/contracts/visual-view-contract.md`
+-- `docs/validation/golden-cases.md`
+-- `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`
+-- `.agent-context/session-log.md`
++- [MVP purpose and staged success criteria](../docs/product/mvp-spec.md)
++- [First task, verdict criteria and follow-up cases](../docs/validation/golden-cases.md)
++- [Result and evidence-review contract](../docs/contracts/agent-output-contract.md)
++- [Human-material contract](../docs/contracts/visual-view-contract.md)
++- [Session history](session-log.md)
+ 
+-## Capabilities Activated By Future Evidence
++## Do Not Reopen Unless Needed
+ 
+-- Language-specific scanners or adapters enter when repeated repository tasks need deterministic extraction.
+-- Expert lenses and reusable investigation procedures enter when strong models repeatedly miss the same professional concern.
+-- Coverage ledgers and technical-debt maps enter for claims and gates whose risk requires explicit scope accounting.
+-- Viewer, graph database, RAG, Plugin, MCP, Hook or Skill implementation enters when the Golden Run identifies a concrete integration or delivery need.
+-- Provider-specific support enters when a model capability creates measurable value beyond the common contract.
+-- Synchronization support continues to preserve one Canonical Base and one-way human projections.
++Historical walkthroughs, the multi-view fixture and Claim Schema remain research inputs. Detailed record schemas, storage, language, model routing, Skill/Hook/MCP packaging and UI remain open; observed failures should justify their implementation.
+ 
+ ## Notes
+ 
+-- Verified pre-reset backup: `D:/work/AI/project-cognition-backups/project-cognition-before-capability-refocus-20260903-163050.zip`.
+-- The first case remains pinned to `yolo-study-001/dev@9505591f51974c04664d7fc231ddc8685791bcf7` unless the user changes it.
+-- `schemas/claim.schema.json` version `0.1.0` preserves the historical Claim experiment; current work uses the Task Frame, Result Envelope, Knowledge Delta and thin Base concepts.
+-- Exact field names, storage, implementation language, model routing, Skill/MCP/Hook packaging and UI remain undecided.
++- Reference remains `yolo-study-001/dev@9505591f51974c04664d7fc231ddc8685791bcf7`; commit availability was checked on 2026-09-05. Selected source reads prepared a candidate, not a completed Design investigation.
++- Task-specific details are owned by Golden Cases; reusable knowledge authority is defined in the Base contract.
++- Pre-revision copies for this documentation change are under `output/doc-revision-20260905-0952/before/`.
+--- a/.agent-context/session-log.md
++++ b/.agent-context/session-log.md
+@@ -107,3 +107,25 @@
+ Follow-up:
+ 
+ - Use the same attention order when instantiating the first Design Golden Run and its companion human material.
++
++## 2026-09-05 — Revise purpose, evidence review and staged validation
++
++Goal: Apply the user-authorized document-revision recommendations while preserving the thin-governance mainline.
++
++User confirmed: proceed with the assessed revisions to the product specification, case design, result review, reader guidance, README and corresponding project context. This confirms documentation and validation design, not the reference-project task or observed effectiveness.
++
++What changed:
++
++- Reorganized README around maintainer purpose and one work example.
++- Separated first-run feasibility from reuse, repeatability, real-reader usefulness and relative-cost evidence.
++- Connected important completion conditions to actual artifacts, verification methods, reviewers and verdicts; retained small-task proportionality.
++- Added a concrete output-diagnosis task proposal with six criteria, plus review-calibration, later-reuse and benefit-comparison cases.
++- Added a maintenance-question check for human materials and synchronized architecture and stable AGENTS rules.
++
++AI-inferred / proposed: the output-diagnosis use case is a reviewable task candidate, not a confirmed yolo requirement or a proven defect. Exact field names and runtime mechanisms remain drafts.
++
++Verification: the one-off checker passed for 13 Markdown files, 29 local links/anchors, four YAML examples, sequential GC-001–GC-014 IDs, preservation of existing session history and retention of prior AGENTS instructions. Report and before/after patch are in `output/doc-revision-20260905-0952/`. This is static document verification; no Golden Run, reference-project implementation, new runtime test, reuse experiment or real-reader acceptance is claimed.
++
++Subagent results: none. Context updated through sync-20260905-001: handoff, this session log and DEC-2026-09-05-001. Existing archived history remains linked above; no history compaction was performed.
++
++Follow-up: confirm or replace the concrete first-task candidate, freeze its scope and criteria, then execute the Design run.
+--- /dev/null
++++ b/.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md
+@@ -0,0 +1,71 @@
++# DEC-2026-09-05-001: Staged validation and evidence review
++
++Status: accepted  
++Date: 2026-09-05  
++Confirmed by: user authorized the preceding document-revision recommendations in the current session; acceptance covers the documentation and validation design, not runtime effectiveness or the proposed yolo task  
++Related sessions: 2026-09-05, project-purpose alignment and document revision  
++Related files:
++- `README.md`
++- `AGENTS.md`
++- `docs/product/mvp-spec.md`
++- `docs/validation/golden-cases.md`
++- `docs/contracts/agent-output-contract.md`
++- `docs/contracts/visual-view-contract.md`
++- `docs/architecture/information-system-architecture.md`
++Supersedes: none; clarifies the validation boundary of DEC-2026-09-03-003  
++Superseded by: none
++
++## Context
++
++The user asked to align the project purpose after reading the current documents and two Meituan articles, then requested an assessment of document changes and authorized the recommended revision. The active thin-governance mainline remains valid. The review found that one run could demonstrate feasibility but could not establish enduring value; review checks needed explicit connections to actual evidence; and knowledge reuse and reader application needed their own observations.
++
++The [Agent evaluation article](https://tech.meituan.com/2026/08/07/Agent-Evaluation.html) informed the use of concrete criteria, observed task results and case-based improvement. The [AI Coding practice article](https://tech.meituan.com/2026/05/07/Agent-AI-Coding.html) informed the connection between shared project standards and review. These are external design inputs; their reported outcomes are not evidence of Project Cognition's effectiveness.
++
++## Decision
++
++1. Express the product purpose through the maintainer's work: task direction, reviewable delivery, important human decisions and usable accumulated knowledge. README provides an accessible entry into the existing contracts.
++2. The first Golden Run demonstrates a bounded task path and discovers failures. Durable reuse, repeatability, real-reader usefulness and relative cost require separate evidence.
++3. Important completion conditions connect to actual artifacts or execution evidence, with reviewer, method, scope, verdict and rationale. Self-review, evidence verification, human acceptance, knowledge admission and reader feedback remain distinct.
++4. Keep task execution autonomous and evidence proportional to risk. Small tasks can express checks briefly; record only the execution evidence needed to verify consequential behavior and explain failures.
++5. Use a small set of explicitly synthetic results to clarify review criteria before expanding automated judgment. No fixed agreement threshold, second-model requirement or new tracing platform is selected.
++6. Validate admitted knowledge in a later real task. Validate human material through a concrete maintenance question appropriate to the reader. Two complementary materials remain a first-run experiment arrangement.
++7. Record human work and available resource data. Use a matched comparison only when drawing relative-benefit conclusions; state missing measurements and uncontrolled differences.
++
++## Reasons
++
++- A complete single run and repeated reliable use answer different questions.
++- Traceable verdicts help detect unsupported completion claims and disagreements about evidence.
++- Accumulated knowledge has value when it helps later work and remains applicable.
++- Human materials should support concrete understanding and judgment; generation alone does not establish that outcome.
++- Proportional records and staged experiments preserve the accepted thin-governance boundary.
++
++## Rejected Alternatives
++
++- Reset the product mainline again: the review identified validation and explanation gaps within the accepted direction.
++- Treat a successful run as proof of long-term reliability or savings: those claims require reuse, repeated observations and relevant comparisons.
++- Introduce a mandatory full-trace or multi-model platform now: the next case can use existing execution records and human verification.
++- Automatically adopt an Agent-created project change as the real task: the user's document-edit authorization does not supply the missing business target.
++
++## Evidence
++
++- User requested the document assessment and then said “可以修订。开始工作”.
++- Pre-edit MVP linked long-term value to one complete run; the new success section narrows that claim.
++- Pre-edit review rules required evidence but did not specify a per-condition verification record.
++- Pre-edit reader checks covered explanation and navigation; the revision adds an applied maintenance question.
++- The reference commit was verified locally, and its root policy plus selected source excerpts were read only to prepare a reviewable case candidate.
++
++## Consequences
++
++- The next step is to confirm or replace the concrete first-task candidate, then freeze the task and its criteria before execution.
++- The output-diagnosis task in Golden Cases is Agent-proposed, not human-confirmed. It neither establishes a defect nor authorizes implementation in the reference project.
++- The new checks and conceptual field names are validation design; no schema or implementation stack is frozen.
++- All current runtime, reuse, real-reader and cost-effectiveness outcomes remain unverified.
++- Earlier accepted decisions and historical fixtures keep their original scope and history.
++
++## Review Triggers
++
++- Verification records cost more effort than the errors they expose.
++- Human/model disagreements cannot be resolved with explicit criteria and source checks.
++- Later tasks cannot use the admitted knowledge or repeatedly need the same missing context.
++- Readers can repeat the explanation but cannot use it for the agreed maintenance question.
++- Comparable runs show no benefit after including governance and knowledge-maintenance costs.

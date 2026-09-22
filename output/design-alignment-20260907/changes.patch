@@ -1,0 +1,1006 @@
+--- before/.agent-context/handoff.md
++++ after/.agent-context/handoff.md
+@@ -1,37 +1,37 @@
+ # Agent Handoff
+ 
+-Last updated: 2026-09-05T10:08:31.9206244+08:00
++Last updated: 2026-09-07
+ Updated by: Codex
+-Staleness: stale when the first task is confirmed/replaced, a validation run is completed, or the user changes the product direction
++Staleness: stale when the user revises the goals/architecture, directs implementation or trials, or a comparison provides new evidence
+ 
+ ## Current Objective
+ 
+-Validate whether a thin boundary around Agent direction, project policy, actual outcomes and reusable knowledge helps maintainers complete work and understand the project. The first run establishes bounded feasibility; reuse, repeatability, reader usefulness and relative cost require later evidence.
++先整理资料、产品方向和逻辑架构。Project Cognition 保持 Agent 的任务方向、适用规范、交付依据和可复用知识，并从同一知识帮助人理解项目。用户明确要求新应用比当前 agent-context-sync 更完善、更好用；该要求尚无效果证据。
+ 
+ ## Current State
+ 
+-The user authorized the document-revision recommendations after a purpose discussion and reading two Meituan articles. README, MVP, Golden Cases, result review, architecture, human-material guidance and stable AGENTS rules now distinguish task completion, evidence verification, human acceptance, knowledge admission and reader use.
++能力目标、体验要求、现有基线、候选来源和逻辑架构已整理为设计稿。Trellis、SPEC-AGENTS 等是直接候选，不能再假定现有方案只覆盖零散需求。资料核对不等于实测或采用。
+ 
+-The mainline remains DEC-2026-09-03-003. DEC-2026-09-05-001 records the accepted validation refinements. No first Golden Run, implementation, knowledge-reuse experiment or new real-reader acceptance has occurred.
++薄治理与伴生资料主线仍有效。用户叫停了过早的 Skill 组合工作：`skills/project-cognition/` 未采纳、未安装或启用；`knowledge/` 为设计期来源索引示例，未选择物理 Base。无新 Golden Run、应用实现、后续复用或真实读者验收。
+ 
+ ## Next Action
+ 
+-Confirm or replace the proposed output-diagnosis Design task in [Primary Golden Run](../docs/validation/golden-cases.md#2-primary-golden-run), then freeze its original request, relevant policies and completion conditions before executing it. The proposal is concrete and reviewable but is not a user-confirmed change to the reference project.
++围绕 [能力目标](../docs/product/capability-goals.md)、[基线与候选](../docs/research/capability-baseline-and-candidates.md) 和 [逻辑架构](../docs/architecture/information-system-architecture.md) 进行设计对齐，重点核对目标、日常体验和职责是否准确。新的实施指令到来前保持设计范围。
+ 
+ ## Blockers
+ 
+-- The maintainer's exact intended change is not yet confirmed. An optional question was raised in this session; document revision proceeded with the concrete task marked proposed.
+-- Existing Agent capabilities can execute the analysis once the target is fixed. Another model is optional; independent same-model runs can support later comparison.
++- 当前资料整理没有阻塞；架构、组件和比较细节保持 proposed。
++- 后续试用前仍需确定真实任务、使用者与比较条件；当前不请求或启动试用。
+ 
+ ## Active Questions
+ 
+-- Does the proposed output-diagnosis use case match a real maintenance need, or should the maintainer supply another intended change?
+-- Who verifies the important first-run criteria, and which parts are model self-review?
+-- Which reader will use the materials for which concrete maintenance judgment?
+-- Which admitted knowledge will help a later real task, and what additional human work does maintaining it require?
++- 五项能力与使用要求是否准确表达维护者要掌握的事情？
++- 哪些实际操作最需要减少重复解释、寻找资料、复核或记录负担？
++- 哪些职责可由现有方案整体承担，哪些差距值得适配或自建？
+ 
+ ## Relevant Decisions
+ 
++- [DEC-2026-09-07-001](decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md): 用户明确的设计优先范围和基线要求；未确认具体方案。
+ - [DEC-2026-09-05-001](decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md): accepted documentation and validation refinements; proposed task and effectiveness are outside that acceptance.
+ - [DEC-2026-09-03-003](decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md): accepted active thin-governance mainline.
+ - [DEC-2026-09-02-001](decisions/DEC-2026-09-02-001-agent-led-analysis-and-progressive-visuals.md): Agent-led investigation remains active.
+@@ -40,18 +40,18 @@
+ 
+ ## Files To Read First
+ 
+-- [MVP purpose and staged success criteria](../docs/product/mvp-spec.md)
+-- [First task, verdict criteria and follow-up cases](../docs/validation/golden-cases.md)
+-- [Result and evidence-review contract](../docs/contracts/agent-output-contract.md)
+-- [Human-material contract](../docs/contracts/visual-view-contract.md)
++- [能力目标与比较门槛](../docs/product/capability-goals.md)
++- [基线、来源与候选判断](../docs/research/capability-baseline-and-candidates.md)
++- [架构、职责与信息归属](../docs/architecture/information-system-architecture.md)
++- [MVP 功能与后续验证](../docs/product/mvp-spec.md)，按问题再读契约和案例。
+ - [Session history](session-log.md)
+ 
+ ## Do Not Reopen Unless Needed
+ 
+-Historical walkthroughs, the multi-view fixture and Claim Schema remain research inputs. Detailed record schemas, storage, language, model routing, Skill/Hook/MCP packaging and UI remain open; observed failures should justify their implementation.
++历史 walkthrough、多视图 fixture、Claim Schema 和早期 Skill 草稿均为研究材料。原 proposed Golden Case 保留供后续选择。精确 schema、存储、语言、模型、Skill/Hook/MCP 和 UI 未定，不根据草稿文件存在自动推进实施。
+ 
+ ## Notes
+ 
+-- Reference remains `yolo-study-001/dev@9505591f51974c04664d7fc231ddc8685791bcf7`; commit availability was checked on 2026-09-05. Selected source reads prepared a candidate, not a completed Design investigation.
+-- Task-specific details are owned by Golden Cases; reusable knowledge authority is defined in the Base contract.
+-- Pre-revision copies for this documentation change are under `output/doc-revision-20260905-0952/before/`.
++- 旧参考仍为 `yolo-study-001/dev@9505591f51974c04664d7fc231ddc8685791bcf7`；任务细节由 Golden Cases 保存，当前未确认任务。
++- 来源快照在 `output/market-review-20260905/` 与 `output/skill-adoption-20260907/upstream/`；本轮修改前备份在 `output/design-alignment-20260907/before/`。
++- 文档状态核对与真实能力验证分开；不得把更多文件描述为更完善或更好用的证据。
+--- before/.agent-context/session-log.md
++++ after/.agent-context/session-log.md
+@@ -129,3 +129,19 @@
+ Subagent results: none. Context updated through sync-20260905-001: handoff, this session log and DEC-2026-09-05-001. Existing archived history remains linked above; no history compaction was performed.
+ 
+ Follow-up: confirm or replace the concrete first-task candidate, freeze its scope and criteria, then execute the Design run.
++
++## 2026-09-07 — Organize goals, baseline and architecture before implementation
++
++Goal: clarify capability targets and derive responsibilities from them, using existing Skills and applications as evidence and candidates.
++
++User confirmed: first organize materials, direction and architecture; the new application must be more complete and easier to use than agent-context-sync. DEC-2026-09-07-001 records only this scope and requirement. The earlier immediate Golden Run action is deferred.
++
++Changed: consolidated capability goals, experience requirements, a documented local baseline, external candidate sources and a logical architecture; aligned README, MVP, validation design and AGENTS. Research from Sep 5 found direct alternatives including Trellis and SPEC-AGENTS; Sep 7 pinned selected Skill sources. No candidate is adopted or runtime-tested.
++
++Correction: a Skill combination and knowledge-index example were drafted prematurely. They remain unadopted design material, were not installed or enabled, and are now explicitly marked. The knowledge directory does not establish an operational Base or approved storage scheme.
++
++AI-proposed: interaction details, component decomposition, candidate suitability and comparative acceptance design. Product superiority, reuse, real-reader benefit and cost effectiveness remain unverified. Checks for this revision are static document checks only; backups and review material are in `output/design-alignment-20260907/`.
++
++Subagents: none. Context SyncSet: sync-20260907-001 updated handoff, appended this history and added DEC-2026-09-07-001. Existing history and archive links were preserved; size-based compaction was suggested and deferred.
++
++Follow-up: review the capability goals, baseline comparison and logical architecture with the user; remain in design scope until a new instruction to implement or trial.
+--- before/AGENTS.md
++++ after/AGENTS.md
+@@ -11,7 +11,8 @@
+ 
+ - 当前处于 R1：能力边界与端到端验收设计。
+ - 当前主线是“薄治理能力优先，人类资料伴生”。
+-- 当前交付是一个真实 Design Golden Run，以及由同一次工作产生的最小 Knowledge Delta 和人类资料。
++- 当前交付是资料索引、产品能力目标和逻辑架构；用户于 2026-09-07 要求先整理设计。新的实施指令到来前，保持设计范围，Skill 接入、应用开发和 Golden Run 留待后续。
++- 新应用必须比当前 `agent-context-sync` 更完善、更好用；能力覆盖、可靠接续、人工使用与维护负担需要分别比较，新增文件或功能不等于目标达成。
+ - 实现语言、模型供应商、存储、Skill、Hook、MCP、插件和 UI 由验证中观察到的实际需求决定。
+ 
+ ## Attention Order
+--- before/docs/architecture/information-system-architecture.md
++++ after/docs/architecture/information-system-architecture.md
+@@ -1,9 +1,9 @@
+ # Project Cognition Information System Architecture
+ 
+-Status: Revised logical architecture; effectiveness unverified  
+-Phase: R1 capability boundary  
+-Last updated: 2026-09-05  
+-Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`
++Status: Logical architecture proposal; no implementation selected or effectiveness established  
++Phase: R1 materials, direction and architecture review  
++Last updated: 2026-09-07  
++Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`, `.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md`
+ 
+ ## 1. Architecture Outcome
+ 
+@@ -14,6 +14,20 @@
+ - 交付可判断的结果；
+ - 把可复用认知与临时回答分开；
+ - 从同一长期知识生成对人类友好的资料。
++
++新应用还必须保留 `agent-context-sync` 的连续性与确认边界，并让上述工作更省心。完整能力目标和比较门槛由 [产品能力目标](../product/capability-goals.md) 定义。本架构解释为达成目标需要哪些责任；具体分层和交互是设计提案，效果仍需真实使用证明。
++
++### 从维护者的操作进入架构
++
++产品入口需要围绕三个问题连续提供信息：
++
++| 用户当前的问题 | 优先呈现 | 主要动作 |
++| --- | --- | --- |
++| 这次在做什么 | 当前目标、适用约束、进展与重要偏差 | 提出任务、纠正理解或继续工作 |
++| 现在需要我判断什么 | 完成条件与证据、待决定命题、相关影响 | 核验交付、明确取舍、要求补证或修正 |
++| 我需要理解项目的哪一部分 | 与问题相关的行为、关系、决定、未知和来源 | 展开细节、返回证据或提出后续任务 |
++
++这些是信息职责，可以在一个连续入口中完成。用户无需先选择某个 Skill 或知识文件。独立窗口、IDE 内集成或宿主内入口仍是待比较的承载形式，当前没有界面实现方案。
+ 
+ ## 2. Architectural Invariants
+ 
+@@ -27,25 +41,30 @@
+ 8. **Human material is derived** — 人类资料从 Base 派生，不成为第二个当前事实系统。
+ 9. **Provider neutrality** — 核心契约以项目语义表达，适用于不同模型、语言、上下文大小和工具协议。
+ 10. **Mechanisms follow observed failures** — 固定流程和基础设施对应已经观察到的重复失败。
++11. **Completeness and usability are both required** — 扩展能力时保留基线价值，实际收益包括使用与维护成本。
++12. **Continuity and durable knowledge have distinct owners** — 当前任务游标与长期项目知识分工明确，使用引用连接。
+ 
+ ## 3. Three Logical Planes
+ 
+ ```mermaid
+ flowchart LR
+-    U["User natural-language task"] --> G["Governance plane\nDirection / Policy / Outcome"]
+-    B["Canonical Base\nrelevant durable knowledge"] --> G
+-    G --> A["Model execution plane\nAgent plans, investigates, uses tools and verifies"]
+-    R["Repository and external evidence"] <--> A
+-    A --> O["Result Envelope\nanswer / evidence / impact / unknowns"]
+-    O --> V{"Outcome Review"}
+-    E["Actual artifacts and execution evidence"] --> V
+-    A --> E
+-    V -->|task result| U
+-    V -->|durable candidate| D["Knowledge Delta"]
+-    D --> P{"Promotion / human confirmation"}
+-    P --> B
+-    B --> H["Companion knowledge plane\nhuman-oriented projections"]
+-    H --> U
++    U["维护者：任务与判断"] <--> I["产品入口：当前工作 / 待决定 / 项目理解"]
++    I --> G["治理职责：方向 / 相关规范 / 完成条件"]
++    C["任务接续：宿主状态与交接"] --> G
++    B["长期项目知识 Base"] --> G
++    S["源码、规范、决定与证据来源"] --> G
++    G --> A["既有 Agent：自主调查、执行与验证"]
++    S <--> A
++    A --> O["任务结果与实际证据"]
++    O --> V["结果核验：条件 / 判定 / 未验证项"]
++    V -->|交付供核验| I
++    O -->|按需提取| D["长期知识候选"]
++    D --> P["来源、范围、冲突与确认检查"]
++    I -->|明确的人类决定| P
++    P -->|符合准入| B
++    B --> H["围绕读者问题组织同源资料"]
++    I -->|当前问题| H
++    H --> I
+ ```
+ 
+ ### Governance Plane
+@@ -57,7 +76,7 @@
+ - 结果最低要求；
+ - 必须由人确认的边界。
+ 
+-它可以由文档、Agent 提示、规则或未来工具实现，具体形态由纵向验证选择。
++它把当前任务理解与规范使用情况交给产品入口呈现。已有规则和 Skill 可以承载其中的可复用方法；需要稳定记录或确定性检查的部分再由工具承担。具体形态由后续比较选择。
+ 
+ ### Model Execution Plane
+ 
+@@ -82,7 +101,13 @@
+ - 连续技术说明；
+ - 证据、历史和未知项入口。
+ 
+-它使用已确认知识设计阅读体验；新的项目事实继续由真实任务和证据产生。
++它使用按准入规则接纳的知识设计阅读体验，保留其中的推断与未知状态；需要人确认的目标、规范和取舍须有对应确认。新的项目事实继续由真实任务和证据产生。
++
++### 产品入口与接续
++
++产品入口将三个平面的结果组织成用户当前能够行动的信息。接续记录保存本次目标、未完成项、待决定事项和相关引用；Base 保存跨任务知识。`agent-context-sync` 可作为接续适配的参考或候选，具体是否保留原文件协议仍待验证。
++
++恢复任务时先检查当前请求和最近状态，再选择有关长期知识与来源。恢复记录与源码不符时暴露差异并查证；文件存在或时间较新都不自动代表其内容适用。
+ 
+ ## 4. End-to-end Flow
+ 
+@@ -96,6 +121,8 @@
+ ```
+ 
+ Task Frame 是由自然语言生成的轻量语义结构。模型参与生成，原始意图同时保留供用户核对。
++
++重要解释、scope 或完成条件变化必须在产品入口可见。可调查的事实由 Agent 查证；只有缺失的人类意图、受保护取舍或授权影响继续工作时，才形成相应人类决定点。
+ 
+ ### 4.2 Execute
+ 
+@@ -136,6 +163,8 @@
+ 
+ 长期记录聚焦足以支撑项目知识的来源、状态和决定。
+ 
++当前任务交付与知识准入分别推进。没有知识增量可以直接完成任务；有价值但来源不足的候选可以保留待查状态。普通已授权记录沿既有政策处理，目标、规范、架构取舍和风险接受的确认绑定具体命题与范围。
++
+ ### 4.5 Project
+ 
+ ```text
+@@ -149,19 +178,18 @@
+ 
+ ## 5. Minimal Logical Components
+ 
+-| Capability | Responsibility | May Be Performed By | Success Condition |
+-|---|---|---|---|
+-| Task Framing | 保持目标、范围和完成条件 | Agent + human review | 用户能核对 Agent 对任务的理解 |
+-| Context Selection | 选择相关规范和 Base 内容 | Agent, retrieval or simple rules | 上下文达到最小充分 |
+-| Agent Runtime | 自主完成项目工作 | Existing coding agent/model | 模型充分使用仓库与工具能力 |
+-| Outcome Review | 按完成条件核验实际产物与证据，暴露影响和未知 | Human, model reviewer, deterministic checks | 判定有来源，核验范围和接受状态清楚 |
+-| Delta Extraction | 分离长期知识候选 | Agent | Delta 只保留跨任务价值 |
+-| Promotion | 处理来源、冲突、确认和生命周期 | Policy + human + optional tools | Base 更新可追溯且符合权威边界 |
+-| Base | 维护可复用项目认知 | Git files or future storage | 后续任务能取得稳定上下文 |
+-| Projection | 生成面向人的资料 | Agent + replaceable renderer | 读者能借助资料完成具体判断并回到证据；实际使用另行观察 |
+-| Context Adapter | 保持当前任务连续性 | `.agent-context` or host feature | 新 Session 能快速恢复当前动作 |
+-
+-这些是职责边界。首版可以由协议和人工验证共同承担，验证后再决定合并或实现哪些组件。
++| 对应目标 | 逻辑职责 | 输入 → 输出 | 责任边界 |
++| --- | --- | --- | --- |
++| 日常使用与接续 | 产品入口 / Context Adapter | 请求、任务状态、决定与知识引用 → 当前工作和主要下一动作 | 呈现和恢复状态；原始任务与长期事实各有归属 |
++| PC-G1 | Task Framing | 原请求、相关决定 → 目标、scope、完成条件和重要解释 | Agent 提取，用户掌握意图和取舍 |
++| PC-G2 | Context Selection | 当前任务、规范、Base 与源码 → 相关来源、适用边界和未知 | Agent 判断相关性；工具可提供检索和引用检查 |
++| 五项能力的执行基础 | Agent Runtime | 任务与上下文 → 调查、实际产物和验证证据 | 复用既有 Coding Agent 的执行能力 |
++| PC-G3 | Outcome Review | 完成条件、产物、证据 → 逐项判定与未验证项 | 模型做语义评审，工具核验确定性事实，人工接受另有状态 |
++| PC-G4 | Delta / Promotion | 候选、来源、scope、冲突和人类决定 → 接纳、修正、待查或拒绝 | Agent 理解语义；政策规定准入；人掌握受保护决定 |
++| PC-G4 | Base / Evidence References | 接纳的知识与来源引用 → 可追溯、可复核的长期知识 | 保留语义身份和生命周期；源码与执行日志留在原 owner |
++| PC-G5 | Human Projection | 读者问题、Base 子集 → 说明、关系和来源导航 | 与 Agent 使用同一知识；真实理解效果另行观察 |
++
++这是责任划分，不是八个待建服务。先复用既有 Agent、项目来源和合适工具，后续按实际缺口决定组件合并或实现。候选与具体版本集中在 [资料索引](../research/capability-baseline-and-candidates.md#3-哪些现成材料可供各项职责使用)，当前没有采用结论。
+ 
+ ## 6. Minimal Information Objects
+ 
+@@ -186,6 +214,8 @@
+ 回答：特定读者为了一个问题，应怎样低负担地理解相关 Base 内容。
+ 
+ 精确字段和序列化格式仍未冻结。
++
++状态至少保持以下区别：任务有产物、完成条件已经核验、人类已经接受、知识已经准入、资料已经生成、真实读者已经使用。这些状态不能因其中一项变化而整体升级。当前 `knowledge/base.md` 只是设计期来源索引示例，其文件名和草稿编号不冻结 Base 的物理实现。
+ 
+ ## 7. Authority Boundary
+ 
+@@ -219,6 +249,8 @@
+ - 支撑上述内容的来源与适用范围。
+ 
+ 任务回答留在当前工作记录，原始工程内容留在仓库和证据系统，交互状态留在用户会话；Base 使用引用连接这些来源并保存跨任务语义。
++
++来源或依赖变化时，先识别受影响知识，再复核其语义与适用范围。工具可以发现引用失效、文件或 revision 变化；Agent 判断这是否改变事实或解释。旧记录保留历史关系，需要人判断的冲突交给明确决定点。自动发现变化的方式、执行时机和存储索引都仍是实现候选。
+ 
+ ## 10. Projection Boundary
+ 
+@@ -243,10 +275,12 @@
+ | 多个资料维护不同事实 | Projection ownership | 回到 Base，废止并行维护 |
+ | Base 与源码可能漂移 | Agent investigation | 标记待复核，不由时间戳猜测语义 |
+ | 资料难读 | Projection | 改变解释和视图，不改造事实来源 |
++| 用户重复填表、确认或管理文件 | Product interaction / Policy | 定位负担来源，沿用已有授权，缩减非必要步骤并重新比较 |
++| 接续或旧知识误用造成退步 | Context Adapter / Base | 保留失败证据，修正责任划分与适用性检查，未解决前不宣称可替代基线 |
+ 
+ ## 12. Implementation Selection
+ 
+-纵向 Golden Run 将为以下选择提供证据：
++先审阅目标、基线和逻辑架构；得到新的实施指令后，真实任务比较再为以下选择提供证据：
+ 
+ - 本地库、CLI、MCP、Hook、Skill 或插件承担哪些职责；
+ - 文件、事件日志、数据库或 Git 对象如何保存 Base；
+@@ -255,16 +289,22 @@
+ 
+ 当某项职责需要确定性执行、外部持久化或自动触发时，选择对应的最小实现形态。
+ 
++Skill 适合表达可复用任务方法；Hook 适合触发已确认的检查点；MCP 或其他适配负责连接现有服务；存储与校验工具负责记录和引用完整性；界面负责当前焦点、判断和导航。语义理解、适用性判断和解释仍由 Agent 承担。任何候选均需说明目标覆盖、实际缺口、新增成本和替换方式。
++
++现成方案如果已经覆盖某组责任，可以整体复用。资料中出现的缺省目录、固定阶段或写作偏好需要适配审阅，不能自动变成产品目标。早期 `skills/project-cognition/` 保留为未采纳草稿，当前不接入、不运行。
++
+ ## 13. Current Phase
+ 
+ ### R1 — Current
+ 
+-- 修订 Task Frame、Result Envelope、Knowledge Delta 的最小语义及其验证边界；
+-- 补实首例任务、证据判据和后续复用案例；
+-- 确认首例要支持的真实变化和人类决定，保留任务候选状态直到确认。
++- 整理已确认目标、现有基线和候选资料；
++- 审阅从能力目标推导的责任、用户操作和信息归属；
++- 设计相对 `agent-context-sync` 更完善、更好用的比较方式；
++- 保留 Task Frame、Result Envelope、Knowledge Delta 的语义设计与 Golden Case 候选；当前不实施或试运行。
+ 
+ ### R2 — Next
+ 
++- 收到新的实施指令后，先固定实际任务、基线配置、完成条件和成本观察方式；
+ - 对固定项目执行一次由强模型自主规划的 Golden Run；
+ - 核验重要完成条件，记录真实失败、人工补充和修正成本，为基础设施选择提供依据。
+ 
+@@ -288,3 +328,6 @@
+ - 删除所有历史 fixture 后，核心目标是否仍然完整成立？
+ - 每项必要完成条件能否回到实际产物及核验记录，而不仅是执行者自述？
+ - 一次成功、后续知识复用、真实读者反馈和对照收益是否保持各自证据范围？
++- 用户能否按当前工作、待决定事项和项目问题操作，而无需管理组件与文件？
++- 新能力是否保留基线的可靠接续、确认和隐私边界，日常负担是否实际改善？
++- 来源变化后，工具发现的变化与 Agent 对语义失效的判断是否分开？
+--- before/docs/guides/cognition-flow.md
++++ after/docs/guides/cognition-flow.md
+@@ -1,7 +1,7 @@
+ # 一次工作中的能力关系
+ 
+-Base 读取基点：`pc-base-20260907-01`，记录 PC-G1–PC-G5、PC-V1。  
+-来源入口：[已确认知识索引](../../knowledge/base.md)。图表达已确认的职责关系，运行效果见对应任务证据。
++状态：概念流程示意，2026-09-07；未实施、未经过真实使用验证。  
++目标来源：[能力目标及其确认来源](../product/capability-goals.md#7-来源与文档分工)。图用于审阅职责配合，不代表已运行的产品或已确定的组件。
+ 
+ 你从一个实际任务开始。Agent 获得当前相关的目标与规范，自主调查和执行；交付会回到完成条件接受核验。有后续价值的发现进入知识候选，满足来源、范围和确认条件后供后续任务与人类资料使用。
+ 
+@@ -12,21 +12,23 @@
+     G --> A[Agent 自主调查与执行]
+     C --> A
+     A --> R[PC-G3 按实际证据核验结果]
+-    R --> D{是否有跨任务价值}
++    R --> T[交付当前任务及未验证项]
++    A --> D{是否有跨任务价值}
+     D -->|有| K[PC-G4 候选与准入检查]
+-    D -->|没有| T[交付当前任务]
+-    K --> H{是否涉及待确认取舍}
+-    H -->|是| P[维护者确认具体命题与范围]
++    D -->|没有| N[本次无需更新长期知识]
++    K -->|需要人决定| P[维护者确认具体命题与范围]
+     P --> K
+-    H -->|否且满足准入| B
++    K -->|满足准入| B
+     K -->|来源不足或冲突未解决| W[保留候选或未知]
++    K -->|无保留价值| N
++    Q0[维护者想理解的问题] --> V
+     B --> V[PC-G5 围绕读者问题生成资料]
+     V --> Q[维护者定位影响、未知和待决定事项]
+     Q -->|产生语义修正| K
+ ```
+ 
+-图中的确认只针对确实需要人判断的命题，既有授权仍然有效。图不要求每次任务经过所有节点；一次普通修改可以在结果核验后结束。
++图中的确认只针对确实需要人判断的命题，既有授权仍然有效。交付和知识准入分别推进；本次任务可以完成，而知识仍保持候选状态。普通修改不要求额外生成资料。
+ 
+-当你想知道“这项改动会影响什么”，从 PC-G5 的资料进入相应知识 ID，再返回支持它的源码、决定或运行证据。语义需要修正时回到候选与准入环节；表达和导航问题可以直接改进资料。
++当你想知道“这项改动会影响什么”，可以从 PC-G5 的资料展开相关知识，再返回支持它的源码、决定或运行证据。用户无需先记住知识 ID。语义需要修正时回到候选与准入环节；表达和导航问题可以直接改进资料。
+ 
+-这份流程与 [能力目标说明](../product/capability-goals.md) 使用相同知识基点。它们是否帮助你完成维护判断，按 PC-V1 记录真实使用反馈；生成这两份文件只证明资料产出。
++新应用必须在保留 `agent-context-sync` 接续能力的基础上，让这条路径更完善、更好用。需要通过后续任务与真实读者使用比较，生成这张图只证明设计材料产出。更完整的职责与来源归属见 [逻辑架构](../architecture/information-system-architecture.md)。
+--- before/docs/product/capability-goals.md
++++ after/docs/product/capability-goals.md
+@@ -1,24 +1,75 @@
+-# 产品能力目标与组件对应
++# 产品能力目标：持续掌握交给 Agent 的项目
+ 
+-Base 读取基点：`pc-base-20260907-01`，记录 PC-G1–PC-G5、PC-V1。  
+-来源入口：[已确认知识索引](../../knowledge/base.md)。这是已确认目标的导读；下表组件是本次实现选择，其效果仍待验证。
++状态：产品方向整理，2026-09-07。既有目标与最新用户要求有明确来源；下文的体验细化、比较判据和组件划分为设计提案，尚未经过使用验证。当前工作只整理资料、方向和架构。
+ 
+-Project Cognition 帮助维护者把实际工作交给 Agent 后，仍能掌握任务方向、交付依据和关键取舍，并让后续的人与 Agent 继承可靠项目知识。
++## 1. 创建这个应用的目的
+ 
+-| 能力目标 | 用户应看到的结果 | 需要的组件职责 | 当前采用基础 | 验收方式 |
+-| --- | --- | --- | --- | --- |
+-| PC-G1 保持目标 | Agent 的解释可与原请求比较，变更范围时会说明 | 简短任务边界与完成条件 | SPEC-AGENTS 的 plan 适配 | 注入目标歧义或范围变化，检查是否暴露 |
+-| PC-G2 用对规范 | 当前相关的约定得到遵守，Agent 能自主调查 | 上下文选择与规范定位 | project-memory 的按职责读取，结合任务适配 | 检查相关约束是否被选中，普通小任务是否保持轻量 |
+-| PC-G3 核验交付 | 可以看见哪些条件满足、依据是什么、哪里没验证 | 结果与实际证据对应 | Superpowers 的 verification 适配 | 检查不相关的通过记录是否会被误用 |
+-| PC-G4 复用知识 | 下次工作能接上，并分清事实、推断、决定与未知 | 候选、来源、scope、冲突与准入 | project-memory 的知识维护适配 | 换上下文处理后续问题，检查误用与复核行为 |
+-| PC-G5 帮助人理解 | 人能找到行为、影响、未知和证据 | 基于同一知识来源的解释与资料 | technical-writer 的来源与读者目的适配 | 生成互补材料，再记录真实读者的维护判断 |
++Project Cognition 帮助持续使用 Agent 开发和维护项目的人，始终知道：**这次要做成什么、交付是否可信、哪些事要自己决定，以及下次怎样接着做。** 工作中留下的知识同时服务后续 Agent 和人对项目的理解。
+ 
+-一个 [项目 Skill](../../skills/project-cognition/SKILL.md) 按任务读取相应组件。组件实际作用是给出输入、输出和关键判断边界；调查步骤、实现方法和资料形式仍由 Agent 决定。接入和上游差异见 [采用说明](../implementation/skill-composition.md)。
++`agent-context-sync` 是这个想法的早期形态，已经解决了项目接续、决策留存和上下文写入审查。新应用要保留这些价值，把支持范围延伸到一次任务的方向、交付核验、长期知识的适用性和人的维护判断。
+ 
+-例如，维护者希望调整某段输出逻辑。Agent 先明确期望行为和必须保留的约束，调查实际路径，按完成条件说明方案及证据。随后只留下后续仍有用的关系、决定和未知；维护者可以用这些知识生成的说明或流程理解改动影响。
++用户明确要求：**新应用必须比 `agent-context-sync` 更完善、更好用。** 这是产品必须证明的目标。功能数量、文档数量、Skill 安装成功和一次演示成功，都不能单独证明达成。
+ 
+-普通局部任务可能只需要目标和核验两部分。复杂任务才保留可交接材料；没有可复用发现时不必更新知识，没有读者问题时不必额外生成资料。
++## 2. 五项能力，分别交付什么
+ 
+-PC-V1 要求分别检查“文件存在”“Skill 做出了正确判断”“新上下文正确复用”“真实读者理解”和“投入产出更好”。任何一项的通过都不自动证明其他项。
++| 能力目标 | 维护者应当得到的结果 | 完成这项能力需要回答的问题 |
++| --- | --- | --- |
++| PC-G1 保持任务方向 | 一眼能核对这次要改变什么、范围和完成条件；重要解释变化及时可见 | Agent 接到的任务还是我的原意吗？ |
++| PC-G2 用对项目规范和上下文 | Agent 能找到本次相关的事实、决定与限制，减少我重复介绍项目 | 这次必须遵守什么，已有知识现在是否适用？ |
++| PC-G3 核验交付 | 看见完成条件对应的产物、证据与未验证项，能够判断接受、补证或返工 | 到底做成了什么，凭什么相信？ |
++| PC-G4 积累可靠知识 | 下一次工作能复用有来源、有范围、有状态的知识，并处理变化和冲突 | 哪些发现值得留下，什么已变，哪些仍是推断？ |
++| PC-G5 帮助人理解项目 | 按当前问题找到行为、关键取舍、改动影响和未知，并能回到来源 | 我能用这些资料作出下一次维护判断吗？ |
+ 
+-接着阅读 [一次工作中的能力关系](../guides/cognition-flow.md)，从具体工作路径理解这些能力如何配合。
++Agent 继续自主选择调查、工具、实现和验证方法。维护者主要负责目标、规范、架构取舍和风险接受。普通局部任务可以只用简短目标与结果核验；没有长期价值的发现不要求更新知识。
++
++## 3. 用起来应当是什么感觉
++
++以下是由目标推导的体验要求，具体交互形态仍待审阅：
++
++1. **接着做时能直接开始。** 用户说“继续”或提出新任务，系统恢复相关目标、决定和下一动作；能查到的项目事实由 Agent 调查。
++2. **工作中只突出当前重点。** 当前目标、重要偏差和需要人决定的事项容易找到。用户无需先学会记忆文件名、组件名或命令组合。
++3. **收尾时可以作出判断。** 交付先回答做成了什么和证据是否足够；适合保留的知识以简短变化呈现。确认精确对应需要人判断的命题，既有授权持续有效。
++4. **以后查项目时有可靠入口。** 用户按“为什么这样设计”“改这里影响什么”进入资料，逐步展开相关关系、未知和来源，并回到原问题。
++5. **维护负担随实际变化增长。** 系统选择相关内容并整理记录，用户处理重要取舍；小任务不会固定生成一套资料或要求完整同步。
++
++统一入口和连续体验属于产品目标。入口采用独立应用、宿主内界面还是其他形式，需要结合使用场景选择；这些界面名称和底层存储尚未冻结。
++
++## 4. 怎样才算超过 agent-context-sync
++
++比较基线是用户当前使用的 `agent-context-sync`、启动 Skill 和实际项目约定。基线拥有的能力照常使用；不能通过拿掉现有规范或不给基线提供必要来源来制造优势。
++
++| 门槛 | 拟定判据 | 失败意味着什么 |
++| --- | --- | --- |
++| 更完善 | 保留可靠接续、决策记录、推断标记和隐私边界；在同一组真实任务中走通 PC-G1–PC-G5，包含后续复用和人的实际判断 | 只有新增文件、更多摘要或孤立功能，尚不能满足产品目标 |
++| 更好用 | 核心任务完成质量不降低；重复解释、纠偏、找资料、复核和维护记录的人工负担出现可观察改善，用户认为值得持续使用 | 功能覆盖更广，但人要承担更多无法抵消的操作与维护成本，应缩减或调整方案 |
++| 可以持续替代 | 新会话接续和项目变化后仍能正确使用知识；重要失败、未解决限制及完整使用成本有记录 | 一次成功只能证明局部可行性，仍需继续验证 |
++
++这是验收设计提案。未来运行前要固定具体任务、必须保留的行为、观察方式及可接受的成本取舍。当前没有测量数据，不设定虚构的节省比例，也不宣称产品已经优于基线。
++
++至少覆盖五类场景：恢复中断工作、完成一个普通局部任务、核验一次结构性设计交付、在来源变化后处理后续任务、让真实维护者借助资料作出判断。完整比较方法见 [基线与候选资料](../research/capability-baseline-and-candidates.md#4-comparison-design)。
++
++## 5. 从目标反推职责
++
++| 为什么需要 | 应有的逻辑职责 | 输入 → 可见输出 | 后续实现选择的依据 |
++| --- | --- | --- | --- |
++| 用户需要持续掌握当前工作 | 产品交互与任务状态 | 自然语言请求、已有上下文 → 当前目标、进展、待决定事项、交付入口 | 观察用户在哪里需要来回找信息或重复操作 |
++| PC-G1、PC-G2 | 任务边界与相关上下文选择 | 原请求、规范、知识和源码 → 可核对的任务理解与相关来源 | 观察误解方向、漏用规范和多读无关资料的失败 |
++| PC-G3 | 结果核验与证据关联 | 完成条件、产物和实际证据 → 满足、未满足或尚未验证的判定 | 观察完成声明与实际结果脱节的失败 |
++| PC-G4 | 知识候选、准入和生命周期 | 任务发现、来源变化、人类决定 → 可复用知识及其状态变化 | 观察重复解释、知识误用和维护成本 |
++| PC-G5 | 围绕问题组织人类资料 | 读者问题、同一批长期知识 → 可理解的说明、关系和证据入口 | 观察人是否真的能定位影响、未知和待决定事项 |
++| 接续、跨工具使用与可追溯 | Agent/项目适配与记录 | 既有 Agent、项目资料与授权 → 可接续任务和可追溯引用 | 只为已观察到的集成、持久化和确定性校验缺口添加机制 |
++
++这些职责可以由同一组件承担。Skill 可以承载可复用任务方法，已有工具可以承担存储或集成，Agent 承担语义理解。组件选择要同时说明覆盖了哪个目标、增加什么负担、为什么已有能力不足。
++
++## 6. 当前交付与接下来要对齐的内容
++
++本阶段交付能力目标、基线与来源、逻辑架构，以及后续比较设计。此前写出的 [Skill 草稿](../../skills/project-cognition/SKILL.md) 未采纳、未安装；`knowledge/` 是设计期索引示例，物理 Base 方案未确定。
++
++下一步围绕两个问题审阅：五项能力与体验要求是否准确表达产品价值；架构是否让这些结果更容易获得且负担可控。得到新的实施指令后，再固定真实试用任务与比较条件。已有 Golden Case 保留为候选。
++
++## 7. 来源与文档分工
++
++- [DEC-2026-09-03-003](../../.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md) 确认薄治理、Agent 自主、长期知识和伴生资料；PC-G1–PC-G5 是对应目标的导读编号。
++- [DEC-2026-09-05-001](../../.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md) 确认分阶段验证及证据边界；PC-V1 沿用这一要求。
++- [DEC-2026-09-07-001](../../.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md) 记录“先整理资料、方向和架构”及“必须比 agent-context-sync 完善好用”的用户要求；不确认具体组件和比较结果。
++- 本文负责面向人的能力目标、体验要求和比较门槛；[MVP 规格](mvp-spec.md) 保留功能要求与分阶段验收，[架构](../architecture/information-system-architecture.md) 解释职责和信息如何配合，[资料索引](../research/capability-baseline-and-candidates.md) 保存外部证据与候选判断。
+--- before/docs/product/mvp-spec.md
++++ after/docs/product/mvp-spec.md
+@@ -1,13 +1,15 @@
+ # Project Cognition MVP Spec
+ 
+-Status: Revised validation baseline; effectiveness unverified  
+-Phase: R1 capability contract and vertical-slice design  
+-Last updated: 2026-09-05  
+-Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`
++Status: Product and validation design; effectiveness unverified  
++Phase: R1 materials, direction and architecture review  
++Last updated: 2026-09-07  
++Related decisions: `.agent-context/decisions/DEC-2026-09-03-003-thin-governance-and-companion-knowledge.md`, `.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md`, `.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md`
+ 
+ ## 1. Outcome
+ 
+ Project Cognition 希望让维护者把真实项目工作交给 AI 后，能够核对方向、判断交付，并利用积累下来的知识继续维护项目。维护者的精力应更多用于目标、业务语义和重要取舍，重复解释、纠偏和复核的负担应当逐步减少。
++
++用户要求新应用比 `agent-context-sync` 更完善、更好用。能力目标、体验细化和比较门槛集中在 [产品能力目标](capability-goals.md)。本规格负责功能和分阶段验证；当前先整理资料、方向与架构，以下试运行均为后续设计。
+ 
+ 首轮验证一个具体命题：
+ 
+@@ -70,7 +72,7 @@
+ 
+ ### Current Validation Scope
+ 
+-当前阶段交付一条可观察的纵向路径：自然语言目标、相关规范、Agent 自主工作、结果评审、Knowledge Delta 和两种人类资料。实现形态由这条路径暴露的确定性校验、持久化、集成和触发需求决定。
++当前阶段交付资料、方向和逻辑架构，审阅完成后再依据新的实施指令进入试用。后续纵向路径包括自然语言目标、相关规范、Agent 自主工作、结果评审、Knowledge Delta 和两种人类资料；实现形态由观察到的确定性校验、持久化、集成和触发需求决定。
+ 
+ ## 5. MVP Vertical Slice
+ 
+@@ -93,7 +95,7 @@
+ 
+ 首个任务的唯一详细定义见 [Primary Golden Run](../validation/golden-cases.md#2-primary-golden-run)。正式运行前固定真实的预期变化、相关规范、需要人做的设计决定和完成条件；任务候选保持其提案状态。调查方法由 Agent 自主选择。
+ 
+-本轮交付 Design 分析、可评审建议及验证计划，代码实施和真实运行接受按各自任务另行判断。两种资料是本次实验用于验证同源表达的安排；普通任务按实际需要选择资料数量，也可以没有知识更新。
++该候选运行的交付为 Design 分析、可评审建议及验证计划，代码实施和真实运行接受按各自任务另行判断。两种资料是该实验用于验证同源表达的安排；普通任务按实际需要选择资料数量，也可以没有知识更新。
+ 
+ ## 6. Minimal Information Boundary
+ 
+@@ -221,7 +223,7 @@
+ 
+ - **知识复用：** 在新的任务上下文中使用已接纳知识，记录实际帮助了什么、哪些来源仍需复核、哪些知识过期或无用，见 GC-013。
+ - **独立运行：** 同一模型独立运行或另一个模型完成相同任务，比较结果性质与失败，见 GC-010；一次成功尚不能证明稳定性。
+-- **收益与成本：** 当需要判断相对日常做法是否值得时，再做条件可比的对照，保留相同任务、revision、已知规范及权限边界，见 GC-014。模型、上下文或评审者差异必须说明，结论仅适用于实际比较范围。
++- **收益与成本：** 产品最终需要相对当前 `agent-context-sync` 的条件可比对照，保留相同任务、revision、已知规范及权限边界，见 GC-014 和 [基线比较设计](../research/capability-baseline-and-candidates.md#4-comparison-design)。首轮可行性通过不要求收益实验同时完成；模型、上下文或评审者差异必须说明，结论仅适用于实际比较范围。
+ 
+ 首轮按 [运行记录要求](../validation/golden-cases.md#15-evidence-to-record-during-the-first-run) 记录人工补充、纠偏、复核、知识整理和资料使用的工作，以及可获得的耗时与资源数据。缺失项标为未记录，估算注明方法。先观察失败和负担，再制定量化门槛。
+ 
+@@ -242,14 +244,16 @@
+ | Task | Function | Status |
+ |---|---|---|
+ | R0 | 确认薄治理与伴生资料双目标 | Accepted |
+-| R1 | 修订验证基线，固定首例的真实变化、相关规范和证据判据 | Current; task pending confirmation |
+-| R2 | 对固定项目执行 Design 任务，核验完成条件并记录人工工作 | After R1 |
++| R1 | 整理能力目标、现有基线、候选资料与逻辑架构，设计完整性与易用性比较 | Current; design only |
++| R2 | 新的实施指令后固定真实任务与比较条件，再执行 Design 任务并核验结果 | After design review and instruction to proceed |
+ | R3 | 根据真实失败缩减或增强契约 | After R2 |
+ | R4 | 接纳最小知识增量，生成同源资料并观察真实读者使用 | After R3; reader evidence tracked separately |
+-| R5 | 验证后续任务复用与独立运行；需要比较收益时安排条件可比的对照 | After R4 |
++| R5 | 验证后续任务复用与独立运行，比较相对 agent-context-sync 的完整能力、人工负担与使用意愿 | After R4 |
+ | R6 | 根据重复缺口选择最小 Skill、Rule、Hook、MCP 或工具 | After validation |
+ 
+ ## 11. Open Questions
++
++当前先审阅五项能力、使用要求及责任划分是否准确；具体架构、组件和验收细节仍是设计提案。进入后续试用前再处理以下问题：
+ 
+ 1. 首例任务候选是否对应维护者真实需要的变化，哪些行为必须保留？
+ 2. 谁核验首例的关键完成条件，哪些部分可以由模型先做自查？
+--- before/docs/validation/golden-cases.md
++++ after/docs/validation/golden-cases.md
+@@ -1,7 +1,9 @@
+ # Golden Cases
+ 
+ Status: Revised validation design; no new run or reader acceptance recorded  
+-Last updated: 2026-09-05
++Last updated: 2026-09-07
++
++当前按用户要求只整理资料、方向和架构。以下案例保留为后续验证设计，本轮不执行。产品须比现有 `agent-context-sync` 更完善、更好用，相关门槛见 [能力目标](../product/capability-goals.md#4-怎样才算超过-agent-context-sync)。
+ 
+ ## 1. Purpose
+ 
+@@ -327,7 +329,7 @@
+ 
+ ## 18. GC-014 — Compare Benefit and Added Work
+ 
+-输入：需要判断流程相对日常做法是否值得时，在相同任务、revision、已知规范和权限边界下，比较日常工作方式与本流程。记录模型、上下文、评审者和已有任务知识等差异；优先使用独立上下文减少先前答案的影响。
++输入：在相同任务、revision、已知规范和权限边界下，比较当前 `agent-context-sync`、启动 Skill 与实际项目约定构成的日常做法和候选应用。基线保留现有能力，两组能访问相同来源；记录资料组织与维护成本，以及模型、上下文、评审者和已有任务知识等差异。优先使用独立上下文减少先前答案的影响。场景和控制要求见 [比较设计](../research/capability-baseline-and-candidates.md#4-comparison-design)。
+ 
+ 预期：
+ 
+@@ -335,5 +337,7 @@
+ - 只把可获得的耗时与资源数据作为测量值；缺失保持未记录，估算说明方法；
+ - 收益结论同时包含额外治理工作，失败和无收益结果也保留；
+ - 未控制的模型、学习效应或任务差异明确限制归因。
++- 保留基线的可靠接续、决定与推断分离及隐私边界；功能扩展与易用性分别判断。
++- 用户能借助资料完成真实维护判断，并评价是否愿意持续使用；产品效果不以新增文件或安装成功代替。
+ 
+ 验收边界：这是后续对照设计，首个案例不以完成收益实验为前提。一次对照只支持该任务和条件下的局部结论，不能据此声称长期可靠或普遍提效。
+--- before/knowledge/base.md
++++ after/knowledge/base.md
+@@ -1,7 +1,8 @@
+-# Project Cognition 知识索引
++# Project Cognition 设计期来源索引
+ 
+-Base revision: `pc-base-20260907-01`  
+-范围：本仓库已确认的产品意图与证据边界。以下是来源索引及最小命题摘要，不是已实现能力或效果报告。原始决定拥有确认与理由。
++状态：未采纳的存储形式示例，2026-09-07；用于整理已有目标的来源，不是运行中的 Base。物理存储、目录和准入实现尚未确定。  
++设计索引版本：`pc-base-20260907-01`（保留草稿编号，不表示已发布的 Base revision）。  
++范围：既有产品意图与证据边界的最小摘要。原始决定拥有确认与理由，条目中的 human-confirmed 仅指这些命题。最新完整方向及本次用户要求见 [能力目标](../docs/product/capability-goals.md)。
+ 
+ ## PC-G1 — 保持当前任务方向
+ 
+@@ -47,4 +48,4 @@
+ 
+ ## 更新与失效
+ 
+-准入记录：[本次登记](changes/20260907-bootstrap.md)。这些记录的确认来自既有决定，日期指本次登记时间。用户变更相应目标、规范或证据边界时，重新检查相关 ID 并保留修正历史。上游工具变更不会自动改变本项目目标。
++登记说明：[设计期登记示例](changes/20260907-bootstrap.md)。这些命题的确认来自既有决定，日期指整理时间；本次没有执行应用端知识准入。用户变更相应目标、规范或证据边界时，重新检查相关 ID 并保留修正历史。上游工具变更不会自动改变本项目目标。
+--- before/knowledge/changes/20260907-bootstrap.md
++++ after/knowledge/changes/20260907-bootstrap.md
+@@ -1,10 +1,11 @@
+-# 已确认目标的最小登记
++# 设计期登记示例：既有目标的来源
+ 
+ 日期：2026-09-07  
++状态更正：本文件为早期设计草稿，未采纳为运行协议；没有执行应用端 Promotion。下列既有命题的确认，不代表用户采纳本次存储、组件或操作方案。  
+ 基点：此前没有当前 `knowledge/base.md`；既有确认来源为 DEC-2026-09-03-003 与 DEC-2026-09-05-001。  
+-结果：`pc-base-20260907-01`。
++设计索引版本：`pc-base-20260907-01`。
+ 
+-## 接纳内容
++## 整理的来源条目
+ 
+ | 操作 | ID | 为什么值得保留 | 确认与检查 |
+ | --- | --- | --- | --- |
+@@ -19,9 +20,9 @@
+ 
+ ## 当前未晋升项
+ 
+-- 四个上游组件是否是最佳组合：inferred，仍需任务对照。
+-- 当前适配是否提升真实维护效率：unknown，需使用和成本证据。
++- 四个上游组件是否适合组合：proposed，当前没有采用结论。
++- 草稿中的适配能否提升真实维护效率：unknown，未安装、未运行。
+ - 原参考项目的输出诊断任务：proposed，沿用既有候选状态。
+ - 统一自动接受知识、固定存储 schema 或长期审核机制：尚未形成新的人类确认。
+ 
+-冲突检查：与已接受薄治理、单一 Base、Agent 自主调查及人类确认边界一致；没有替代既有决定。当前 Base 只保存最小语义索引，源码、决定、运行材料和生成资料各自保留其职责。
++来源核对：上述命题与已接受薄治理、单一 Base、Agent 自主调查及人类确认边界一致；没有替代既有决定。这里只是来源索引示例，源码、决定、运行材料和生成资料各自保留职责。新的设计范围见 [DEC-2026-09-07-001](../../.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md)。
+--- before/README.md
++++ after/README.md
+@@ -1,6 +1,8 @@
+ # Project Cognition
+ 
+ Project Cognition 面向使用 AI 持续开发和维护项目的人。它的目标是让 AI 按项目目标和规范完成工作，让维护者能够核验交付、掌握重要决定，并利用工作中留下的知识继续理解和维护项目。
++
++它从 `agent-context-sync` 的项目接续需求发展而来。新应用必须保留接续与决策留存的价值，进一步支持任务核验、可靠知识复用和人的项目理解，并通过真实使用证明比现有做法更完善、更好用。
+ 
+ ## 用它完成一次项目任务
+ 
+@@ -22,16 +24,18 @@
+ 
+ ## 当前阶段
+ 
+-当前处于 R1：能力边界与验收设计。仓库已有产品规格、工作契约、验收案例及历史资料实验；首个完整真实任务和读者使用验证仍待开展。
++当前处于 R1：整理资料、产品方向和逻辑架构。先审阅能力目标、与 `agent-context-sync` 的比较门槛，以及由目标推导的职责；当前不接入 Skill、不开发应用或启动试运行。
+ 
+-首轮用来发现可行性和具体失败，后续再验证知识复用、独立运行和成本收益。具体实现语言、存储、工具集成和界面由实际需要决定。
++仓库已有规格、契约、验收设计、调研和历史资料实验；首个完整真实任务、后续复用及真实读者验证仍待开展。早期 Skill 和知识索引保留为未采纳设计草稿，具体语言、存储、集成和界面尚未确定。
+ 
+-从 [首个真实任务的候选与完成条件](docs/validation/golden-cases.md#2-primary-golden-run) 进入验证；当前状态和唯一下一动作见 [项目交接](.agent-context/handoff.md)。
++先读 [能力目标与使用要求](docs/product/capability-goals.md)，再看 [基线与候选资料](docs/research/capability-baseline-and-candidates.md) 和 [架构](docs/architecture/information-system-architecture.md)。当前状态和下一动作见 [项目交接](.agent-context/handoff.md)。
+ 
+ ## 继续阅读
+ 
+ | 你现在关心的问题 | 入口 |
+ |---|---|
++| 应该具备哪些能力，怎样才算比 agent-context-sync 更好？ | [能力目标](docs/product/capability-goals.md) |
++| 已有哪些类似方案，哪些结论已经查证？ | [基线与候选资料](docs/research/capability-baseline-and-candidates.md) |
+ | 为谁解决什么问题，怎样判断有用？ | [产品规格与分阶段成功标准](docs/product/mvp-spec.md) |
+ | 人、AI 和项目工具各自负责什么？ | [架构与职责边界](docs/architecture/information-system-architecture.md) |
+ | 一次任务如何明确目标、核验结果？ | [Agent 工作与结果契约](docs/contracts/agent-output-contract.md) |
+@@ -41,4 +45,4 @@
+ 
+ ## License
+ 
+-License 将在正式发布或引入第三方实现前确定，并同时完成依赖许可审查。
++项目 License 将在正式发布或接入第三方实现前确定。研究快照和未采纳草稿涉及的上游内容保留各自许可与来源；这不表示已选择实现依赖。
+--- before/skills/project-cognition/references/human-material.md
++++ after/skills/project-cognition/references/human-material.md
+@@ -1,4 +1,6 @@
+ # 人类资料
++
++> 未采纳草稿；仅供设计审阅，未安装或运行。以下描述不是当前工作指令，状态见 [草稿入口](../SKILL.md)。
+ 
+ 改编自 technical-writer 的读者目的、文档类型、来源与事实唯一归属规则；方向来自本项目的人类资料契约。版本见 [来源清单](../THIRD_PARTY_NOTICES.md)。
+ 
+--- before/skills/project-cognition/references/knowledge.md
++++ after/skills/project-cognition/references/knowledge.md
+@@ -1,4 +1,6 @@
+ # 知识维护
++
++> 未采纳草稿；仅供设计审阅，未安装或运行。以下描述不是当前工作指令，状态见 [草稿入口](../SKILL.md)。
+ 
+ 改编自 project-memory 的 canonical home、按变化路由、事实与假设区分和 promotion 规则。版本见 [来源清单](../THIRD_PARTY_NOTICES.md)。长期知识位置由 [项目绑定](workspace-binding.md) 确定。
+ 
+--- before/skills/project-cognition/references/outcome-review.md
++++ after/skills/project-cognition/references/outcome-review.md
+@@ -1,4 +1,6 @@
+ # 结果核验
++
++> 未采纳草稿；仅供设计审阅，未安装或运行。以下描述不是当前工作指令，状态见 [草稿入口](../SKILL.md)。
+ 
+ 改编自 Superpowers `verification-before-completion` 的结论与证据对应方法，并采用项目结果契约的范围与核验者区分。版本见 [来源清单](../THIRD_PARTY_NOTICES.md)。
+ 
+--- before/skills/project-cognition/references/task-context.md
++++ after/skills/project-cognition/references/task-context.md
+@@ -1,4 +1,6 @@
+ # 任务与上下文
++
++> 未采纳草稿；仅供设计审阅，未安装或运行。以下描述不是当前工作指令，状态见 [草稿入口](../SKILL.md)。
+ 
+ 改编自 SPEC-AGENTS `plan` 的需求、未改变基线、事实与决定分工、轻量任务验收约定；知识定位参考 project-memory 的按职责读取。版本见 [来源清单](../THIRD_PARTY_NOTICES.md)。
+ 
+--- before/skills/project-cognition/references/workspace-binding.md
++++ after/skills/project-cognition/references/workspace-binding.md
+@@ -1,4 +1,6 @@
+ # 项目绑定
++
++> 未采纳草稿；仅供设计审阅，未安装或运行。下表是曾提出的映射，当前 Base 的目录与存储形式未确定。状态见 [草稿入口](../SKILL.md)。
+ 
+ 本包将通用 Skill 的角色映射到当前项目已有 owner，不要求上游目录结构。
+ 
+--- before/skills/project-cognition/SKILL.md
++++ after/skills/project-cognition/SKILL.md
+@@ -5,7 +5,9 @@
+ 
+ # Project Cognition
+ 
+-帮助维护者把工作交给 Agent 后仍能掌握目标、交付依据和项目知识。以下四个模块改编自现有 Skill，来源、固定版本及改动见 [第三方说明](THIRD_PARTY_NOTICES.md)。它们是本包内的适配组件，可直接读取，无需另外安装上游框架。
++> 状态：未采纳草稿，2026-09-07。未安装或启用，仅保留供资料与架构审阅；以下操作描述不构成当前任务指令。产品能力和组件选择以 [能力目标](../../docs/product/capability-goals.md) 与 [候选资料](../../docs/research/capability-baseline-and-candidates.md) 为准。
++
++草稿尝试用四组上游方法支持任务、核验、知识和资料，来源与许可见 [第三方说明](THIRD_PARTY_NOTICES.md)。这种组合尚未获得采用决定；以下保留其设计内容供比较。
+ 
+ ## 开始当前工作
+ 
+--- before/docs/research/capability-baseline-and-candidates.md
++++ after/docs/research/capability-baseline-and-candidates.md
+@@ -0,0 +1,108 @@
++# 能力基线与候选资料
++
++整理日期：2026-09-07。本文供方向与架构审阅使用。已核对的文件内容、作者自述、社区反馈和本项目的设计判断分别标明；没有安装、实测或确定采用下列候选。
++
++## 1. 先用什么标准看资料
++
++检索围绕 [五项能力目标](../product/capability-goals.md) 展开：保持方向、使用相关规范、核验交付、可靠复用知识、帮助人理解。比较同时看使用和维护负担。
++
++已有材料显示，Trellis、SPEC-AGENTS 等方案已经连接多项能力，project-memory 是连续性与知识维护的直接同类。不能因为它们没有使用本项目术语，就判断无法覆盖需求；目前也没有证据证明一个自建应用会更好。具体资料与原始链接见 [9 月 5 日市场调研](../../output/market-review-20260905/research-note.zh-CN.md)。
++
++用户把 `agent-context-sync` 指定为新应用必须超过的基线。这是第一条验收线；之后仍应使用这些已有方案检查是否有更省力的实现方式。
++
++## 2. agent-context-sync 的实际基线
++
++### 已核对的内容
++
++读取范围为本机正在使用的 `using-agent-context-sync/SKILL.md`、`agent-context-sync/SKILL.md` 及其上下文文件、SyncSet、reviewer 和 decision schema 说明。文件身份见 [本机基线清单](../../output/design-alignment-20260907/baseline-source-manifest.json)。主 Skill SHA-256 为 `669886b0c08f5b0b6eed20f1f83e06b1eee099eef5c1740cb6e12d109a34146a`。
++
++| 已有能力 | 文件中明确表达的行为 | 新应用应保留的价值 |
++| --- | --- | --- |
++| 按需启动与项目接续 | 发现连续性线索后先读 handoff，再读相关决定和近期历史；一次性任务可以跳过 | 后续会话能够恢复当前工作，避免无关上下文开销 |
++| 当前状态与长期理由分工 | handoff 放当前目标和下一动作，session-log 保留历史，decision 保存理由 | 当前工作容易找到，历史可追溯 |
++| 推断与确认分开 | AI 推断不得记为用户确认；重要决定带来源和接受状态 | 防止 Agent 的解释变成未经确认的项目决定 |
++| 写入计划与审查 | 写入前展示 SyncSet，检查来源、范围、敏感内容、体量和确认；已有明确写入授权可以适用 | 维护者掌握长期记录发生了什么变化 |
++| 文件体量与隐私 | handoff 和历史有整理提示；不保存 secrets 或无关个人信息 | 记忆可维护，减少污染 |
++| 有范围的交接 | 可准备限定任务和必要资料的 brief | 工作交给后续 Agent 时保留任务边界 |
++
++上述是指令与模板的资料证据。它们能否稳定执行、实际节省多少工作，尚未做独立测量。其 reviewer 主要审查上下文写入；本次读到的协议没有定义所有项目交付都必须使用的结果验收契约。这一观察限定于上述文件，不能推广为“使用它的 Agent 不会核验结果”。
++
++### 从基线向完整应用扩展
++
++| 用户要解决的问题 | 当前基线提供的起点 | 新应用需要形成的稳定责任 |
++| --- | --- | --- |
++| 这次究竟要做成什么 | 交接里的当前目标与下一动作 | 保留原请求，管理任务理解、完成条件和重要方向变化 |
++| 结果是否可以接受 | 写入审查与已有 Agent/项目规范 | 把本次重要完成条件对应到产物、证据和未验证项 |
++| 上次留下的知识还适用吗 | 决策、历史、状态与仓库冲突检查 | 跨任务知识的来源、范围、依赖变化、冲突与替代关系 |
++| 我能理解项目并判断改动吗 | 可阅读的交接、历史和决策文件 | 围绕人的问题组织同源说明、关系、影响、未知与证据导航 |
++| 日常使用能否更省心 | Agent 维护文件，SyncSet 展示更新 | 用户通过统一入口完成工作与判断，减少文件管理、重复解释和无价值确认 |
++
++右栏是产品设计要求。当前文件说明不足以证明这些扩展一定能改善体验，更不能把预测的摩擦写成基线的实测缺陷。
++
++## 3. 哪些现成材料可供各项职责使用
++
++### 能承担多项职责的方案
++
++| 候选 | 原始资料支持的范围 | 对架构的意义与待验证问题 |
++| --- | --- | --- |
++| [Trellis](https://github.com/mindfold-ai/Trellis) | 规范、任务需求与上下文、实现检查、经验回写 | 完整工作流程候选；需比较阶段与任务管理带来的收益和负担。资料详见 [官方首个任务说明](https://docs.trytrellis.app/start/install-and-first-task) |
++| [SPEC-AGENTS](https://github.com/yibie/SPEC-AGENTS.md) | 项目概念与约束、任务契约、证据、长期知识演化 | 方向、结果与知识边界均有对应设计；可比较整体采用或有限适配，不能先假定只有零散能力 |
++| [OpenSpec](https://openspec.dev/docs/skills) | 需求探索、提案、规格差异、实现、验证与归档 | 任务方向和规格管理候选；具体规则作用范围要依 [官方配置说明](https://openspec.dev/docs/project-config) 检查 |
++| [Global Agent Memory](https://github.com/ozankasikci/global-agent-memory) | Markdown 知识、检索、候选审核、冲突、生命周期与人类阅读入口 | 知识与审核部分可直接比较现成实现；本次资料未建立 Windows 原生运行适用性 |
++| [Basic Memory](https://docs.basicmemory.com/start-here/what-is-basic-memory) | 人与 Agent 共享 Markdown、关系、检索和上下文组装 | 检索和共享底座候选；分类与 Schema 校验不能自动代表用户确认 |
++
++这组材料以 9 月 5 日已核对来源为基点，属于公开功能描述和设计参考，没有本项目运行结果。
++
++### 已阅读具体指令的 Skill
++
++| Skill 来源 | 可以参考的职责 | 适配前必须考虑的差异 |
++| --- | --- | --- |
++| [SPEC-AGENTS plan](https://github.com/yibie/SPEC-AGENTS.md/blob/5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed/.spec-agents/doctrine/skills/plan/SKILL.md) | 让任务目标、范围、相关项目约束与验证要求可以审阅 | 本项目保留普通任务的轻量路径，具体工作步骤交给 Agent |
++| [project-memory](https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/SKILL.md) | 当前事实、假设、决定、证据和恢复入口分工；按需要读取与更新 | 本项目已有资料落点，应避免重复建立一套目录；它同样以 Agent 遵守指令为基础 |
++| [Superpowers verification-before-completion](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/verification-before-completion/SKILL.md) | 完成声明必须有对应验证证据，测试通过与需求满足分别判断 | 逐条要求重新运行的规则需与证据适用性和成本协调；整套框架的其他流程不因引用此 Skill 而成为项目约束 |
++| [technical-writer](https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/technical-writing/SKILL.md) 与 [truth](https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/plugins/technical-writer/skills/technical-writing/references/truth.md) | 读者目的、来源、事实与提案区分、资料失效与单一事实归属 | 固定写作风格和画图工具属于上游选择；本项目按读者问题和实际理解效果选择表达 |
++
++这四组资料的固定 revision、路径、SHA-256 和本地快照见 [上游文件清单](../../output/skill-adoption-20260907/upstream/files.json)。已保存其 MIT 许可文本；许可允许的范围与是否值得采用是两个判断。
++
++此前写出的 [组合草稿](../../skills/project-cognition/SKILL.md) 只展示过一种可能的适配方式，已标为未采纳。当前没有组件选型结论，也没有 Skill 已经接入的声明。
++
++### 需求与方法来源
++
++- 美团的 [Agent 评测文章](https://tech.meituan.com/2026/08/07/Agent-Evaluation.html) 和 [AI Coding 实践文章](https://tech.meituan.com/2026/05/07/Agent-AI-Coding.html) 是已有评审与验证设计的输入，其对本项目的采用范围记录在 [DEC-2026-09-05-001](../../.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md)。外部案例的结果不证明本项目有效。
++- skills.sh 用于发现 Skill，GitHub 的实际文件用于核对行为；LINUX DO 和 Reddit 用于了解使用者提过什么问题。社区讨论已经包含规范失守、跨会话接续、文档负担和静默改变需求等需求；原帖与来源类型见 [已有调研](../../output/market-review-20260905/research-note.zh-CN.md#社区是否讨论过同样的需求)。社区推荐不作为质量证明。
++
++## 4. Comparison Design
++
++状态：供后续审阅的比较设计，本轮不运行。
++
++### 比什么
++
++| 场景 | 要观察的能力 | 同时记录的人工负担 |
++| --- | --- | --- |
++| 中断后换会话继续 | 找对目标、已确认决定、未完成项和下一动作 | 再次介绍背景、纠正错误记忆、等待定位资料 |
++| 一个普通局部任务 | 方向与规范正确，交付可核验，流程保持轻量 | 启动、额外确认、收尾和记录维护 |
++| 一次结构性 Design 交付 | 结果回答原问题，证据与结论范围匹配，关键取舍可判断 | 补充目标、纠偏、打开证据和复核 |
++| 项目变化后的后续任务 | 正确复用、识别过期或冲突，推断未被冒充确认 | 重复解释、重新查证、修正与维护知识 |
++| 人依据资料作维护判断 | 能找到行为、影响、未知、待决定事项并返回证据 | 找资料、阅读、术语澄清和来回定位 |
++
++### 怎样保证比较公平
++
++- 基线使用当前实际的 Agent、`agent-context-sync`、启动规则和项目约定；记录自定义部分，不能将已有能力从基线移除。
++- 两边固定原始任务、源码 revision、可用来源、规范、权限和重要完成条件。系统组织资料的方式可以不同，但必须记录建立与更新资料的人工成本。
++- 尽量使用相同模型与环境、独立上下文。无法控制的模型差异、已有答案和读者学习效应明确列出；必要时交错顺序或用难度相称的任务，不伪称严格因果实验。
++- 在看结果之前确定每个任务的判据和实际观察方法。实现正确、模型自评、独立评审、知识接纳、真实用户反馈各有自己的状态。
++- 记录人工补充、纠偏、查找、核验、知识整理和读者使用，以及可获得的总耗时与资源成本。缺失保持未记录，估算说明方法。
++
++### 怎样判断方向值得继续
++
++先检查基线已有的接续与权威边界有没有退步，再检查五项能力能否共同服务真实任务，最后比较实际人工负担与使用意愿。功能增量如果伴随明显额外操作，应说明收益是否足够抵消，不能只报新增功能数量。
++
++产品成功需要支持 [能力目标中的三条门槛](../product/capability-goals.md#4-怎样才算超过-agent-context-sync)。未达到时优先缩减流程、复用现成组件或修正交互；不以继续堆叠 Skill 代替问题诊断。单次对照只支持相应任务和条件下的结论，持续替代仍要观察后续任务。
++
++这些观察与 [GC-013 后续复用](../validation/golden-cases.md#17-gc-013--reuse-knowledge-in-a-follow-up-task)、[GC-014 收益对照](../validation/golden-cases.md#18-gc-014--compare-benefit-and-added-work) 衔接，不新增本轮执行承诺。
++
++## 5. 资料如何参与下一步选择
++
++先审阅能力目标和逻辑架构，明确必须保留的日常体验。之后选择少量最有代表性的现成方案与当前基线比较，按真实差距决定整体复用、局部适配或自建范围。
++
++每项采用结论应写清楚：对应目标、使用的版本、实际覆盖、已观察到的限制、新增成本和替换方式。当前这些结论全部待验证；已保存的源码和草稿是研究材料。
+--- before/skills/project-cognition/THIRD_PARTY_NOTICES.md
++++ after/skills/project-cognition/THIRD_PARTY_NOTICES.md
+@@ -0,0 +1,107 @@
++# 未采纳草稿的上游来源与许可
++
++状态：研究与设计草稿，未安装、未启用、未确定采用。此说明仅保留已参考和改写内容的归属。项目自身 License 尚未选定。
++
++对应关系：task-context 参考 SPEC-AGENTS plan 与 project-memory；outcome-review 参考 Superpowers verification-before-completion；knowledge 参考 project-memory；human-material 参考 technical-writer。草稿调整了固定目录、步骤、验证重跑及表达偏好，加入本项目已有的目标、证据和准入边界；这些调整未经行为验证。
++
++固定版本与原始文件见 [来源清单](../../output/skill-adoption-20260907/upstream/files.json)，设计判断见 [候选资料](../../docs/research/capability-baseline-and-candidates.md)。以下保留上游许可原文。
++
++## yibie/SPEC-AGENTS.md
++
++[上游许可](https://github.com/yibie/SPEC-AGENTS.md/blob/5ccfd6a8ce009016f6ed76c5ca39a4bd529d95ed/LICENSE)
++
++```text
++MIT License
++
++Copyright (c) 2026 yibie
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++```
++
++## tasuku-9/project-memory-skill
++
++[上游许可](https://github.com/tasuku-9/project-memory-skill/blob/de8a47d555105eccfafa1e2f050f43c8de2d48ce/LICENSE)
++
++```text
++MIT License
++
++Copyright (c) 2026 tasuku-9
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++```
++
++## obra/superpowers
++
++[上游许可](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/LICENSE)
++
++```text
++MIT License
++
++Copyright (c) 2025 Jesse Vincent
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++```
++
++## riekelt/technical-writer
++
++[上游许可](https://github.com/riekelt/technical-writer/blob/099d31bc3fa1f82acc6bc196f2a9a7010607f66d/LICENSE)
++
++```text
++MIT License
++
++Copyright (c) 2026 riekelt
++
++Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++```
+--- before/.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md
++++ after/.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md
+@@ -0,0 +1,64 @@
++# DEC-2026-09-07-001: Design first and surpass the context-sync baseline
++
++Status: accepted  
++Date: 2026-09-07  
++Confirmed by: the user's explicit instruction quoted below; acceptance is limited to work scope and the product requirement  
++Related sessions: 2026-09-05 to 2026-09-07, product origins, existing alternatives and capability-first planning  
++Related files:
++- `docs/product/capability-goals.md`
++- `docs/research/capability-baseline-and-candidates.md`
++- `docs/architecture/information-system-architecture.md`
++- `docs/product/mvp-spec.md`
++- `docs/validation/golden-cases.md`
++- `README.md`
++- `AGENTS.md`
++Supersedes: the immediate next-action ordering in DEC-2026-09-03-003 Decision 10 and DEC-2026-09-05-001 Consequences only; their product invariants and later validation requirements remain active  
++Superseded by: none
++
++## Context
++
++The user described agent-context-sync as an early form of this product idea, then asked whether existing Skills or applications already meet the need. Research found direct alternatives and multi-capability frameworks. The user asked to clarify capability goals before deriving components. The Agent began drafting a Skill combination before the direction and architecture review was complete.
++
++The user then explicitly stopped that progression and requested materials, direction and architecture first. Existing project documents still placed a Golden Run as the immediate next action and needed a scope correction.
++
++## Decision
++
++1. The current work is to organize research, product direction, capability goals and logical architecture. Skill installation, integration, application implementation and trial execution are deferred until a new instruction to proceed.
++2. The new application must be more complete and easier to use than the user's current agent-context-sync approach. This is a requirement to demonstrate, not an observed result.
++3. Capability goals precede component selection. Existing Skills and tools are research inputs and candidates; their presence in the repository does not mean adoption.
++
++These three points record explicit user instructions. The proposed experience details, architecture decomposition, comparison scenarios and specific acceptance criteria in the revised design documents have not been separately accepted by the user.
++
++## Reasons
++
++- The user wants the purpose and capability target clear before assembling the solution.
++- The earlier Skill provides an actual starting point and a required comparison baseline.
++- Completeness and daily usability must both guide design; the requirement does not establish a chosen runtime, storage or interface.
++
++## Rejected Alternatives
++
++- Continue implementing or integrating the drafted Skill now: inconsistent with the user's latest instruction.
++- Treat a Skill bundle or more documents as sufficient evidence of improvement: does not demonstrate the stated product requirement.
++- Treat the proposed architecture or trial criteria as already user-confirmed: outside the scope of the user's confirmation.
++
++## Evidence
++
++- User: “最重要的还是明确好产品的能力目标，然后根据目标反向推理所需组件”.
++- User: “先别做，先整理资料、方向和架构。而且这个新应用一定要比agent-context-sync完善好用”.
++- The local agent-context-sync instructions already cover continuity, decisions, inferred status and write review. The baseline inspection and its limits are documented in the research index.
++- Early `skills/project-cognition/` files and `knowledge/` examples existed as drafts. They were not installed or run as a product in this task.
++
++## Consequences
++
++- The next action is design review of capability goals, baseline evidence and logical architecture.
++- The proposed output-diagnosis Golden Case retains its proposed status; no reference-project change is authorized or performed by this decision.
++- The early Skill files are retained and explicitly marked unadopted. The knowledge index is a design example, not a chosen operational Base.
++- The product must eventually compare against the actual context-sync setup, preserving its existing capabilities and accounting for human work. Detailed experimental choices remain proposed.
++- No efficacy, ease-of-use, runtime, reuse or real-reader acceptance is established by this documentation work.
++
++## Review Triggers
++
++- The user directs the project to begin implementation or trials.
++- Design review changes the target users, capability scope or intended interaction.
++- Actual comparisons show loss of baseline capability or added burden that outweighs the benefit.
++- A suitable existing application or component changes the justified implementation scope.

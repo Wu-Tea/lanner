@@ -1,0 +1,41 @@
+{
+  "source": "E:\\work\\yxyw\\yxyw-safe-check\\src\\main\\java\\com\\ecidi\\dam\\modules\\util\\shortpath\\DistanceMatrixUtil.java",
+  "sha256": "ebd797a921d0f5c40b6d167d12896d10755fe0f8f6fc24cbba209acb1c8a7e50",
+  "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e",
+  "java_compiler": "javac 17.0.11",
+  "scope": "Exact extracted constants and four-BigDecimal method; no Spring, DB, Feign or route invocation",
+  "reference_assumption": "Input is latitude/longitude in degrees; sphere radius 6371000 m; no ellipsoid accuracy claim",
+  "samples": [
+    {
+      "input_lat_lon_degrees": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "actual_java": 63781.0,
+      "reference_sphere_m": 111194.92664455874
+    },
+    {
+      "input_lat_lon_degrees": [
+        30,
+        120,
+        30,
+        121
+      ],
+      "actual_java": 9442.09549869929,
+      "reference_sphere_m": 96297.32567761323
+    },
+    {
+      "input_lat_lon_degrees": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual_java": 0.0,
+      "reference_sphere_m": 0.0
+    }
+  ],
+  "observed_disagreement": true
+}

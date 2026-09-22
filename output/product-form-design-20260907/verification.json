@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-09-07",
+  "result": "PASS",
+  "scope": "Static documentation and source snapshot verification only",
+  "markdown_files": 6,
+  "local_reference_targets": 60,
+  "broken_references": [],
+  "upstream_files": 18,
+  "hash_mismatches": 0,
+  "upstream_json_files_parsed": 7,
+  "upstream_license_files": 3,
+  "handoff_lines": 74,
+  "session_log_lines": 159,
+  "session_log_hash_unchanged": true,
+  "architecture_status_proposed": true,
+  "checked_active_plugin_files_present": [],
+  "runtime_validation": "not run",
+  "installation": "not performed",
+  "note": "No checks of actual agent behavior, Hook coverage, project scanning, mouse capability or product effectiveness were run."
+}

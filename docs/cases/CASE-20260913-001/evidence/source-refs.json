@@ -1,0 +1,492 @@
+[
+  {
+    "id": "S01",
+    "path": "README.md",
+    "line": 1,
+    "anchor": "# microSafeCheckService",
+    "total_lines": 89,
+    "sha256": "65559cf9f0f2f5185c33ab06ade6d642d43ff82878065a8567a8967c5987f5d1",
+    "scope": "生成器说明与历史构建入口",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S02",
+    "path": "build.gradle",
+    "line": 40,
+    "anchor": "sourceCompatibility=1.8",
+    "total_lines": 367,
+    "sha256": "87c2b2f09785ee30af7c13f0f9a5f1d4893cc727ecdd399c07cebe5e2d3c5d36",
+    "scope": "构建版本、依赖与 profile 分流；未构建",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S03",
+    "path": "src/main/java/com/ecidi/dam/MicroSafeCheckServiceApp.java",
+    "line": 35,
+    "anchor": "@SpringBootApplication",
+    "total_lines": 126,
+    "sha256": "0825d023176bf7455d098dce02b78312196015b490e161091439fa7624e598ad",
+    "scope": "Spring 应用与 Feign / discovery 入口",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S04",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectLineRecommendController.java",
+    "line": 37,
+    "anchor": "@RequestMapping(",
+    "total_lines": 59,
+    "sha256": "b6f760e651dcd374eba7766bf94d73826a513f9dd9b92e0ee9be5dcaae647d43",
+    "scope": "推荐 HTTP 契约；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S05",
+    "path": "src/main/java/com/ecidi/dam/modules/dto/RecommendLineQuery.java",
+    "line": 13,
+    "anchor": "public class",
+    "total_lines": 28,
+    "sha256": "2c9215a50f3fab7afd5003505adac87908d594bff57e03b43c318fe0274f715d",
+    "scope": "推荐输入；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S06",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+    "line": 883,
+    "anchor": "public List<LineFinderObjectVo> recommendLines",
+    "total_lines": 1131,
+    "sha256": "3cde5202cdeefe74287dc68e6a357f76bf95709bd153df4325ee3736ff0c85f3",
+    "scope": "推荐编排；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S07",
+    "path": "src/main/java/com/ecidi/dam/modules/entity/InspectObject.java",
+    "line": 56,
+    "anchor": "private Long capitalId",
+    "total_lines": 186,
+    "sha256": "7908c14d7196298a0e52372ca172bf09ebf9d186e4799ae6351ae1be1509d051",
+    "scope": "对象关联资产及 Translate 注解；字段核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S08",
+    "path": "src/main/java/com/ecidi/dam/modules/util/TranslateUtils.java",
+    "line": 38,
+    "anchor": "public void translateModelStatisticsCost(List",
+    "total_lines": 187,
+    "sha256": "c39fe4667a77f0e59f6ad0e933fc45026d38ca252f02ad188ba74f7fddc00f80",
+    "scope": "模型翻译入口及处理链",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S09",
+    "path": "src/main/java/com/ecidi/dam/modules/util/translate/impl/CapitalTranslateHandler.java",
+    "line": 58,
+    "anchor": "public Object beforeTranslate",
+    "total_lines": 85,
+    "sha256": "bc29a6e91dd1dd3ab9d2a4d122052b1f9e9160aa0d7f2a8a816907cbc34314cc",
+    "scope": "资产来源、配置分支、ThreadLocal；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S10",
+    "path": "src/main/java/com/ecidi/dam/client/CapitalClient.java",
+    "line": 96,
+    "anchor": "ApiResponseBody<List<CapitalExtendVo>> extendList",
+    "total_lines": 98,
+    "sha256": "e4ce15bb4c192ab6030c7686cdbd7b192fd051fa94e043969a4df1352bba3df9",
+    "scope": "扩展字段 Feign 契约",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S11",
+    "path": "src/main/resources/mapper/InspectObjectMapper.xml",
+    "line": 85,
+    "anchor": "<select id=\"historyVisits\"",
+    "total_lines": 119,
+    "sha256": "307b82e5bc4bbad4f667601078ca4a35498d4793500c1c60c1b430578b605c49",
+    "scope": "历史边权 SQL；读完整查询",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S12",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/DistanceMatrixUtil.java",
+    "line": 19,
+    "anchor": "private static final BigDecimal EQUATOR_RADIUS",
+    "total_lines": 122,
+    "sha256": "ebd797a921d0f5c40b6d167d12896d10755fe0f8f6fc24cbba209acb1c8a7e50",
+    "scope": "距离计算与矩阵；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S13",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/MatrixWeightUtil.java",
+    "line": 11,
+    "anchor": "public class MatrixWeightUtil",
+    "total_lines": 125,
+    "sha256": "d3f01a35032483e65d0fc5e7854d9a94f23e0edb037348a3cbcb260d7a2044a8",
+    "scope": "空间与历史加权、合并；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S14",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/PathfindingUtils.java",
+    "line": 28,
+    "anchor": "public static int findClosestNode(List<InspectObject> objectList, String",
+    "total_lines": 60,
+    "sha256": "09b6db4131f0217aa35cdd12430c63e8d87aaf17b0d9c22bfe1061866fb1ed25",
+    "scope": "起点选择；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S15",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/algorithm/AStarPathfinding.java",
+    "line": 16,
+    "anchor": "public PathResult findPath",
+    "total_lines": 132,
+    "sha256": "b85d0705c412d5cd6388fb28c0c2bcddacbd5944583b61a7154bf4f784047b1e",
+    "scope": "搜索与距离汇总；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S16",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/model/Node.java",
+    "line": 8,
+    "anchor": "public class Node",
+    "total_lines": 52,
+    "sha256": "ee4149629a1e77d500dffcf0416fb7e2bbe22cf325af8ffcfdda75091f7e11ae",
+    "scope": "优先队列比较；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S17",
+    "path": "src/main/java/com/ecidi/dam/modules/util/shortpath/model/PathResult.java",
+    "line": 99,
+    "anchor": "public void calculateDuration",
+    "total_lines": 116,
+    "sha256": "b0dee29edc786b9c5725a694460ea70aee3b423ad96feecd584d4ff7eeb3eab8",
+    "scope": "ETA 计算；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S18",
+    "path": "src/main/java/com/ecidi/dam/modules/vo/LineFinderObjectVo.java",
+    "line": 35,
+    "anchor": "public static LineFinderObjectVo build",
+    "total_lines": 46,
+    "sha256": "2fbf7bb62e64585df6966b4722819b21ecad0f175e181df97ac158f1da6a51ee",
+    "scope": "输出二次加工；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S19",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectLineController.java",
+    "line": 38,
+    "anchor": "@RequestMapping(\"/api/inspect/line\")",
+    "total_lines": 167,
+    "sha256": "1cafb99c4e5e7def42afd743b44188c5b26e378c8b69b18d8d8052197c214c89",
+    "scope": "路线、计划、导出与复制入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S20",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectLineServiceImpl.java",
+    "line": 206,
+    "anchor": "public InspectPlan createPlan",
+    "total_lines": 1131,
+    "sha256": "3cde5202cdeefe74287dc68e6a357f76bf95709bd153df4325ee3736ff0c85f3",
+    "scope": "计划展开并直接创建任务；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S21",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectPlanServiceImpl.java",
+    "line": 92,
+    "anchor": "public void clonePlanAndTask",
+    "total_lines": 105,
+    "sha256": "faf5d1bd3db7c496ea66364d203e657dc3200687bdd6354ee2dba48864672bf8",
+    "scope": "关闭计划及未来任务；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S22",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectTaskAppController.java",
+    "line": 148,
+    "anchor": "@PostMapping(\"/saveCacheInspectV2\")",
+    "total_lines": 169,
+    "sha256": "878ef21efb1a9ad40fcf08b4548e4ef26ad8534207f49a07280b8e2adfe2b261",
+    "scope": "App 提交、状态及委托入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S23",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+    "line": 2017,
+    "anchor": "public Result<Object> saveCacheInspectV2",
+    "total_lines": 2293,
+    "sha256": "80929d7d3280b5bb727b6b09109d5df9638690057a74b5e42775a8b1bae479cc",
+    "scope": "V2 编排、Redis 与异步边界；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S24",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+    "line": 1525,
+    "anchor": "inspectMqSender.send(InspectMqEnum.INSPECT_NORMAL",
+    "total_lines": 2293,
+    "sha256": "80929d7d3280b5bb727b6b09109d5df9638690057a74b5e42775a8b1bae479cc",
+    "scope": "提交内部实际生产消息处；定向片段",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S25",
+    "path": "src/main/java/com/ecidi/dam/util/mq/InspectMqSender.java",
+    "line": 25,
+    "anchor": "public void send(",
+    "total_lines": 46,
+    "sha256": "c0afa079b7bde712114533bfd713eb61f7a13a9915ab91150546cffb9b99fe91",
+    "scope": "MQ 发布；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S26",
+    "path": "src/main/java/com/ecidi/dam/util/mq/InspectMqConsumer.java",
+    "line": 28,
+    "anchor": "public class InspectMqConsumer",
+    "total_lines": 232,
+    "sha256": "d39caa160d7fb215f099f1af4753e92c4498ba8beebcf5699303a1bcefdcce10",
+    "scope": "消费持久化、ack/nack/死信；定向核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S27",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+    "line": 1957,
+    "anchor": "public Result<InspectTaskRecord> assignDelegation",
+    "total_lines": 2293,
+    "sha256": "80929d7d3280b5bb727b6b09109d5df9638690057a74b5e42775a8b1bae479cc",
+    "scope": "委托前置条件与状态更新；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S28",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+    "line": 576,
+    "anchor": "public Result<Map<String, Object>> updateInspectTaskStatus",
+    "total_lines": 2422,
+    "sha256": "09dda7b3b29eafea738824020246d1ce724f5da5af10d2bb22bd9f6bbc7f7042",
+    "scope": "任务开始/暂停/结束及负责人；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S29",
+    "path": "src/main/java/com/ecidi/dam/job/TaskJob.java",
+    "line": 59,
+    "anchor": "public void updateTaskStatus",
+    "total_lines": 207,
+    "sha256": "87f24570c2cc3ceb4e54498b3db267b7c5866c367e9df0a6197295a59268737c",
+    "scope": "10 分钟逾期检查、告警和消警；定向片段，仅保存定位",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S30",
+    "path": "src/main/java/com/ecidi/dam/modules/enums/InspectTaskRunStatus.java",
+    "line": 7,
+    "anchor": "public enum",
+    "total_lines": 25,
+    "sha256": "70e9f94001cd8f0f8403a184038ee35c42d158b112a807ba46ef78db0403b822",
+    "scope": "任务状态枚举；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S31",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/AppVersionSyncController.java",
+    "line": 42,
+    "anchor": "public class AppVersionSyncController",
+    "total_lines": 175,
+    "sha256": "1e346a66f2262946b2c45e8f72df22b74a25f23f2a2d2d496115b9abf01f63d9",
+    "scope": "离线下载/合并/预取入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S32",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectTaskRecordController.java",
+    "line": 349,
+    "anchor": "public void batchRecordReport",
+    "total_lines": 459,
+    "sha256": "258e7e432aaf27e32488104df4136de3eaf2e85b36b2579425a45b7d0c18f332",
+    "scope": "批量报告；入口及调用核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S33",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskRecordServiceImpl.java",
+    "line": 1912,
+    "anchor": "public void batchRecordReport",
+    "total_lines": 2422,
+    "sha256": "09dda7b3b29eafea738824020246d1ce724f5da5af10d2bb22bd9f6bbc7f7042",
+    "scope": "报告实现定位；方法清单，未完整追踪文件链",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S34",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/BugMainServiceImpl.java",
+    "line": 503,
+    "anchor": "public Result<Boolean> syncDefectsStatus",
+    "total_lines": 746,
+    "sha256": "124a832fed158c929522eb5d842aeba3350590fb8f794a4bcb235ab45c498958",
+    "scope": "外部问题回写巡检缺陷；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S35",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectRecordDetailController.java",
+    "line": 41,
+    "anchor": "@GetMapping(\"/inspect-object-snapshots",
+    "total_lines": 45,
+    "sha256": "63cc0efcf4b8c7842dcb3008759d21f7d07834cd334210a7f0bddda845b173fc",
+    "scope": "对象快照入口；读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S36",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectRecordDetailServiceImpl.java",
+    "line": 77,
+    "anchor": "public Result<InspectObjectSnapshotDTO> findByContentResultId",
+    "total_lines": 107,
+    "sha256": "a001e78b3335245367c0422610286468cbe558b297fef9f9b1676517db95dc86",
+    "scope": "快照来源与时间字段消费者；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S37",
+    "path": "src/main/java/com/ecidi/dam/modules/entity/InspectRecordDetail.java",
+    "line": 129,
+    "anchor": "private Date inspectTime",
+    "total_lines": 131,
+    "sha256": "79e8bdeba154d375cc4aca3f6cf18863c4daad3052698c0dcaab81fd50c81181",
+    "scope": "巡检时间字段；字段核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S38",
+    "path": "src/main/java/com/ecidi/dam/modules/entity/InspectTaskRecord.java",
+    "line": 42,
+    "anchor": "private Long planId",
+    "total_lines": 240,
+    "sha256": "fc546e2c01460eb04689ad1349798cc7e274f52b6ed2cd381d4f5db977fff3ea",
+    "scope": "任务关联计划/路线、状态和负责人；字段核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S39",
+    "path": "src/main/java/com/ecidi/dam/modules/entity/InspectObjectContent.java",
+    "line": 28,
+    "anchor": "public class",
+    "total_lines": 167,
+    "sha256": "6cbf9f69629dc1d30396385657f814254ec3bf908a2cc374b3e54d2cb5c00bf4",
+    "scope": "对象检查内容；字段核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S40",
+    "path": "src/main/java/com/ecidi/dam/modules/entity/InspectLineObject.java",
+    "line": 29,
+    "anchor": "public class",
+    "total_lines": 139,
+    "sha256": "00a3b7006c77327a8e36fb83b41b4bff0508d9c01be7af3ccc25cb0a88f75cd6",
+    "scope": "路线与对象关联；字段核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S41",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectObjectController.java",
+    "line": 41,
+    "anchor": "public class",
+    "total_lines": 165,
+    "sha256": "0e8e5f0da07f373f6c5ae652ab495c9d58ea61e22399d174e8bb34c46df8a5cc",
+    "scope": "对象管理入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S42",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/InspectContentController.java",
+    "line": 34,
+    "anchor": "public class",
+    "total_lines": 157,
+    "sha256": "9bed5c8516a3f981e55ee32b32a288bc41081ac2da9bd49b289f2fb0b0c22024",
+    "scope": "标准库入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S43",
+    "path": "src/main/java/com/ecidi/dam/modules/controller/StatisticsController.java",
+    "line": 23,
+    "anchor": "public class",
+    "total_lines": 87,
+    "sha256": "6fa3da06d3698ad61f3130580fb8614c4e9bd2ff2b72b2629dd89374961f69b8",
+    "scope": "统计入口；注解/方法核对",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S44",
+    "path": "gradle.properties",
+    "line": 13,
+    "anchor": "spring_boot_version=",
+    "total_lines": 56,
+    "sha256": "77a8f1b55da17a5fac8e7108e0c2bbb15e97636d3778bf200cc669ef2e47a700",
+    "scope": "本地构建版本，仅记录非敏感字段定位",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S45",
+    "path": "gradle/wrapper/gradle-wrapper.properties",
+    "line": 3,
+    "anchor": "distributionUrl=",
+    "total_lines": 5,
+    "sha256": "3f64a54e6c668160ba8ce18944a5f6248bc45d94c60d23c2ac536194edb93a44",
+    "scope": "Gradle wrapper 版本",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S46",
+    "path": "src/main/java/com/ecidi/dam/util/mq/InspectMqConfig.java",
+    "line": 27,
+    "anchor": "private Map<String, Object> withDLX",
+    "total_lines": 117,
+    "sha256": "f2f80dae46bf5bb3a6213dccc8e224d239f5610264b5564ceab3738f9a36150f",
+    "scope": "第二轮：全部队列与 DLX 配置，读全文件",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S47",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+    "line": 1875,
+    "anchor": "public FileInfoDTO getFileId",
+    "total_lines": 2293,
+    "sha256": "80929d7d3280b5bb727b6b09109d5df9638690057a74b5e42775a8b1bae479cc",
+    "scope": "第二轮：保留的 Base64 上传路径；定向片段",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S48",
+    "path": "src/main/java/com/ecidi/dam/modules/service/impl/InspectTaskAppServiceImpl.java",
+    "line": 2240,
+    "anchor": "private void saveCachePhotoWithId",
+    "total_lines": 2293,
+    "sha256": "80929d7d3280b5bb727b6b09109d5df9638690057a74b5e42775a8b1bae479cc",
+    "scope": "第二轮：V2 随手拍与附件同步保存；读完整方法",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  },
+  {
+    "id": "S49",
+    "path": "src/main/resources/config/application-prod.yml",
+    "line": 46,
+    "anchor": "acknowledge-mode:",
+    "total_lines": 248,
+    "sha256": "947264df6527daa80dc552ecefdb6dc42cbe8621b2bb4a4ab58d4f4d52b44341",
+    "scope": "第二轮：仅核对 listener 确认模式与并发字段，未转存其他配置",
+    "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e"
+  }
+]

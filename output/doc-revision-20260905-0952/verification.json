@@ -1,0 +1,91 @@
+{
+  "status": "pass",
+  "markdown_files": 13,
+  "local_links_and_anchors": 29,
+  "yaml_examples": 4,
+  "case_ids": [
+    "GC-001",
+    "GC-002",
+    "GC-003",
+    "GC-004",
+    "GC-005",
+    "GC-006",
+    "GC-007",
+    "GC-008",
+    "GC-009",
+    "GC-010",
+    "GC-011",
+    "GC-012",
+    "GC-013",
+    "GC-014"
+  ],
+  "session_history_preserved": true,
+  "errors": [],
+  "changes": [
+    {
+      "file": "README.md",
+      "before_lines": 111,
+      "after_lines": 44,
+      "changed": true
+    },
+    {
+      "file": "AGENTS.md",
+      "before_lines": 106,
+      "after_lines": 109,
+      "changed": true
+    },
+    {
+      "file": "docs/product/mvp-spec.md",
+      "before_lines": 236,
+      "after_lines": 260,
+      "changed": true
+    },
+    {
+      "file": "docs/validation/golden-cases.md",
+      "before_lines": 260,
+      "after_lines": 339,
+      "changed": true
+    },
+    {
+      "file": "docs/contracts/agent-output-contract.md",
+      "before_lines": 204,
+      "after_lines": 239,
+      "changed": true
+    },
+    {
+      "file": "docs/contracts/visual-view-contract.md",
+      "before_lines": 195,
+      "after_lines": 204,
+      "changed": true
+    },
+    {
+      "file": "docs/architecture/information-system-architecture.md",
+      "before_lines": 282,
+      "after_lines": 290,
+      "changed": true
+    },
+    {
+      "file": ".agent-context/handoff.md",
+      "before_lines": 69,
+      "after_lines": 57,
+      "changed": true
+    },
+    {
+      "file": ".agent-context/session-log.md",
+      "before_lines": 109,
+      "after_lines": 131,
+      "changed": true
+    },
+    {
+      "file": ".agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md",
+      "before_lines": 0,
+      "after_lines": 71,
+      "changed": true
+    }
+  ],
+  "limits": [
+    "Static documentation checks only",
+    "No Golden Run, runtime test, reuse experiment or reader study performed",
+    "GitHub-style heading slugs approximated; linked headings are also reviewed manually"
+  ]
+}

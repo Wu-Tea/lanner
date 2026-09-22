@@ -1,0 +1,579 @@
+{
+  "case_id": "CASE-20260908-001",
+  "source": {
+    "thread_id": "01a07c11-d7e0-78e1-be00-e6639a0b9aec",
+    "title": "实现原生鼠标屏蔽算法",
+    "url": "codex://threads/01a07c11-d7e0-78e1-be00-e6639a0b9aec",
+    "host_id": "local",
+    "workspace": "D:\\work\\AI\\yolo-study-001",
+    "thread_updated_at_utc": "2026-09-07T16:18:45.000Z",
+    "retrieval": {
+      "tool": "read_thread",
+      "turnLimit": 10,
+      "includeOutputs": true,
+      "maxOutputCharsPerItem": 9000,
+      "hasMore": false
+    }
+  },
+  "coverage": {
+    "items": 537,
+    "commands": 207,
+    "truncatedCommandOutputs": 57,
+    "contextReads": 6,
+    "visibleOldHandoffs": 6,
+    "contextFileChanges": 0,
+    "contextWriteCandidates": 0,
+    "suggestionTurns": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "method": "通读 8 轮用户要求与最终回复，按路线变化、已读决定、关键补丁和上下文维护定向核对可见事件。未通读所有源码输出。",
+    "limits": [
+      "57 份命令输出由接口截断；正面观察仅引用可见片段。",
+      "未重跑鼠标项目、未查看或复制私人视频、未核验全部游戏行为。",
+      "未获得可完整重放的源码与运行快照；不借用 Project Cognition 旧 Golden Case 的 revision。",
+      "上下文写入统计覆盖显式 fileChange 与命令文本扫描，不排除动态间接写入或其他任务的操作。",
+      "现有六项能力是否能实际阻止偏离属于待试验假设。"
+    ]
+  },
+  "turns": [
+    {
+      "label": "T1",
+      "id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+      "status": "completed",
+      "start_utc": "2026-09-07T13:32:54.000Z",
+      "end_utc": "2026-09-07T13:46:23.000Z"
+    },
+    {
+      "label": "T2",
+      "id": "01a07c26-3524-7e21-83a0-0a26034a6108",
+      "status": "completed",
+      "start_utc": "2026-09-07T13:54:33.000Z",
+      "end_utc": "2026-09-07T13:56:28.000Z"
+    },
+    {
+      "label": "T3",
+      "id": "01a07c2e-6793-7123-995e-51e795347d89",
+      "status": "interrupted",
+      "start_utc": "2026-09-07T14:03:31.000Z",
+      "end_utc": "2026-09-07T14:18:55.000Z"
+    },
+    {
+      "label": "T4",
+      "id": "01a07c60-6701-75a0-bc5e-551a35956fe9",
+      "status": "completed",
+      "start_utc": "2026-09-07T14:58:07.000Z",
+      "end_utc": "2026-09-07T15:17:56.000Z"
+    },
+    {
+      "label": "T5",
+      "id": "01a07c73-daaa-74a3-97ed-19bdac9e534c",
+      "status": "completed",
+      "start_utc": "2026-09-07T15:19:22.000Z",
+      "end_utc": "2026-09-07T15:27:35.000Z"
+    },
+    {
+      "label": "T6",
+      "id": "01a07c7c-99c1-7872-8e21-c4a5372966af",
+      "status": "completed",
+      "start_utc": "2026-09-07T15:28:55.000Z",
+      "end_utc": "2026-09-07T15:40:56.000Z"
+    },
+    {
+      "label": "T7",
+      "id": "01a07c88-e8a2-7ab0-bad4-9643b9c4891d",
+      "status": "completed",
+      "start_utc": "2026-09-07T15:42:22.000Z",
+      "end_utc": "2026-09-07T15:54:34.000Z"
+    },
+    {
+      "label": "T8",
+      "id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "status": "completed",
+      "start_utc": "2026-09-07T15:54:35.000Z",
+      "end_utc": "2026-09-07T16:18:45.000Z"
+    }
+  ],
+  "excerpts": [
+    {
+      "id": "E01",
+      "label": "原始目标",
+      "turn": "T1",
+      "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+      "item_id": "01a07c12-64be-7a03-a0eb-45221a4457e0",
+      "item_ordinal": 1,
+      "item_type": "userMessage",
+      "field": "text content",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "给这个项目做一套mouse控制算法，逻辑可以跟gamepad一样，要求给原生mouse信号屏蔽掉，屏蔽方案项目里我记得有\n"
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "label": "第一轮已发现旧工作目录与旧能力",
+      "turn": "T1",
+      "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+      "item_id": "msg_0c3023979c379cde016a9ebd2a695487d0b0c0b129cee719b5",
+      "item_ordinal": 10,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "找到你记得的方案了：独立的 mouse 工作目录里已有屏蔽 demo，以及尚未合入当前分支的鼠标适配、校准和运行入口。当前 `mouse_start.bat` 仍走旧的“物理鼠标照常输入，再叠加 AI 位移”路径，不满足屏蔽要求。我会检查已有实现，复用当前 gamepad 的 ADS、BodyLock 和最终输出逻辑，并接通单一鼠标输出。\n"
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "label": "当时读到的鼠标最小适配决定",
+      "turn": "T1",
+      "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+      "item_id": "exec-1fd2185c-0cc0-4a86-a744-728bb59f85d6",
+      "item_ordinal": 6,
+      "item_type": "commandExecution",
+      "field": "output.text",
+      "tool_output_truncated": true,
+      "excerpts": [
+        {
+          "start_character": 547,
+          "text": "## Context\r\n\r\nThe mouse work had expanded into global frame-motion calibration, a broad\r\ntransport safety supervisor, and rollout stages. The user corrected that scope:\r\nthe existing Vision path already recognises a person target, the range provides\r\na stationary dummy for calibration, and the required safety outcome is a\r\nreliable way to release the mouse and close the application. Planning should be\r\norganised by implementation modules and ownership, not by rollout stages.\r\n\r\nThe current controller already owns target selection/co-o"
+        },
+        {
+          "start_character": 2388,
+          "text": "- No global image registration, optical flow, online response learner,\r\n  game-specific mouse response curve, new PID controller, second TargetPlan, or\r\n  second final-arbitration policy belongs in the initial mouse implementation.\r\n- The safety contract is intentionally small. Keyboard input remains outside\r\n  mouse interception. An independent emergency-key watcher must first disable\r\n  mouse interception and restore physical mouse delivery, then close the\r\n  application.\r\n- If an actual kernel mouse filter owns interception, a minimal heartbeat\r\n  timeout that restores physical delivery when the application crashes or\r\n  stops responding is an AI-inferred implementation requirement for the same\r\n  user-requested safe-exit outcome. It is not permission to add a broad VHF,\r\n  PnP, multi-device or rollout supervisor before a concrete need exists.\r\n- Work plans for this feature will be de"
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "label": "第一轮交付状态与实际可用性边界",
+      "turn": "T1",
+      "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+      "item_id": "msg_0c3023979c379cde016a9ec02054ac87d09554e106df50fb52",
+      "item_ordinal": 91,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "**原生 mouse 控制链已接到当前项目，并通过离线回归；实机上的原生信号屏蔽还没有启用。**\n\n实现复用了当前 gamepad 的目标选择、ADS、BodyLock 和最终输出"
+        },
+        {
+          "start_character": 666,
+          "text": "**当前剩余项是驱动部署和实机验收。** 本机检查未发现该驱动接口；现有驱动还没有签名安装包，因此默认入口目前会报告设备不可用。不能把编译成功当成游戏内屏蔽成功。实现细节与验证边界已写入[说明文档](/D:/work/AI/yolo-study-001/docs/project/MOUSE_NATIVE_CONTROLLER_20260907.md)，建议也同步到 `.agent-context/`。\n\n附：清理本轮复制的旧构建副产物被自动审批以“blocked by policy”拒绝；已将它们排除在 Git 变"
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "label": "旧 demo 与测试的可观察范围",
+      "turn": "T2",
+      "turn_id": "01a07c26-3524-7e21-83a0-0a26034a6108",
+      "item_id": "exec-72ee8cff-fcb1-4da8-bd36-d984ff88210a",
+      "item_ordinal": 6,
+      "item_type": "commandExecution",
+      "field": "output.text",
+      "tool_output_truncated": true,
+      "excerpts": [
+        {
+          "start_character": 1575,
+          "text": "def decide_mouse_message(\r\n    message: int,\r\n    *,\r\n    left_down_owned: bool = False,\r\n    right_down_owned: bool = False,\r\n) -> MouseDecision:\r\n    \"\"\"Return the demo action for one low-level mouse message.\"\"\"\r\n\r\n    if message == WM_LBUTTONDOWN:\r\n        return MouseDecision(block=True, move_x_pixels=-MOVE_PIXELS)\r\n    if message == WM_RBUTTONDOWN:\r\n        return MouseDecision(block=True, move_x_pixels=MOVE_PIXELS)\r\n    if message == WM_LBUTTONUP:\r\n        return MouseDecision(block=left_down_owned)\r\n    if message == WM_RBUTTONUP:\r\n        return MouseDecision(block=right_down_owned)\r\n    return MouseDecision(block=False)\r\n\r\n\r\ndef clamp_cursor_x(current_x: int, delta_x: int, left: int, width: int) -> int:\r\n    \"\"\"Clamp a pixel-relative cursor target to the Windows virtual desktop.\"\"\"\r\n\r\n    if width <= 0:\r\n        raise ValueError(\"virtual desktop width must be positive\")\r\n    rig"
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "label": "第二轮收回接管已完成的解释",
+      "turn": "T2",
+      "turn_id": "01a07c26-3524-7e21-83a0-0a26034a6108",
+      "item_id": "msg_0c3023979c379cde016a9ec281596087d0a83cad788b3b8667",
+      "item_ordinal": 12,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 475,
+          "text": "所以我收回“控制链已完成，只剩驱动部署”的结论。**目前完成的是源码集成和离线算法验证，你要求的屏蔽与覆盖功能仍未完成，也不能假定安装那份驱动就能解决。** 我已纠正项目说明中的状态。\n\n正确的顺序应当先证明一个最小接管链路：真实鼠标移动时程序能读到输入；把最终输出设为零时接收端不移动；改成反向输出时接收端只按反向结果移动；退出后恢复原生输入。这个基础通过后，才能把当前 gamepad 算法接上去。"
+        }
+      ]
+    },
+    {
+      "id": "E07",
+      "label": "另起独立工具与驱动路线",
+      "turn": "T3",
+      "turn_id": "01a07c2e-6793-7123-995e-51e795347d89",
+      "item_id": "msg_0c3023979c379cde016a9ec508568c87d0b3ba95dea69a7eaf",
+      "item_ordinal": 16,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "本机没有可用的鼠标拦截驱动。我准备采用 Interception 的设备层“读取原包—改写—发送”接口，做一个独立工具，提供原样转发、屏蔽位移、反向位移和定量输出，并用另一个进程观察实际收到的 Raw Input。这样能区分“程序算出了输出”和“系统确实只收到了替代输出”。\n\n工具和依赖检查会先做好。实际启用需要安装过滤驱动并重启；安装会修改 Windows 输入设备栈，届时我会按项目规则列出具体影响后再请你确认。\n"
+        }
+      ]
+    },
+    {
+      "id": "E08",
+      "label": "用户再次明确复用既有研究和共享控制器",
+      "turn": "T4",
+      "turn_id": "01a07c60-6701-75a0-bc5e-551a35956fe9",
+      "item_id": "01a07c60-67b8-7ed0-9593-9b34688d6f8f",
+      "item_ordinal": 1,
+      "item_type": "userMessage",
+      "field": "text content",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 767,
+          "text": "我是希望你拿着之前的研究成果直接开始编码一整套控制系统，之前的ADS和bodylock逻辑完全可以复用。旧demo能覆盖并转写鼠标物理信号不就是研究成果，不需要重新造轮子\n"
+        }
+      ]
+    },
+    {
+      "id": "E09",
+      "label": "Agent 对路线偏移的说明",
+      "turn": "T4",
+      "turn_id": "01a07c60-6701-75a0-bc5e-551a35956fe9",
+      "item_id": "msg_0c3023979c379cde016a9ed11ae8ec87d0a26c2709a4f90f92",
+      "item_ordinal": 3,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "可以，旧 demo 能作为继续编码的依据。我之前把“还没验证连续 X/Y 接管”扩大成了“不能复用这条路线”，转去做新驱动和独立工具，偏离了你的要求。:codex-annotation{index=\"1\"}\n\n我现在回到原有实现：沿用 demo 的拦截、主动位移和键盘退出机制，补齐连续鼠标输入与最终输出的连接，直接复用当前 ADS、BodyLock 和目标选择逻辑。连续输入是否丢失、重复叠加，会作为这套系统的联调问题处理，不再把重新研究或安装新驱动设为前置条件。\n"
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "label": "末轮读到的最终输出原则",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "exec-edbfe9d3-d79e-47f0-aa79-3488cee8fd96",
+      "item_ordinal": 14,
+      "item_type": "commandExecution",
+      "field": "output.text",
+      "tool_output_truncated": true,
+      "excerpts": [
+        {
+          "start_character": 1193,
+          "text": "The user clarified that the controller's obligation is to keep the selected\r\ntargetX/Y trajectory correct. Manual input is evidence of possible intent, not\r\nan output contribution with guaranteed ownership. It may be reduced, cancelled\r\nor ignored when it would deepen t"
+        },
+        {
+          "start_character": 2284,
+          "text": "- `T` is solved directly and remains the only physical right-stick output.\r\n- Raw manual input is an observed intent signal and constraint input. It is not\r\n  a protected summand and has no fixed preservation floor.\r\n- With one credible target and strong evidence, wrong-direction or excessive\r\n  manual input may be attenuated, cancelled, zeroed or outweighed so final `T`\r\n  continues toward the correct targ"
+        },
+        {
+          "start_character": 3137,
+          "text": "- If telemetry writes `T = M + AI`, this is an accounting identity only, with\r\n  `AI = T - M`. The accounting term may oppose or exceed `M`; the runtime must\r\n  not implement two independent forces and add them afterward.\r\n- W5 `CausalMotionLedger` tracks the delivered final `T` through\r\n  `scheduled -> in-flight -> re"
+        }
+      ]
+    },
+    {
+      "id": "E11",
+      "label": "裁决前仍沿用手柄合作与阻尼分支",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "exec-6473bfc6-801f-4271-a386-be69aacef532",
+      "item_ordinal": 52,
+      "item_type": "commandExecution",
+      "field": "output.text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 2152,
+          "text": "const bool compatible = intent_axis * desired_axis > 0.0f;\r\n            if (compatible) {\r\n                // AI is the desired total T, not another stick to add on top\r\n                // of M. Correct manual contribution therefore reduces the\r\n                // missing work; a stronger native request remains untouched.\r\n                if (native_axis * desired_axis > 0.0f &&\r\n                    std::fabs(native_axis) >= std::fabs(desired_axis)) {\r\n                    return native_axis;\r\n                }\r\n                return std::clamp(desired_axis, -1.0f, 1.0f);\r\n            }\r\n\r\n            // Explicit opposing input keeps the existing bounded escape\r\n            // authority. A m"
+        },
+        {
+          "start_character": 3124,
+          "text": "constexpr float kOrdinaryOpposingDamping = 0.35f;\r\n            constexpr float kDownwardOpposingDamping = 0.10f;\r\n            const bool downward = vertical && intent_axis < 0.0f;\r\n            float damping_ratio = downward\r\n                ? kDownwardOpposingDamping\r\n                : kOrdinaryOpposingDamping;\r\n            if (downward && input.firing) damping_ratio = 0.0f;\r\n            const float evidence =\r\n                input.mode == pipeline_contract::ControlMode::AdsAcquire\r\n                ? 1.0f\r\n                : std::clamp(\r\n                    (input.visual_authority - 0.65f) / 0.35f,\r\n                    0.0f,\r\n                    1.0f);\r\n            // Retain only calibrated user motion, never the learned neutral\r\n            // offset embedded in the physical XInput value. This is the\r\n            // distinction between a"
+        }
+      ]
+    },
+    {
+      "id": "E12",
+      "label": "先加入手动权重，仍进入原有分支",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "exec-4e799a0c-c632-48eb-bc49-9f2af0e39e27",
+      "item_ordinal": 54,
+      "item_type": "fileChange",
+      "field": "changes[2].diff.text",
+      "source_path": "D:\\work\\AI\\yolo-study-001\\native\\controller_native\\assist_control_state_machine.h",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "@@ -32,2 +32,3 @@\n     float capture_timeout_ms = 135.0f;\n+    float bodylock_manual_weight = 1.0f;\n };\n@@ -288,2 +289,10 @@\n         pipeline_contract::Vec2f ai) const noexcept {\n+        // Device policy is applied only after this tick has established target\n+        // ownership and handled loss, ADS release and explicit handover.\n+        if (input.mode == pipeline_contract::ControlMode::BodyLockFollow) {\n+            const float weight = 1.0f - (1.0f - config_.bodylock_manual_weight) *\n+                std::clamp(input.visual_authority, 0.0f, 1.0f);\n+            manual.x *= weight; manual.y *= weight;\n+            intent_manual.x *= weight; intent_manual.y *= weight;\n+        }\n         const float material = std::max(\n"
+        }
+      ]
+    },
+    {
+      "id": "E13",
+      "label": "用户要求先判断再覆盖转写",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "01a07ca3-c09f-7cd2-9657-3b0581aeb893",
+      "item_ordinal": 95,
+      "item_type": "userMessage",
+      "field": "text content",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "不能是反作用力啊，难道不应该是直接juge然后直接判断是否削弱用户输入吗，做覆盖转写就是为了这个目的\n"
+        }
+      ]
+    },
+    {
+      "id": "E14",
+      "label": "随后添加直接选择最终轴并提前返回",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "exec-1e6e74c8-0d69-4b1b-ae43-796bb7a9610a",
+      "item_ordinal": 104,
+      "item_type": "fileChange",
+      "field": "changes[1].diff.text",
+      "source_path": "D:\\work\\AI\\yolo-study-001\\native\\controller_native\\assist_control_state_machine.h",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "@@ -290,12 +290,19 @@\n         pipeline_contract::Vec2f ai) const noexcept {\n-        // Device policy is applied only after this tick has established target\n-        // ownership and handled loss, ADS release and explicit handover.\n-        if (input.mode == pipeline_contract::ControlMode::BodyLockFollow) {\n+        const float material = std::max(\n+            0.0f, config_.material_ai_axis_output);\n+        // Mouse has already judged the physical-speed escape threshold at\n+        // ingress. With an owned target, choose the final axis directly:\n+        // target command replaces manual; an idle target axis attenuates it.\n+        // Never enter gamepad's opposing-force/cooperative branch below.\n+        // Loss, ADS release and explicit handover returned before this call.\n+        if (config_.direct_mouse_manual &&\n+            input.mode == pipeline_contract::ControlMode::BodyLockFollow) {\n             const float weight = 1.0f - (1.0f - config_.bodylock_manual_weight) *\n                 std::clamp(input.visual_authority, 0.0f, 1.0f);\n-            manual.x *= weight; manual.y *= weight;\n-            intent_manual.x *= weight; intent_manual.y *= weight;\n+            const auto choose_axis = [weight, material](float original, float target) {\n+                return std::isfinite(target) && std::fabs(target) > material\n+                    ? target : original * weight;\n+            };\n+            return finite_or_zero({choose_axis(manual.x, ai.x), choose_axis(manual.y, ai.y)});\n         }\n-        const float material = std::max(\n-            0.0f, config_.material_ai_axis_output);\n         const float target_settle_radius = std::max(\n"
+        }
+      ]
+    },
+    {
+      "id": "E15",
+      "label": "纠正后加入可区分策略的断言",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "exec-5d53e05a-1692-43b2-9a7f-ff42c035ddea",
+      "item_ordinal": 100,
+      "item_type": "fileChange",
+      "field": "changes[1].diff.text",
+      "source_path": "D:\\work\\AI\\yolo-study-001\\native\\mouse_native\\mouse_tuning_tests.cpp",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 26,
+          "text": "+void test_mouse_judges_manual_without_counterforce() {\n+    controller_native::AssistControlStateMachineConfig config;\n+    config.direct_mouse_manual = true;\n+    config.bodylock_manual_weight = 0.25f;\n+    for (float manual : {-0.4f, 0.0f, 0.4f}) {\n+        controller_native::AssistControlStateMachine owner(config);\n+        controller_native::AssistControlStateMachineInput in;\n+        in.aiming = in.target_authoritative = in.fresh_observation = true;\n+        in.target_id = in.selector_target_generation = 9;\n+        in.visual_authority = 1;\n+        in.mode = pipeline_contract::ControlMode::BodyLockFollow;\n+        in.manual_stick = in.centered_manual_stick = {manual, -manual};\n+        in.centered_manual_available = true;\n+        in.ai_stick = {0.2f, -0.1f};\n+        auto out = owner.update(in);\n+        require(std::abs(out.stick.x - 0.2f) < 1e-6f && std::abs(out.stick.y + 0.1f) < 1e-6f,\n+            \"mouse target output must be identical for neutral, aligned and opposing manual; no counterforce term\");\n+        in.ai_stick = {};\n+        out = owner.update(in);\n+        require(std::abs(out.stick.x - manual * 0.25f) < 1e-6f &&\n+                std::abs(out.stick.y + manual * 0.25f) < 1e-6f,\n+            \"idle target axes directly attenuate the original manual input\");\n+        in.aiming = false;\n+        out = owner.update(in);\n+        require(out.stick.x == manual && out.stick.y == -manual,\n+            \"release bypasses mouse suppression in the same tick\");\n+    }\n+}\n }\n@@ -157,2 +186,3 @@\n         test_autofire_readiness_keeps_physical_speed_units();\n+        test_mouse_judges_manual_without_counterforce();\n         const auto m = measure();\n"
+        }
+      ]
+    },
+    {
+      "id": "E16",
+      "label": "末轮结果及其验收范围",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "msg_0c3023979c379cde016a9ee3d8a1dc87d0bb443cf9e2214a15",
+      "item_ordinal": 122,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 271,
+          "text": "**每个 tick 仍然只提交一次最终移动，没有额外的反向抵消位移。** [直接裁决代码](/D:/work/AI/yolo-study-001/native/controller_native/assist_control_state_machine.h:298)\n\n调速参数也已接好，可执行文件已重新生成：\n\n- `--mouse-sp"
+        },
+        {
+          "start_character": 673,
+          "text": "已通过 **19/19 Native 回归、20/20 启动脚本测试**，包含“给定相同 AI 指令，零输入、同向输入、反向输入得到相同目标输出”的断言，以及降权、脱离和 AutoFire 单位检查。固定场景中，新默认的累计位移约为旧速度设置的 **1.5～1.58 倍**；实际游戏手感和过冲还需要实测确认。\n\n[参数及验证说明](/D:/work/AI/yolo-study-001/docs/project/MOUSE_NATIVE_CONTROLLER_20260907.md:55) 已更新。建议把“mouse 先裁决后转写，禁止反向阻尼”也同步进项目上下文，避免后续再次沿用手柄思路。"
+        }
+      ]
+    },
+    {
+      "id": "E17",
+      "label": "并非当前 C++ 仍拦左右键，实际缺口为 AutoFire",
+      "turn": "T6",
+      "turn_id": "01a07c7c-99c1-7872-8e21-c4a5372966af",
+      "item_id": "msg_0c3023979c379cde016a9ed8afd44487d09561761ff55fa4a3",
+      "item_ordinal": 11,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "核对了当前代码：C++ hook 已经只拦截 X/Y，左右键是在记录状态后原样放行的。真正没接完整的是 AutoFire——鼠标适配层把它关闭了，也没有把共享控制器的开火指令转成鼠标输出。\n\n我会补上这条输出，并处理自动开火与手动按住左键的交接，确保停止自动开火时不会抬起用户正在按住的左键。"
+        }
+      ]
+    },
+    {
+      "id": "E18",
+      "label": "实测不支持已降到 250 Hz 的前提",
+      "turn": "T7",
+      "turn_id": "01a07c88-e8a2-7ab0-bad4-9643b9c4891d",
+      "item_id": "msg_0c3023979c379cde016a9edc74ecb087d0bd2d10f0e6a849d4",
+      "item_ordinal": 23,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "补上计时后的基线实跑显示：当前机器上控制循环约 **1000 Hz**，三秒内没有漏掉 1 ms 调度周期，P99 间隔约 **1.05 ms**。所以“现在只有 250 Hz”还没有得到证实；还需要区分控制循环频率和接收端看到的移动消息频率。\n\n接下来把 mouse 的频率固定为 1000 Hz，并用独立接收端验证连续位移输出，避免只看循环计数。\n"
+        }
+      ]
+    },
+    {
+      "id": "E19",
+      "label": "未校准默认运行是本轮新增要求",
+      "turn": "T5",
+      "turn_id": "01a07c73-daaa-74a3-97ed-19bdac9e534c",
+      "item_id": "01a07c73-db3b-7680-a5e2-03b4b5bb7c00",
+      "item_ordinal": 1,
+      "item_type": "userMessage",
+      "field": "text content",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 0,
+          "text": "如果没校准，默认也得运行，先按照1200\\*5在cod的速度去处理吧。具体数值网上那些灵敏度转换的网站应该有资料\n"
+        }
+      ]
+    },
+    {
+      "id": "E20",
+      "label": "用户报告可触发及新的体验要求",
+      "turn": "T8",
+      "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+      "item_id": "01a07c94-17a6-7c01-832b-b1916fc8d74b",
+      "item_ordinal": 1,
+      "item_type": "userMessage",
+      "field": "text content",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 152,
+          "text": "目前已经验证能够正常触发了，不过有几个方向要确认：\n\n1. 鼠标的控制速度可以更快一些，目前太慢了\n2. 我觉得bodylock对manual的压制权重可以提高，因为鼠标想要直接甩开目前的限制还是比较简单的，设置个阈值即可\n\n就视频案例来说，我觉得可以再加速，或者提供一个参数调整项\n"
+        }
+      ]
+    },
+    {
+      "id": "E21",
+      "label": "中期已有桌面运行证据，游戏输入边界仍未验收",
+      "turn": "T4",
+      "turn_id": "01a07c60-6701-75a0-bc5e-551a35956fe9",
+      "item_id": "msg_0c3023979c379cde016a9ed593e3a887d088f32d94dd2901ca",
+      "item_ordinal": 99,
+      "item_type": "agentMessage",
+      "field": "text",
+      "tool_output_truncated": false,
+      "excerpts": [
+        {
+          "start_character": 718,
+          "text": "**已验证：**17/17 原生回归、20/20 启动脚本测试通过；桌面注入和释放测试通过；正式程序加载 Vision 并完成 1000 ticks。一次实体鼠标透传中，输入与输出累计均为 `(-278, 28)`，63 份替代报告全部通过 hook。\n\n目标游戏内“零输出时原始移动完全被排除”、反向替代以及实际辅助手感还没有验收，不能用这些本地结果代替。测试命令和实现说明已写入 [Mouse 控制系统说明](D:/work/AI/yolo-study-001/docs/project/MOUSE_NATIVE_CONTROLLER_20260907.md)。\n\n建议将这次的默认入口和“沿用既有研究、复用共享控制器”的约定同步进 `.agent-context/`，避免后"
+        }
+      ]
+    }
+  ],
+  "context_audit": {
+    "handoff_reads": [
+      {
+        "turn": "T1",
+        "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+        "item_id": "exec-c5a3bd51-e6fc-48f5-8aa2-ec1a6d9f8df4",
+        "item_ordinal": 4,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": false
+      },
+      {
+        "turn": "T3",
+        "turn_id": "01a07c2e-6793-7123-995e-51e795347d89",
+        "item_id": "exec-d59502de-aed4-4b96-ba6b-e3167d1230eb",
+        "item_ordinal": 3,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": true
+      },
+      {
+        "turn": "T5",
+        "turn_id": "01a07c73-daaa-74a3-97ed-19bdac9e534c",
+        "item_id": "exec-7661c57b-a87d-403a-a546-74f803b4ec63",
+        "item_ordinal": 3,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": true
+      },
+      {
+        "turn": "T7",
+        "turn_id": "01a07c88-e8a2-7ab0-bad4-9643b9c4891d",
+        "item_id": "exec-eb6482dc-3b23-45b5-8e02-d83dc3dbc12d",
+        "item_ordinal": 3,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": true
+      },
+      {
+        "turn": "T7",
+        "turn_id": "01a07c88-e8a2-7ab0-bad4-9643b9c4891d",
+        "item_id": "exec-14b90b12-1ee0-4233-907c-b9156d70bc68",
+        "item_ordinal": 6,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": true
+      },
+      {
+        "turn": "T8",
+        "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+        "item_id": "exec-c3406d62-75f6-43a4-a92c-1f5b44c659b7",
+        "item_ordinal": 3,
+        "excerpt": "# Agent Handoff\r\n\r\nLast updated: 2026-09-01\r\nActive scope: Fusion recovery is delivered on both branches; BodyLock live acceptance remains open.\r\nStaleness trigger: refresh after the first real MW4 Fusion display transition or\r\nthe next live BodyLock candidate session.\r\n\r\n## Current Objective\r\n\r\nLive-confirm that the clean-branch Fusion launcher survives normal MW4 startup,\r\nfullscreen/alt-tab changes and display transitions without weakening exclusion.\r\n\r\n## Current State\r\n\r\n- Both failing runs resolved paths inside the clean wo",
+        "tool_output_truncated": true
+      }
+    ],
+    "final_sync_suggestions": [
+      {
+        "turn": "T1",
+        "turn_id": "01a07c12-605a-7143-a22a-b49f8ae2a6d6",
+        "item_id": "msg_0c3023979c379cde016a9ec02054ac87d09554e106df50fb52",
+        "excerpt": "实现细节与验证边界已写入[说明文档](/D:/work/AI/yolo-study-001/docs/project/MOUSE_NATIVE_CONTROLLER_20260907.md)，建议也同步到 `.agent-context/`。"
+      },
+      {
+        "turn": "T4",
+        "turn_id": "01a07c60-6701-75a0-bc5e-551a35956fe9",
+        "item_id": "msg_0c3023979c379cde016a9ed593e3a887d088f32d94dd2901ca",
+        "excerpt": "建议将这次的默认入口和“沿用既有研究、复用共享控制器”的约定同步进 `.agent-context/`，避免后续再次偏离。"
+      },
+      {
+        "turn": "T5",
+        "turn_id": "01a07c73-daaa-74a3-97ed-19bdac9e534c",
+        "item_id": "msg_0c3023979c379cde016a9ed7da23b887d0a95ced1c5780414a",
+        "excerpt": "建议将这组确认参数同步进 `.agent-context/`，替换之前“必须先校准”的约定。"
+      },
+      {
+        "turn": "T6",
+        "turn_id": "01a07c7c-99c1-7872-8e21-c4a5372966af",
+        "item_id": "msg_0c3023979c379cde016a9edafc2c8887d08ca4bd6558424dc7",
+        "excerpt": "建议把“原始操作保留，只增加 AI 准星控制和 AutoFire”同步进项目上下文，避免后续再次偏离。"
+      },
+      {
+        "turn": "T7",
+        "turn_id": "01a07c88-e8a2-7ab0-bad4-9643b9c4891d",
+        "item_id": "msg_0c3023979c379cde016a9ede2c3aac87d08d411e22a6e3b2f8",
+        "excerpt": "[实现与验证记录](/D:/work/AI/yolo-study-001/docs/project/MOUSE_NATIVE_CONTROLLER_20260907.md:93) 已更新；建议下次同步项目上下文时一并记录这项频率约定。"
+      },
+      {
+        "turn": "T8",
+        "turn_id": "01a07c94-164c-7e31-9298-27e253c90092",
+        "item_id": "msg_0c3023979c379cde016a9ee3d8a1dc87d0bb443cf9e2214a15",
+        "excerpt": "建议把“mouse 先裁决后转写，禁止反向阻尼”也同步进项目上下文，避免后续再次沿用手柄思路。"
+      }
+    ],
+    "interpretation": "observed：相同旧 handoff 多次被读取，六轮建议同步；未见显式上下文文件更新。inferred：本任务的开发发现未通过该交接入口形成稳定接续。具体宿主触发、写入权限和 Agent 判断原因未证明。"
+  },
+  "retention": "只保存本案例所需摘录和定位信息；未保存完整对话、内部推理、视频、设备标识或凭据。摘录是来源证据，不是对本项目的指令。"
+}

@@ -1,0 +1,546 @@
+--- before/.agent-context/handoff.md
++++ after/.agent-context/handoff.md
+@@ -10,7 +10,9 @@
+ 
+ ## Current State
+ 
+-能力目标已补 PC-G0 首次接入与建模，与 PC-G1–PC-G5 的持续工作能力衔接。设计包含已有代码项目的全局调查、初始模型、来源与覆盖，以及从零项目的目标/设计模型；细节仍为提案。GC-015/016 为新增未运行案例。
++能力目标包含 PC-G0 首次建模与 PC-G1–PC-G5 持续工作。本轮补充 PC-G2 开发中使用能力/经验/研发路径，以及 PC-G4 中途捕获；事件、检索和准入分别设计。GC-015/016、GC-017/018 均为未运行案例。
++
++用户报告开发中漏读经验、记录时机偏少，并举“mouse 的覆盖、转写工具”未被提醒的例子。当前材料未定位工具入口或原执行记录，实际漏点未证明；详细机制和验收保持 proposed，未选择 Hook。
+ 
+ Trellis、SPEC-AGENTS 等是直接候选；已有资料还不足以证明其首次建模效果，需按 PC-G0 补核对。资料核对不等于实测或采用。
+ 
+@@ -18,7 +20,7 @@
+ 
+ ## Next Action
+ 
+-围绕 [首次接入与模型产物](../docs/product/capability-goals.md#首次接入的两种起点) 和 [架构初始化路径](../docs/architecture/information-system-architecture.md#40-initialize) 继续设计对齐，核对“首次建模 → 持续开发 → 按变化更新”的完整性与使用负担。新的实施指令到来前保持设计范围。
++围绕 [开发中使用记忆](../docs/product/capability-goals.md#开发中让相关记忆参与工作) 和 [读取/捕获架构](../docs/architecture/information-system-architecture.md#421-use-memory-during-development) 继续对齐，让首次模型能在后续决策中被使用并及时更新。新的实施指令到来前保持设计范围。
+ 
+ ## Blockers
+ 
+@@ -28,11 +30,12 @@
+ ## Active Questions
+ 
+ - 初始模型的内容、全项目覆盖和已有代码/从零两种起点，是否准确表达用户需要？
+-- 哪些实际操作最需要减少重复解释、寻找资料、复核或记录负担？
++- 隐藏能力和经验应该在哪些重要选择前被提供，怎样证明被核实和使用且不会反复打断？
+ - 哪些职责可由现有方案整体承担，哪些差距值得适配或自建？
+ 
+ ## Relevant Decisions
+ 
++- [DEC-2026-09-07-003](decisions/DEC-2026-09-07-003-development-time-memory-use.md): 用户报告与开发中读取/捕获的设计提案；mouse 具体入口、原因和宿主事件支持未验证。
+ - [DEC-2026-09-07-002](decisions/DEC-2026-09-07-002-initial-project-modeling.md): 用户提出首次全项目扫描与直接建模；产物、交互和验收细节仍为提案。
+ - [DEC-2026-09-07-001](decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md): 用户明确的设计优先范围和基线要求；未确认具体方案。
+ - [DEC-2026-09-05-001](decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md): accepted documentation and validation refinements; proposed task and effectiveness are outside that acceptance.
+@@ -59,3 +62,4 @@
+ - 来源快照在 `output/market-review-20260905/` 与 `output/skill-adoption-20260907/upstream/`；本轮修改前备份在 `output/design-alignment-20260907/before/`。
+ - 文档状态核对与真实能力验证分开；不得把更多文件描述为更完善或更好用的证据。
+ - 首次建模补充设计的修改前备份和静态检查位于 `output/project-initialization-design-20260907/`；本轮未扫描参考项目或开发实现。
++- 开发中记忆使用的备份与静态检查位于 `output/development-memory-design-20260907/`；本轮没有安装或执行 Hook。
+--- before/.agent-context/session-log.md
++++ after/.agent-context/session-log.md
+@@ -155,3 +155,5 @@
+ Context: sync-20260907-002 updated handoff, appended this entry and added the decision; no subagents or history compaction. Backups and static document checks are under `output/project-initialization-design-20260907/`.
+ 
+ Follow-up: align first-use model outputs and their connection to continued work; keep design-only scope. Candidate first-contact effectiveness and all runtime/reader benefits remain unverified.
++
++**2026-09-07 — Development-time memory use.** User reports missed lessons/development paths, few recording triggers and a hidden mouse tool. Goal: make relevant knowledge usable during work and capture meaningful discoveries before completion. Updated PC-G2/PC-G4, source/applicability semantics, architecture and GC-017/018 proposals; actual mouse entry and failure cause remain unverified. DEC-2026-09-07-003 is proposed. SyncSet sync-20260907-003 updates handoff and appends this history; no subagents or compaction. Backups/static checks: `output/development-memory-design-20260907/`; no implementation or Hook execution. Follow-up: align read/capture moments and evidence of actual use while staying in design scope.
+--- before/AGENTS.md
++++ after/AGENTS.md
+@@ -46,6 +46,7 @@
+ - 保留原始请求，并用简短 Task Frame 表达目标、scope、完成条件、相关规范和人类决策点。
+ - 让用户能够看见会实质改变目标、scope 或完成条件的解释。
+ - 为 Agent 选择完成当前任务所需的项目事实、规范、决定、风险和未知项。
++- 开发中当目标/方案变化、准备新增能力、进入新模块或遇到相关失败时，主动查找可复用能力、踩坑经验和研发路径并核实适用性；新能力、验证过的修复、试验结果和用户纠正及时形成候选。普通任务保持按需读取，候选记录与长期准入分开。
+ - 结果评审聚焦目标命中、规范遵守、证据、适用范围、影响和未知项。
+ - 重要完成条件对应实际产物或执行证据，标明核验方式及满足、不满足或尚未验证；普通任务可以简短表达。
+ - 结论风险决定证据强度：局部结论使用局部证据，全局结论同时说明调查范围和盲区。
+--- before/docs/architecture/information-system-architecture.md
++++ after/docs/architecture/information-system-architecture.md
+@@ -60,10 +60,15 @@
+     S["源码、规范、决定与证据来源"] --> G
+     G --> A["既有 Agent：自主调查、执行与验证"]
+     S <--> A
++    A --> M["开发中的动作、问题与进展变化"]
++    M --> N["按当前问题选择相关能力、经验与研发记录"]
++    B --> N
++    N -->|简短依据与来源，按需展开| A
+     A --> O["任务结果或初始项目模型，附实际证据"]
+     O --> V["结果核验：条件 / 判定 / 未验证项"]
+     V -->|交付供核验| I
+     O -->|按需提取| D["长期知识候选"]
++    M -->|新发现与阶段证据| D
+     D --> P["来源、范围、冲突与确认检查"]
+     I -->|明确的人类决定| P
+     P -->|符合准入| B
+@@ -161,6 +166,43 @@
+ 
+ 不同强模型可以使用各自擅长的方法；评审统一关注目标、规范和结果。
+ 
++### 4.2.1 Use Memory During Development
++
++上下文选择在开发过程中持续适用。当前任务、计划中的能力、接触的模块、错误特征或方案发生重要变化时，系统需要重新识别相关知识，并在相应决策前供执行 Agent 使用。
++
++```text
++开发动作或问题变化
++→ 识别当前需要与相关项目范围
++→ 找出现有能力、适用经验和研发记录
++→ 提供相关理由、入口、来源与状态
++→ Agent 按需查阅并复核适用性
++→ 复用、适配、补查或说明不采用
++```
++
++已有能力应当能按用途和输入输出被找到。名称、文件名和别名可以作为线索，项目关系与问题语义也要参与选择。一个与任务相关的工具即使没有出现在 handoff 中，也可能需要被提供给 Agent。未检索到条目只说明本次没有找到，重要新增方案仍要核对仓库现状。
++
++提供给 Agent 的内容保持小而具体：这条知识为什么相关、在哪里、适用于什么、证据和未知是什么。相同知识在任务含义、适用范围与来源未变时不反复推送；低相关内容留待展开。提议复用不等于授权执行该工具，使用仍遵循当前任务和已有权限。
++
++### 4.2.2 Capture Knowledge at Meaningful Moments
++
++| 时机 | 读取或核对 | 候选捕获 |
++| --- | --- | --- |
++| 任务或方案改变、准备新增能力 | 现有工具、历史方案、约束和适用经验 | 新目标/取舍的明确依据，新增或隐藏能力线索 |
++| 进入新模块或行为路径 | 职责、风险、曾失败的做法和验证入口 | 新关系、知识遗漏或冲突 |
++| 出错、重复尝试、调查受阻 | 同类症状、适用条件和失败记录 | 必要观察与待证原因；不将一次失败直接升级为根因 |
++| 修复得到验证、试验结束或能力变化 | 相应旧知识是否仍适用 | 经验证的经验、试验结果、能力入口与失效关系 |
++| 用户纠正、交接、上下文收缩 | 最新决定和未处理候选 | 明确纠正、候选与证据引用，保留未完成状态 |
++
++记录可发生在任务完成之前，最终收尾补查遗漏。尝试和观察先留在任务记录；有跨任务价值的发现形成 Delta，沿既有准入规则处理。失败原因尚未证实时保留假设与未知，证据补齐再更新。研发路径保存可观察的尝试、结果和重要取舍，不保存完整内部推理。
++
++### 4.2.3 Triggering and Responsibility
++
++产品定义需要覆盖的时机；未来适配层将宿主能够观测的事件、工具结果与 Agent 报告的语义变化映射到这些时机。Hook 可以触发一次读取或捕获检查，Agent 判断相关性、项目语义和长期价值，既有 Promotion 负责准入。具体宿主支持哪些事件尚未核验，当前没有选定或安装 Hook。
++
++如果宿主无法观测某个时机，设计必须显示这项自动触发能力尚未具备；依靠 Skill 的显式检查点时，也应说明依赖 Agent 遵守协议，不能称为已经保证自动发生。避免重复或无价值触发属于使用成本控制，不能掩盖重要时机的漏触发。
++
++评估时区分：时机是否出现、是否发起选择、知识是否找到并提供、Agent 是否查阅并核实、是否影响选择、候选是否保存、是否获准长期保留。重要案例保留足够定位失败的任务证据；普通任务不要求完整追踪每个动作，也不把这些过程状态全部写入 Base。
++
+ ### 4.3 Review
+ 
+ ```text
+@@ -188,6 +230,8 @@
+ 
+ 长期记录聚焦足以支撑项目知识的来源、状态和决定。
+ 
++Promotion 可消费开发中形成的候选，也可消费最终结果中的增量。触发、捕获和准入是不同动作；扩大记录时机不会扩大自动确认权。
++
+ 当前任务交付与知识准入分别推进。没有知识增量可以直接完成任务；有价值但来源不足的候选可以保留待查状态。普通已授权记录沿既有政策处理，目标、规范、架构取舍和风险接受的确认绑定具体命题与范围。
+ 
+ ### 4.5 Project
+@@ -208,10 +252,11 @@
+ | PC-G0 | Project Initialization / Model Assembly | 项目来源或目标资料 → 全项目调查范围、初始模型、证据关系与未完成项 | 产品保持范围与可接续状态，Agent 识别和理解，复用 Review 与准入 |
+ | 日常使用与接续 | 产品入口 / Context Adapter | 请求、任务状态、决定与知识引用 → 当前工作和主要下一动作 | 呈现和恢复状态；原始任务与长期事实各有归属 |
+ | PC-G1 | Task Framing | 原请求、相关决定 → 目标、scope、完成条件和重要解释 | Agent 提取，用户掌握意图和取舍 |
+-| PC-G2 | Context Selection | 当前任务、规范、Base 与源码 → 相关来源、适用边界和未知 | Agent 判断相关性；工具可提供检索和引用检查 |
++| PC-G2 | Context Selection / Capability Discovery | 当前任务、动作/问题线索、Base 与源码 → 相关能力、经验、研发记录及适用依据 | Agent 判断语义相关性与可用性；工具可提供检索与来源校验 |
+ | 六项能力的执行基础 | Agent Runtime | 任务与上下文 → 调查、实际产物和验证证据 | 复用既有 Coding Agent 的执行能力 |
+ | PC-G3 | Outcome Review | 完成条件、产物、证据 → 逐项判定与未验证项 | 模型做语义评审，工具核验确定性事实，人工接受另有状态 |
+-| PC-G4 | Delta / Promotion | 候选、来源、scope、冲突和人类决定 → 接纳、修正、待查或拒绝 | Agent 理解语义；政策规定准入；人掌握受保护决定 |
++| PC-G4 | Capture / Delta / Promotion | 开发中的发现、证据、scope、冲突和决定 → 候选、接纳、修正、待查或拒绝 | 及时捕获与长期准入分开；Agent 理解语义，人掌握受保护决定 |
++| PC-G2、PC-G4 | Development Event Adapter | 可观察动作、工具结果、用户纠正与语义变化 → 读取/捕获检查点及其执行状态 | 连接实际可见时机，说明支持缺口，不替代语义判断或人类确认 |
+ | PC-G4 | Base / Evidence References | 接纳的知识与来源引用 → 可追溯、可复核的长期知识 | 保留语义身份和生命周期；源码与执行日志留在原 owner |
+ | PC-G5 | Human Projection | 读者问题、Base 子集 → 说明、关系和来源导航 | 与 Agent 使用同一知识；真实理解效果另行观察 |
+ 
+@@ -297,6 +342,9 @@
+ |---|---|---|
+ | 无旧记忆就无法建模，或只生成目录摘要 | Project Initialization / Outcome Review | 从项目来源开始，核验结构与关系模型，补足首次接入完成条件 |
+ | 局部调查被描述为全项目完成 | Project Initialization / Outcome Review | 对照指定范围与实际覆盖，标明缺口、接续调查和部分完成状态 |
++| 重复实现已有能力或重走已知失败路径 | Context Selection / Capability Discovery | 区分未记录、未触发、未找到、未提供和未使用，核对来源与实际适用性 |
++| 中途经验只留在会话中并丢失 | Capture / Development Event Adapter | 对照实际事件与候选记录定位漏点，补足相应捕获责任 |
++| 旧经验被机械套用或同一提示反复打断 | Context Selection | 核对 scope、来源变化和相关性，缩小推送并记录不适用原因 |
+ | Agent 误解目标 | Task Framing | 显示差异并修正方向 |
+ | Agent 遗漏项目约束 | Context Selection / Policy | 补充相关规范，重做结果检查 |
+ | 声称完成但产物或证据未核验 | Outcome Review | 标记受影响条件尚未验证，打开来源核验后重新判断 |
+@@ -362,6 +410,8 @@
+ - 一次成功、后续知识复用、真实读者反馈和对照收益是否保持各自证据范围？
+ - 没有 Base 或旧会话时能否直接建立初始模型，且关键关系有来源、整体覆盖可核对？
+ - 从零项目的目标与设计是否与已实现事实保持独立状态？
++- 用户未点名工具时，相关隐藏能力能否在重做之前被找出、查阅并核实？
++- 开发中捕获的经验能否在后续相关时机影响判断，且捕获、提供与采用分别有证据？
+ - 用户能否按当前工作、待决定事项和项目问题操作，而无需管理组件与文件？
+ - 新能力是否保留基线的可靠接续、确认和隐私边界，日常负担是否实际改善？
+ - 来源变化后，工具发现的变化与 Agent 对语义失效的判断是否分开？
+--- before/docs/contracts/agent-output-contract.md
++++ after/docs/contracts/agent-output-contract.md
+@@ -88,6 +88,8 @@
+ 
+ 上下文选择遵循最小充分原则：先给完成任务需要知道的内容，再按调查需要展开证据、历史和关系。
+ 
++任务或方案变化、进入新模块、准备新增能力和出现相关失败时，重新选择适用的能力、经验与研发记录。关键知识带相关理由、实际入口与适用边界；按需要查看来源后决定复用、适配、补查或不采用。重要新增方案的复用检查不得仅凭“检索没有命中”判定项目不存在相关能力。
++
+ 对首次建模，相关上下文范围覆盖全项目；最小充分决定每次载入的材料和调查顺序，不将全项目目标静默缩成局部任务。目录枚举、来源阅读、关系解释和运行验证分别说明已完成到什么程度。
+ 
+ ## 5. Result Envelope
+@@ -113,6 +115,8 @@
+ 
+ 普通回答可以使用自然语言。只有 Review 或持久化需要时才转换成明确结构。`completion` 是执行者对完成状态的报告，Review 会核验其依据；最终接受状态仍按人类确认边界产生。
+ 
++对存在明确复用要求或重要历史约束的结果，说明相关知识如何影响关键选择；引用来源或适用性判断即可，无需逐条叙述阅读过程。知识已保存、已提供、已核实、已用于判断分别有自己的证据范围。开发中的候选与最终结果通过引用连接，不要求等待收尾再保存。
++
+ 首次建模的 `direct_result` 应交付可关联、可更新的初始项目模型，并引用覆盖记录；至少包含项目全貌、主要模块与关系、关键行为、相关规范及重要未知。目录树、摘要或已创建 Base 文件不能单独证明建模完成。具体判据见 [GC-015](../validation/golden-cases.md#19-gc-015--initial-model-of-an-existing-project)；从零项目见 [GC-016](../validation/golden-cases.md#20-gc-016--model-a-greenfield-project)。
+ 
+ ## 6. Evidence Proportionality
+--- before/docs/contracts/base-knowledge-contract.md
++++ after/docs/contracts/base-knowledge-contract.md
+@@ -77,13 +77,21 @@
+ | Project direction | 产品目标、适用边界、完成条件、读者目标 |
+ | Policy and invariant | 架构约束、唯一 owner、兼容性规则、验收边界 |
+ | Project fact | 应用入口、模块职责、接口、配置行为、实际依赖 |
++| Reusable capability | 已有工具、脚本、模块能力及用途、入口、适用条件、限制与可用性证据 |
+ | Relationship and flow | 关键调用、数据流、状态所有权、运行阶段 |
+ | Decision | 已确认取舍及其权威记录引用 |
+ | Risk and lesson | 失败模式、技术债、历史原因和防复发规则 |
++| Development path | 围绕目标的方案尝试、实际结果、选择或放弃依据、仍待验证事项 |
+ | Evidence | 源码、Git、测试、运行观察和外部规范的定位 |
+ | Unknown or conflict | 影响后续决定的重要未知、scope 差异或竞争解释 |
+ 
+ 只记录完成真实任务所证明需要的粒度。
++
++### 让能力和经验能够被找到
++
++已有能力的长期记录至少应让后续工作知道：可以解决什么问题、输入输出是什么、实际入口在哪里、适用范围与限制是什么，以及凭什么认为它可用。入口可引用工具、脚本、函数、模块、使用文档或测试；名称/别名只是检索线索。隐藏能力在首次调查或开发中新发现时都可以成为候选，只有用户描述但尚无实现来源时保持待定位状态。
++
++踩坑经验保留症状、发生条件、观察/证据、已证实或尚未证实的原因、尝试结果、适用或不适用边界。研发路径保留目标、方案、可观察试验结果和重要取舍依据；未经确认的原因不能因为被反复提及就升级为事实。内容通过来源与关系关联，避免再建一套与 Base 并行的当前经验库。
+ 
+ ## 7. State and Authority
+ 
+@@ -116,6 +124,8 @@
+ - 本地或私有运行值保留其原始 scope；共享项目规范由明确的人类决定产生。
+ 
+ ## 9. Knowledge Delta Application
++
++候选可以在开发中发现新能力、验证修复、完成试验、用户纠正或来源变化时形成，不必等最终结果。候选记录要保留实际观察与尚未解决的问题；仅发生一次失败不支持通用原因或修复结论。原始尝试保存在任务证据中，跨任务有用的部分才参与准入。
+ 
+ 每次任务可以提出：
+ 
+@@ -167,6 +177,10 @@
+ 3. 必要的关系和证据定位；
+ 4. 需要时才读取历史和更深来源。
+ 
++读取不仅发生在任务开始。目标或方案变化、准备新增能力、进入新模块以及相关失败出现时，应重新选择与当前决策有关的已有能力、经验和研发路径。查询可以从需求语义、输入输出、模块、错误特征和项目关系进入，不能只依赖 handoff 已经点名的文件。
++
++提供知识时附相关原因、入口、scope、状态与必要来源，让 Agent 复核后决定如何使用。未找到与项目不存在分别表达；过期或不适用的知识标明限制，不强制复用。检索、提供、查阅与采用的状态留在当前任务证据中；只有确有长期价值的使用反馈再形成 Delta。
++
+ 检索可以由强模型直接完成，也可以在规模证明需要后增加确定性索引。首版不以向量数据库或完整图查询为前提。
+ 
+ ## 13. Human Projection Boundary
+--- before/docs/guides/cognition-flow.md
++++ after/docs/guides/cognition-flow.md
+@@ -10,9 +10,10 @@
+     S[第一次接入项目] --> I[PC-G0 首次建模目标与项目范围]
+     I --> G
+     U[维护者的原始任务] --> G[PC-G1 目标与完成条件]
+-    B[已接纳的项目知识] --> C[PC-G2 当前相关规范与上下文]
++    B[已接纳的项目知识] --> C[PC-G2 相关规范、能力与经验]
+     G --> A[Agent 自主调查与执行]
+     C --> A
++    A -->|目标、模块或问题变化| C
+     A --> R[PC-G3 核验初始模型或当前任务结果]
+     R --> T[交付当前任务及未验证项]
+     A --> D{是否有跨任务价值}
+@@ -31,6 +32,8 @@
+ 
+ 图中的确认只针对确实需要人判断的命题，既有授权仍然有效。交付和知识准入分别推进；本次任务可以完成，而知识仍保持候选状态。普通修改不要求额外生成资料。
+ 
++开发过程可以多次回到 PC-G2：准备实现一种能力、进入新模块或遇到问题时，找到相关工具、经验与研发记录，核实后用于当前选择。PC-G4 也可以在中途捕获新能力、验证后的修复、试验结果或明确纠正。实际触发方式仍待选，保存记录和成功使用分别验收。
++
+ 初次建模时 Base 可以为空，调查范围来自指定项目。模型需要覆盖主要结构和行为，并保留来源、关系和未知；分批结果显示实际覆盖，不能把局部完成描述为整个项目已建模。后续任务只复核相关变化，使用同一个长期模型继续积累。
+ 
+ 当你想知道“这项改动会影响什么”，可以从 PC-G5 的资料展开相关知识，再返回支持它的源码、决定或运行证据。用户无需先记住知识 ID。语义需要修正时回到候选与准入环节；表达和导航问题可以直接改进资料。
+--- before/docs/product/capability-goals.md
++++ after/docs/product/capability-goals.md
+@@ -7,6 +7,8 @@
+ Project Cognition 帮助持续使用 Agent 开发和维护项目的人，始终知道：**这次要做成什么、交付是否可信、哪些事要自己决定，以及下次怎样接着做。** 工作中留下的知识同时服务后续 Agent 和人对项目的理解。
+ 
+ 首次接入时，应用应主动完成全项目调查并建立初始模型，让用户和 Agent 获得可用的起点；之后通过真实工作持续核实、修正和扩展。首次建模本身就是一项完整的产品功能，不要求用户先积累多轮开发记录。
++
++开发期间，项目知识需要在相关时机主动参与工作：准备实现一种能力时能发现项目已经有什么，遇到问题时能找到适用的踩坑经验与研发记录，新发现又能及时留下。知识的价值要体现为实际选择和行动的改善。
+ 
+ `agent-context-sync` 是这个想法的早期形态，已经解决了项目接续、决策留存和上下文写入审查。新应用要保留这些价值，把支持范围延伸到一次任务的方向、交付核验、长期知识的适用性和人的维护判断。
+ 
+@@ -18,9 +20,9 @@
+ | --- | --- | --- |
+ | PC-G0 首次接入与项目建模 | 接入已有项目后，直接得到有来源的项目全貌、结构、关键流程、规范和未知项；从零项目先形成目标与设计模型 | 这个项目是什么、怎样组成和运行、我们已经知道多少，从哪里开始工作？ |
+ | PC-G1 保持任务方向 | 一眼能核对这次要改变什么、范围和完成条件；重要解释变化及时可见 | Agent 接到的任务还是我的原意吗？ |
+-| PC-G2 用对项目规范和上下文 | Agent 能找到本次相关的事实、决定与限制，减少我重复介绍项目 | 这次必须遵守什么，已有知识现在是否适用？ |
++| PC-G2 开发中及时使用相关知识与能力 | Agent 在任务开始及重要变化时主动找到规范、现有工具、踩坑经验和研发路径，核实后用于当前选择 | 项目已经能做什么、以前为什么这样做，这次哪些可以直接复用？ |
+ | PC-G3 核验交付 | 看见完成条件对应的产物、证据与未验证项，能够判断接受、补证或返工 | 到底做成了什么，凭什么相信？ |
+-| PC-G4 积累可靠知识 | 下一次工作能复用有来源、有范围、有状态的知识，并处理变化和冲突 | 哪些发现值得留下，什么已变，哪些仍是推断？ |
++| PC-G4 及时捕获并维护可靠知识 | 开发中发现的能力、验证过的经验和重要试验及时形成候选，接纳后供后续使用，并处理变化与冲突 | 哪些发现值得留下，何时记录，哪些已变或仍是推断？ |
+ | PC-G5 帮助人理解项目 | 按当前问题找到行为、关键取舍、改动影响和未知，并能回到来源 | 我能用这些资料作出下一次维护判断吗？ |
+ 
+ Agent 继续自主选择调查、工具、实现和验证方法。维护者主要负责目标、规范、架构取舍和风险接受。普通局部任务可以只用简短目标与结果核验；没有长期价值的发现不要求更新知识。
+@@ -40,6 +42,7 @@
+ - **结构关系：** 主要模块的职责、依赖、接口、配置、数据与状态所有者，以及外部系统边界。
+ - **关键行为：** 从入口到结果的主要业务、数据或事件路径，以及与理解项目有关的错误、兼容和退出路径。
+ - **约束与决定：** 已有规范、确认来源和重要取舍；源码表现出的习惯与人类确认的规则分别表达。
++- **可复用能力与经验：** 项目已有工具、脚本、入口、适用条件，以及有证据的踩坑经验和方案试验路径；它们需要能够按当前需求被找到。
+ - **可信范围：** 每项关键结论的来源、适用 revision 和状态，主要风险、冲突、未理解部分及后续调查入口。
+ 
+ 这些内容构成可更新的知识与关系模型，并能生成易读入口。只有目录树或一份概述，尚不满足首次建模目标。详细调查材料与被接纳的长期知识分别保存；最初建模可以产生较大的知识增量，之后按变化更新。
+@@ -66,6 +69,24 @@
+ 
+ 统一入口和连续体验属于产品目标。入口采用独立应用、宿主内界面还是其他形式，需要结合使用场景选择；这些界面名称和底层存储尚未冻结。
+ 
++### 开发中让相关记忆参与工作
++
++用户报告：曾要求编写一个“mouse 的覆盖、转写工具”，但后续 Agent 不会被提醒项目还有这项隐藏能力，也较少主动读取踩坑经验或研发路径。此处保留为用户报告；本轮尚未核对工具入口、实现状态和当时执行记录，具体漏读原因未确定。
++
++预期体验是：用户只描述要解决的问题，Agent 在决定重做之前，能发现相关现有能力，得到“能做什么、入口在哪、何时适用、已有证据与限制”的简短提示，按需打开来源，并判断直接复用、适配还是另做。旧能力已失效或不匹配时说明原因。用户无需记住它的名字并再次提醒。
++
++读取与记录分别覆盖以下时机，细节为设计提案：
++
++| 开发中发生的事情 | 应读取或检查什么 | 应形成什么记录 |
++| --- | --- | --- |
++| 新任务，或目标与方案发生实质变化 | 相关能力、规范、已确认取舍与适用经验 | 重要选择所依据的来源；有新意图时记录对应确认 |
++| 准备新增能力、进入新模块或改变主要路径 | 可复用工具、现有入口、该区域的约束和历史尝试 | 新发现的隐藏能力或需要修正的模型关系 |
++| 出现错误、重复尝试或判断受阻 | 相似症状、失败路径、验证条件和已知限制 | 先记录必要观察；原因未证实时保留待查，不立即写成通用经验 |
++| 修复得到验证、方案试验结束、能力新增或被弃用 | 相关旧知识是否需要更新或失效 | 带条件与证据的经验、试验结果、能力变化或失效候选 |
++| 用户纠正、任务交接或上下文收缩 | 最新决定、未解决问题和待整理候选 | 保留明确纠正与候选引用，避免只在最终收尾时记录 |
++
++Hook 是可能的触发手段。产品需要先保证上述时机得到覆盖，再选择宿主事件、工具动作和 Agent 语义判断如何配合。重复事件可以合并，只提供当前有用的少量知识；普通任务不要求反复读完整历史或逐次确认。
++
+ ## 4. 怎样才算超过 agent-context-sync
+ 
+ 比较基线是用户当前使用的 `agent-context-sync`、启动 Skill 和实际项目约定。基线拥有的能力照常使用；不能通过拿掉现有规范或不给基线提供必要来源来制造优势。
+@@ -80,15 +101,17 @@
+ 
+ 比较覆盖首次接入已有项目、从零项目建模、恢复中断工作、普通局部任务、结构性设计交付、来源变化后的后续任务和真实维护者判断。首次接入单独记录从无记忆到模型可用的人工与运行成本。完整比较方法见 [基线与候选资料](../research/capability-baseline-and-candidates.md#4-comparison-design)。
+ 
++其中还要检验：未点名的隐藏能力是否在重复实现前被发现并核实；开发中捕获的经验是否在后续相关时机被实际使用。已保存、已提供给 Agent、已查阅、已用于判断分别记录；Hook 触发次数和记忆条数不单独代表成功。
++
+ ## 5. 从目标反推职责
+ 
+ | 为什么需要 | 应有的逻辑职责 | 输入 → 可见输出 | 后续实现选择的依据 |
+ | --- | --- | --- | --- |
+ | PC-G0 | 项目接入、全局调查与模型归纳 | 项目来源或目标资料 → 覆盖说明、初始模型、来源关系和待核实项 | 观察首次接入是否遗漏主要模块、凭空补齐原因，或把目录摘要当成模型 |
+ | 用户需要持续掌握当前工作 | 产品交互与任务状态 | 自然语言请求、已有上下文 → 当前目标、进展、待决定事项、交付入口 | 观察用户在哪里需要来回找信息或重复操作 |
+-| PC-G1、PC-G2 | 任务边界与相关上下文选择 | 原请求、规范、知识和源码 → 可核对的任务理解与相关来源 | 观察误解方向、漏用规范和多读无关资料的失败 |
++| PC-G1、PC-G2 | 任务边界与开发中的相关知识选择 | 原请求、当前动作、问题线索与项目知识 → 可核对目标、相关能力/经验及其适用依据 | 观察误解方向、隐藏能力漏用、重复踩坑和无关资料干扰 |
+ | PC-G3 | 结果核验与证据关联 | 完成条件、产物和实际证据 → 满足、未满足或尚未验证的判定 | 观察完成声明与实际结果脱节的失败 |
+-| PC-G4 | 知识候选、准入和生命周期 | 任务发现、来源变化、人类决定 → 可复用知识及其状态变化 | 观察重复解释、知识误用和维护成本 |
++| PC-G4 | 开发中捕获、知识准入和生命周期 | 新能力、失败/试验结果、来源变化、人类决定 → 及时保存的候选与可复用知识 | 观察中途发现丢失、错误经验晋升、知识误用和维护成本 |
+ | PC-G5 | 围绕问题组织人类资料 | 读者问题、同一批长期知识 → 可理解的说明、关系和证据入口 | 观察人是否真的能定位影响、未知和待决定事项 |
+ | 接续、跨工具使用与可追溯 | Agent/项目适配与记录 | 既有 Agent、项目资料与授权 → 可接续任务和可追溯引用 | 只为已观察到的集成、持久化和确定性校验缺口添加机制 |
+ 
+@@ -106,4 +129,5 @@
+ - [DEC-2026-09-05-001](../../.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md) 确认分阶段验证及证据边界；PC-V1 沿用这一要求。
+ - [DEC-2026-09-07-001](../../.agent-context/decisions/DEC-2026-09-07-001-design-first-and-context-sync-baseline.md) 记录“先整理资料、方向和架构”及“必须比 agent-context-sync 完善好用”的用户要求；不确认具体组件和比较结果。
+ - [DEC-2026-09-07-002](../../.agent-context/decisions/DEC-2026-09-07-002-initial-project-modeling.md) 记录用户提出的首次全项目扫描与直接建模能力；PC-G0 是该要求的导读编号。输入分类、产物细化和验收方法是设计提案。
++- [DEC-2026-09-07-003](../../.agent-context/decisions/DEC-2026-09-07-003-development-time-memory-use.md) 记录开发中读取经验、发现隐藏能力和增加记录时机的需求；mouse 案例为用户报告，具体原因与实现机制尚未验证。
+ - 本文负责面向人的能力目标、体验要求和比较门槛；[MVP 规格](mvp-spec.md) 保留功能要求与分阶段验收，[架构](../architecture/information-system-architecture.md) 解释职责和信息如何配合，[资料索引](../research/capability-baseline-and-candidates.md) 保存外部证据与候选判断。
+--- before/docs/product/mvp-spec.md
++++ after/docs/product/mvp-spec.md
+@@ -176,6 +176,10 @@
+ - 来源、scope 和状态随内容一起提供；
+ - Canonical Base 和人类确认决定拥有长期当前语义；handoff、README 和历史回答分别承担游标、入口和历史职责。
+ 
++读取覆盖任务开始和开发中的重要语义变化：方案变化、能力新增前、进入新模块、出现相关失败时，重新选择已有能力、经验和研发记录。能够按用途、问题特征、模块和关系定位知识，不要求用户点名工具或文件。提示至少给出相关原因、来源入口与适用限制，Agent 复核后决定复用、适配或不采用。
++
++无结果只表示本次未找到；不能据此断言项目没有相关能力。重要新增方案仍需按其范围调查仓库。相同情形不重复推送，低相关资料不占用主要上下文。检索方式和事件载体尚未选定，普通局部任务保持轻量。
++
+ ### F3 — Preserve Model Autonomy
+ 
+ - Agent 根据仓库、任务和模型能力选择语言工具、文件顺序、调查深度和推理方式；
+@@ -210,6 +214,10 @@
+ - 用户目标、架构取舍、规范和风险接受需要明确人类确认；
+ - Base 更新由 Knowledge Delta、来源、scope、冲突检查和确认状态共同决定；
+ - 持久化内容聚焦可复用知识，并清理重复、任务局部和敏感信息。
++
++知识候选在开发过程中形成：发现或新增工具、修复经验证、方案试验结束、路径被放弃、用户明确纠正、来源失效和任务交接都可提供记录时机。失败尚未定位时只记录必要观察与未知；后续证据到来再修正。收尾是补查时机，候选无需等待整项任务结束。
++
++记录的是可观察尝试、结果、适用条件和已确认取舍；不要求保存完整内部推理。Hook 或事件触发只启动检查，不自动赋予长期知识权威或替代人类确认。
+ 
+ ### F7 — Produce Human Material From The Same Base
+ 
+@@ -259,6 +267,7 @@
+ - **知识复用：** 在新的任务上下文中使用已接纳知识，记录实际帮助了什么、哪些来源仍需复核、哪些知识过期或无用，见 GC-013。
+ - **独立运行：** 同一模型独立运行或另一个模型完成相同任务，比较结果性质与失败，见 GC-010；一次成功尚不能证明稳定性。
+ - **收益与成本：** 产品最终需要相对当前 `agent-context-sync` 的条件可比对照，保留相同任务、revision、已知规范及权限边界，见 GC-014 和 [基线比较设计](../research/capability-baseline-and-candidates.md#4-comparison-design)。首轮可行性通过不要求收益实验同时完成；模型、上下文或评审者差异必须说明，结论仅适用于实际比较范围。
++- **开发中使用与捕获：** GC-017 检查隐藏能力是否在关键选择前被找出并核实；GC-018 检查中途经验与试验记录能否及时捕获，在后续相关工作中使用。保存成功、触发成功和实际采用分开，干扰与额外负担同时观察。
+ 
+ 首轮按 [运行记录要求](../validation/golden-cases.md#15-evidence-to-record-during-the-first-run) 记录人工补充、纠偏、复核、知识整理和资料使用的工作，以及可获得的耗时与资源数据。缺失项标为未记录，估算注明方法。先观察失败和负担，再制定量化门槛。
+ 
+--- before/docs/research/capability-baseline-and-candidates.md
++++ after/docs/research/capability-baseline-and-candidates.md
+@@ -27,6 +27,12 @@
+ 
+ 上述是指令与模板的资料证据。它们能否稳定执行、实际节省多少工作，尚未做独立测量。其 reviewer 主要审查上下文写入；本次读到的协议没有定义所有项目交付都必须使用的结果验收契约。这一观察限定于上述文件，不能推广为“使用它的 Agent 不会核验结果”。
+ 
++### 用户报告的开发中记忆缺口
++
++用户报告 Agent 在开发期间较少读取踩坑经验或研发路径，记录触发场景也较少；举例说此前要求的“mouse 的覆盖、转写工具”不会作为已有隐藏能力被提醒。本轮只在本仓库当前文档、项目上下文和相关研究/样例材料中做了定向文本查找，未定位该工具的实现入口；没有调查其源项目或当时执行轨迹。
++
++可以确认的设计缺口是：已读基线指令着重定义启动恢复与上下文写入审查，本项目先前的执行路径也没有明确开发中语义变化时的再次检索和候选捕获责任。实际 mouse 案例可能发生在未记录、未触发、未找到、未提供或未使用等环节，根因尚未证明。当前没有审计宿主的全部 Hook 配置，不能把这份报告当作其事件支持清单。
++
+ ### 从基线向完整应用扩展
+ 
+ | 用户要解决的问题 | 当前基线提供的起点 | 新应用需要形成的稳定责任 |
+@@ -35,6 +41,8 @@
+ | 这次究竟要做成什么 | 交接里的当前目标与下一动作 | 保留原请求，管理任务理解、完成条件和重要方向变化 |
+ | 结果是否可以接受 | 写入审查与已有 Agent/项目规范 | 把本次重要完成条件对应到产物、证据和未验证项 |
+ | 上次留下的知识还适用吗 | 决策、历史、状态与仓库冲突检查 | 跨任务知识的来源、范围、依赖变化、冲突与替代关系 |
++| 开发中如何用到隐藏能力与历史经验 | 相关决定和历史可供阅读，但用户报告存在漏读 | 根据当前需求、动作与问题，在重要选择前提供可复用能力、踩坑经验和研发路径，并复核适用性 |
++| 中途发现怎样留下来 | SyncSet 与写入审查已有边界 | 覆盖能力发现、验证修复、试验结果和明确纠正等时机，及时形成候选，准入仍单独判断 |
+ | 我能理解项目并判断改动吗 | 可阅读的交接、历史和决策文件 | 围绕人的问题组织同源说明、关系、影响、未知与证据导航 |
+ | 日常使用能否更省心 | Agent 维护文件，SyncSet 展示更新 | 用户通过统一入口完成工作与判断，减少文件管理、重复解释和无价值确认 |
+ 
+@@ -69,6 +77,8 @@
+ 
+ 新增 PC-G0 后，后续候选核对要追问：是否能从没有本工具记忆的仓库直接开始；是否调查整个项目并建立职责、关系和流程模型；是否保留覆盖、来源与未知；模型能否在后续任务更新。已有资料中的 init、adopt、memory 等名称不能单独证明这些结果，初始化一组文件也不能计为建模完成。本轮没有新增候选实测或完整功能审计。
+ 
++针对 PC-G2/PC-G4，还需逐项核对：开发中何时重查知识、如何发现未点名能力、能否按证据判断适用性、哪些时机能捕获候选、宿主事件缺失时如何表达支持范围。现有 Skill 的说明、Hook 数量或检索接口存在都不足以证明最终采用效果；候选选择保留至实际案例比较。
++
+ ### 需求与方法来源
+ 
+ - 美团的 [Agent 评测文章](https://tech.meituan.com/2026/08/07/Agent-Evaluation.html) 和 [AI Coding 实践文章](https://tech.meituan.com/2026/05/07/Agent-AI-Coding.html) 是已有评审与验证设计的输入，其对本项目的采用范围记录在 [DEC-2026-09-05-001](../../.agent-context/decisions/DEC-2026-09-05-001-staged-validation-and-evidence-review.md)。外部案例的结果不证明本项目有效。
+@@ -87,6 +97,8 @@
+ | 中断后换会话继续 | 找对目标、已确认决定、未完成项和下一动作 | 再次介绍背景、纠正错误记忆、等待定位资料 |
+ | 一个普通局部任务 | 方向与规范正确，交付可核验，流程保持轻量 | 启动、额外确认、收尾和记录维护 |
+ | 一次结构性 Design 交付 | 结果回答原问题，证据与结论范围匹配，关键取舍可判断 | 补充目标、纠偏、打开证据和复核 |
++| 准备新增项目已有的能力 | 未点名工具也能在关键选择前找到并核实，避免无依据的重复实现 | 人工提醒、重复开发、检索和适用性核对 |
++| 中途失败、修复或方案试验 | 及时捕获有证据的经验，并在后续相关问题中使用 | 中途记录、无关提示、重复踩坑与知识维护 |
+ | 项目变化后的后续任务 | 正确复用、识别过期或冲突，推断未被冒充确认 | 重复解释、重新查证、修正与维护知识 |
+ | 人依据资料作维护判断 | 能找到行为、影响、未知、待决定事项并返回证据 | 找资料、阅读、术语澄清和来回定位 |
+ 
+--- before/docs/validation/golden-cases.md
++++ after/docs/validation/golden-cases.md
+@@ -12,6 +12,8 @@
+ 首轮提供单次可行性和失败样例。后续任务复用、独立运行、真实读者使用和成本收益各自需要对应证据，按 [MVP 的分阶段成功标准](../product/mvp-spec.md#8-success-criteria) 汇报。
+ 
+ 首次接入与全项目建模有独立案例 GC-015；从零项目有补充设计案例 GC-016。两者不依赖已有 Base 或先完成一次开发任务，已有局部 Design 案例不能代替它们的验收。
++
++GC-017 和 GC-018 检查开发中主动发现隐藏能力、使用经验和及时捕获知识；这些性质不能由启动时读过 handoff 或收尾保存成功来证明。
+ 
+ 每个案例固定：
+ 
+@@ -384,3 +386,42 @@
+ 核验方式：将模型条目分别对照原始请求、明确决定和实际来源，记录不存在实现时是否误报；实现后重新核对受影响条目。真实用户对模型是否帮助作决定的反馈单独记录。
+ 
+ 验收边界：从零项目的设计质量和实施效果各有证据范围，本例不把一次目标整理描述为已完成项目实现。
++
++## 21. GC-017 — Discover and Use a Hidden Capability
++
++状态：来源于用户报告的验收设计，未运行。用户提到的“mouse 的覆盖、转写工具”作为场景线索；本轮未核对实际入口、实现与适用范围，不能据此声称已经找到可用工具或确定漏读原因。
++
++准备：选择一个经源码与适用性核对的真实项目能力。固定其入口、用途、限制、相关来源与 revision；长期知识可用，但当前 handoff 不直接点名该工具。用户任务只描述需要解决的问题，不提示工具名称。另准备词面相近但不适用、来源过期或不存在可复用能力的对照情形。
++
++预期：
++
++- 在作出重要新增实现决定前，从需求、项目关系或问题线索找到可能复用的能力，即使用户未点名；
++- 提供相关理由、实际入口、来源与适用边界，并按需查阅源码、用法或测试核实；
++- 根据实际匹配选择直接复用、适配、补查或另做，结果与证据一致；提到工具名称本身不计为完成；
++- 已失效或不匹配的工具不会被强行采用；未命中检索不会被描述为“项目不存在此能力”；
++- 无关任务不收到重复或大段经验提示，记录额外阅读、等待与人工提醒的负担。
++
++核验：评审者对照已固定的用途、入口和条件，查看关键选择发生前的查询/提供记录、实际来源检查与后续方案或产物。模型自述“我已考虑”不足以证明已核实或使用；适用性不满足时，有证据的不采用也是正确结果。
++
++定位失败时分别检查：能力是否从未记录、条目不可发现、相关时机未触发、查询未命中、命中却未提供、提供后未查阅、查阅后判断失误。若能力仅存在源码或旧历史中而未进入知识模型，单独记录为捕获/建模缺口，不能一概归因为 Hook。
++
++验收边界：使用经过核对的真实能力与任务才支持实际复用结论。mouse 入口尚未定位前，只能进行明确标记的合成方法检查。基线 Agent 自主发现同一能力也应记为通过，不预设新应用必然更优。
++
++## 22. GC-018 — Capture and Reuse Knowledge During Development
++
++状态：开发中记录时机与后续使用的验收设计，未运行。
++
++输入：项目政策已授权必要的任务观察与候选记录；一个尚未结束的开发任务，包含可验证的新能力发现、失败调查、修复/试验结果或明确用户纠正；再提供独立上下文中的相关后续问题与不适用情形。原始证据、权限与知识版本固定。
++
++预期：
++
++- 新发现或经验证的结果在合适的中途时机形成记录，用户无需专门说“记下来”，也无需等待整个任务结束；
++- 未证实失败只保留观察、假设和待查项；实际修复与验证结果补齐后再更新经验，假设不自动升级为已证实原因；
++- 研发路径能区分尝试了什么、观察到什么、哪些方案被选择或放弃及其依据，保留未确认取舍；
++- 上下文收缩或任务交接后，必要证据和待处理候选仍可恢复；捕获成功不自动等于长期准入；
++- 后续相关工作及时得到适用知识并复核来源，实际影响选择；相似但条件不符或已失效的经验保留限制；
++- 重复低价值事件不产生大量重复记录和提示，人类确认继续只针对确实需要人判断的命题。
++
++核验：把可观察时机、实际触发/捕获记录、候选状态、准入依据、后续提供与采用证据对应起来。事件、候选和检索都成功仍可能没有实际使用，分别判定；宿主无法观察的事件标记支持缺口，不能冒充已自动覆盖。
++
++验收边界：保存、触发、提供、查阅、采用和真实收益各有证据。没有实际运行只说明设计可审阅；一次任务不能证明所有记录时机都可靠。实际工具入口、事件支持与成本数据需在后续试用中核对。
+--- before/README.md
++++ after/README.md
+@@ -21,6 +21,8 @@
+ 5. **人能理解项目。** 根据实际问题，用说明、流程或局部关系帮助你理解行为、找到影响和未知，并返回证据。
+ 
+ 普通小任务保持轻量。需要保留多少知识、生成什么资料，由这次工作和后续使用的实际需要决定。
++
++开发中也需要主动使用记忆：准备新增能力时提示项目已有工具，遇到问题时找到适用的踩坑经验与研发记录；发现隐藏能力、验证修复或完成方案试验时及时形成知识候选。详细的读取与记录时机见 [开发中的记忆使用](docs/product/capability-goals.md#开发中让相关记忆参与工作)。
+ 
+ ## 一个具体例子
+ 
+--- before/.agent-context/decisions/DEC-2026-09-07-003-development-time-memory-use.md
++++ after/.agent-context/decisions/DEC-2026-09-07-003-development-time-memory-use.md
+@@ -0,0 +1,72 @@
++# DEC-2026-09-07-003: Use and capture project knowledge during development
++
++Status: proposed  
++Date: 2026-09-07  
++Confirmed by: none for the detailed design; the user explicitly reported the usage gap and mouse example  
++Related sessions: 2026-09-07, development-time recall, lessons, development paths and hidden capabilities  
++Related files:
++- `docs/product/capability-goals.md`
++- `docs/product/mvp-spec.md`
++- `docs/architecture/information-system-architecture.md`
++- `docs/contracts/base-knowledge-contract.md`
++- `docs/contracts/agent-output-contract.md`
++- `docs/validation/golden-cases.md`
++- `docs/research/capability-baseline-and-candidates.md`
++- `AGENTS.md`
++Supersedes: none; elaborates PC-G2/PC-G4 within the accepted product direction  
++Superseded by: none
++
++## Context
++
++The user reports that agent-context-sync does not bring lessons or development paths into ongoing development often enough and has too few situations that trigger recording. They cite a previously requested “mouse 的覆盖、转写工具” as a hidden project capability that later Agents are not told about.
++
++Current project design supplied relevant context at framing and described result-driven knowledge updates, but did not explicitly define renewed selection or candidate capture at meaningful points during execution. The inspected context-sync instructions primarily define startup continuity and write review. These document observations identify a design gap; they do not establish the original incident's technical cause.
++
++The tool entry, current implementation status and original execution trace were not located in the inspected Project Cognition materials. The example is a user report, not a verified implementation record. Host Hook support was not audited.
++
++## Proposed Decision
++
++1. Elaborate PC-G2 so relevant project capabilities, lessons and development paths can be supplied during work when the goal, proposed capability, module or problem changes, including before significant duplicate implementation.
++2. Elaborate PC-G4 so new capabilities, verified fixes, experiment outcomes, explicit corrections and source changes can produce candidates before task completion.
++3. Describe reusable knowledge by purpose, relevant cues, source entry, scope, status and evidence. Capture observable attempts and outcomes; unresolved causes remain hypotheses.
++4. Separate event detection, knowledge selection, delivery, applicability review, actual use, candidate capture and durable admission. Compare their outcomes and burden independently.
++5. Use host events, tool results or Agent semantic checkpoints only as mechanisms for these responsibilities. No Hook or retrieval implementation is selected; unavailable event coverage remains explicit.
++
++The existing thin-governance direction, Agent execution autonomy, one Base, proportional evidence and human confirmation boundaries remain unchanged. This proposed elaboration is documentation work, not runtime authorization.
++
++## Reasons
++
++- Useful knowledge can exist yet fail to affect the next decision.
++- Development creates important evidence before the final response, and that evidence can be lost across interruptions or context changes.
++- Triggering alone does not establish relevance, correct use or knowledge authority.
++- Comparing actual reuse, repeated failures and interruption burden is more informative than counting records or Hook invocations.
++
++## Alternatives Considered
++
++- Rely only on startup and final sync: leaves the reported mid-task situations without explicit responsibility.
++- Add many unconditional Hooks: may increase noise while failing to supply applicable knowledge; event availability is unverified.
++- Force reuse of every related old tool or lesson: could apply stale or mismatched knowledge; applicability requires source checks.
++- Record every failed attempt as a confirmed lesson: confuses observation, cause, scope and evidence.
++- Add a second independent capability or experience store: would split current authority; descriptors should refer to the same Base and source owners.
++
++## Evidence
++
++- User reported missing development-time reading of lessons/development paths and limited recording triggers.
++- User supplied the mouse tool as a concrete example of a hidden capability not brought into later work.
++- Pre-revision architecture section 4.2 went from autonomous execution to results without an explicit development-time memory-use/capture path.
++- The Base already supports facts, relationships, lessons and state distinctions; descriptors and lifecycle use can extend those semantics.
++
++## Consequences
++
++- Product/architecture drafts now describe read and capture moments separately, with capability and development-path semantics.
++- GC-017/018 are proposed, unexecuted cases for hidden-capability use and mid-task capture/reuse.
++- Incident diagnosis must distinguish never captured, not triggered, not found, not supplied, not read and not correctly used; no single cause is assumed.
++- Existing candidate reviews need corresponding execution evidence before adoption claims.
++- No Hook is installed, no mouse tool is run, and no product-effectiveness claim is established.
++
++## Review Triggers
++
++- The user clarifies the intended tool or expected development behavior.
++- Original sources or execution records establish the actual failure stage.
++- Host event support or real trials require different trigger coverage.
++- Proactive knowledge delivery adds more distraction than useful assistance, or supplied knowledge still does not affect decisions.

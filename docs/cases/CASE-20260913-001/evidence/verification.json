@@ -1,0 +1,271 @@
+{
+  "date": "2026-09-13",
+  "reviewer": "Codex self-check; no independent human acceptance",
+  "revision": "8af0fc2d4c6ab064efbcc0154a543ba08eb98b3e",
+  "checks": [
+    {
+      "check": "Source HEAD unchanged",
+      "passed": true
+    },
+    {
+      "check": "Source tracked/untracked status unchanged",
+      "passed": true
+    },
+    {
+      "check": "Exact-author all-ref inventory = 88",
+      "passed": true
+    },
+    {
+      "check": "HEAD reachable wutea commits = 81",
+      "passed": true
+    },
+    {
+      "check": "No wutea merge commits in inventory",
+      "passed": true
+    },
+    {
+      "check": "S01 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S02 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S03 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S04 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S05 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S06 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S07 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S08 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S09 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S10 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S11 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S12 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S13 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S14 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S15 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S16 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S17 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S18 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S19 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S20 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S21 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S22 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S23 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S24 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S25 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S26 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S27 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S28 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S29 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S30 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S31 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S32 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S33 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S34 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S35 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S36 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S37 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S38 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S39 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S40 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S41 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S42 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S43 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S44 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S45 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S46 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S47 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S48 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "S49 source hash and anchor",
+      "passed": true
+    },
+    {
+      "check": "Probe uses same revision and source hash",
+      "passed": true
+    },
+    {
+      "check": "Three numeric examples executed; reference mismatch observed",
+      "passed": true
+    }
+  ],
+  "markdown_links_checked": 186,
+  "errors": [],
+  "status": "pass",
+  "exclusions": [
+    "Full Gradle build",
+    "HTTP integration",
+    "Database execution",
+    "Broker delivery",
+    "Performance",
+    "Business acceptance",
+    "All-source semantic understanding"
+  ],
+  "artifacts": {
+    "analysis.md": "c5dbc125d574ddd644ac806ff8f73bb86c17da6f29096fde585938a09c2387ec",
+    "business-map.md": "daef672e7ee4aa86bc1ffc984b1e20d1b71b9e8b548b4dee6e5a66820f4989cc",
+    "knowledge-candidates.md": "930aa32e1c6f01febd5da240b129579ddcba534371ae199e7e7e31862e145c85",
+    "route-recommendation.md": "e77a456e9235ca4574025225c904e6f487a309527578a21771c450ca37ce6e17",
+    "submission-reassessment.md": "765d8bc2717dd4edde8ee45ff31de48c326fa06c25f68bf30c31f9c55dc625d2",
+    "wutea-history.md": "2e83a38d03c2ca970fe13501a66c71c22e983a0cc13f8e26f21de91ed5c42c3c",
+    "evidence/beginner-doc-verification.json": "b23f32b3da5f2fd08cc12aafebd1d7a806169c6722e02675dd8e9f494a1a25f2",
+    "evidence/build_sources.py": "399d4c48b2011b7d72fe233961976d2d5b4da5a093d14be33f82195832e33324",
+    "evidence/collect.py": "8767154372d4206606adea0b8675ed6f0b315eab4e9fa4573de0ceb48b5bbcf4",
+    "evidence/controller-inventory.json": "b539812a4e73e256a4b1c8f48188de40f28624d4fbf3f9c56b81d3e7c9e98fc2",
+    "evidence/demo-test-output.txt": "6a82b92970dce284470b21a65cbf9fe7987fbfc6ae9f4af704581239e154c405",
+    "evidence/demo-verification.json": "b7d92da99d7121ecc27d8cd5a432dccaaac8919e80407cd0f9bb80a705d5aaf4",
+    "evidence/distance-probe.json": "4e87a0768e8b6359c4dc3596bc57d1445c1273258bf9785243d0464348a80449",
+    "evidence/package_demo.py": "f291cc525593bfb43a280b178ccb17524de46df22781a412b58713998e649847",
+    "evidence/probe_distance.py": "ccdf9b38e1d7dbb7606051bc3aebe1a3fde51135708d53ca42aeba17d878c49b",
+    "evidence/read_submission_doc.py": "4cd459f4727e363668143b334de7337de40877df41a81f08e0e551b44f211840",
+    "evidence/source-catalog.md": "04701bc07c47c0ae2e49e1bbb874650cb7718e0271e207614c8136fb074c37e7",
+    "evidence/source-inventory.json": "040566b2959674e8391dd71944a7f2f990ea5ff350120375593c193b7b9c27c3",
+    "evidence/source-refs.json": "b4fe3a7952178e089a9b8c1823ae46079686c6a752ab74037723d01976ca73df",
+    "evidence/submission-doc-source.json": "ef0ca0f09cc6889f81f2536552d83a94b1ef08b0bc4c944771df405d8525c5cc",
+    "evidence/syncset-002.md": "d26a0137b31d964fcd3936c49d6978796ce8c660080683622052beb03a0326e2",
+    "evidence/syncset-003.md": "e7ffa7f8f5ab2cd083d9dc3a5ce5330d119c5860171fc93de3b4fa94a550d899",
+    "evidence/syncset-004.md": "37a57b5b5508b71295e0a75a108703a599f98c81920427cfb155721ac6654312",
+    "evidence/syncset.md": "a6de73d280690f478697c49ec7c0166591bca87aa22aa03a6c800023911a5524",
+    "evidence/verify.py": "113d4c08614eba51d3b289c0988ae985f391ca6532d2bfb554857a32fe58c2a9",
+    "evidence/wutea-commits.json": "17052c7cb6049c6b6e7554a07d8105942cccff06fa7ad335f9bd879ce0736673"
+  }
+}
